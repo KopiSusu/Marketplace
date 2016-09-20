@@ -18,15 +18,15 @@ const sections = [
     }
   },
   {
-    "nestedKey" : "Baked",
-    "type" : "default",
-    "title" : "Baked Goods",
-    "requestType": "Meal",
-    "queries": ["tRLFjE7Fby", "wDq31PFCHb", "sNmaUrMIpR"]
+    "nestedKey" : "Chefs",
+    "type" : "profileList",
+    "title" : "Our Chefs",
+    "requestType": "User",
+    "queries": ["C9Zy1J2KUz", "SYW3vDTJ03"]
   },
   {
     "nestedKey" : "Canned",
-    "type" : "default",
+    "type" : "cardList",
     "title" : "Canned Goods",
     "requestType": "Meal",
     "queries": ["tRLFjE7Fby", "wDq31PFCHb", "sNmaUrMIpR", "NflccRJiAr", "VMFxv0py2L"]
@@ -44,9 +44,10 @@ export default (state = {
 
       _.forEach(sections, (section) => {
         newSections[section.nestedKey] = section;
-        if(section.type !== 'contentOnly')
-          newSections[`content-${section.nestedKey}`] = []
 
+        if(section.type !== 'contentOnly') {
+          newSections[`content-${section.nestedKey}`] = []
+        }
         newSections.sectionIndex.push(section.nestedKey);
       })
 

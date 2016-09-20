@@ -17,12 +17,10 @@ class Section extends React.Component {
     }
 
   	render() {
-
     	return (
+            <section className={'section column-1 ' + ( this.props.type !== 'contentOnly' ? 'noPadding' : '')}>
 
-            <section className='section column-1'>
-
-                {this.props.type === "default" ? <Header {...this.props}/> : null}
+                {this.props.type !== "contentOnly" ? <Header {...this.props}/> : null}
 
                 <View {...this.props}/>
             </section>

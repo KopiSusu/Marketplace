@@ -4,6 +4,7 @@ import _ from 'lodash'
 
 import Blob from './blob'
 import Cards from './cards'
+import Profiles from './profiles'
 
 class Section extends React.Component {
     constructor(props) {
@@ -35,8 +36,10 @@ class Section extends React.Component {
         switch (this.props.type) {
             case 'contentOnly':
                 return <Blob {...this.props}/>
-            default:
+            case 'cardList':
                 return <Cards {...this.props}/>
+            case 'profileList':
+                return <Profiles {...this.props}/>
         }
     }
 

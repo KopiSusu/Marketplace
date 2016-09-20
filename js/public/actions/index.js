@@ -28,10 +28,10 @@ export function fetchData(requestType, idArray, returnType, nestedKey) {
   return function (dispatch) {
     let Query = _exportQueryConstruct(requestType, idArray)
     return Query.find()
-      .then(response => {
+      .then(response => {        
         return response
       })
-      .then(json => {        
+      .then(json => {
         return dispatch(receiveData(json, returnType, nestedKey))
       })
   }

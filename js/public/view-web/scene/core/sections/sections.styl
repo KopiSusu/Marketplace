@@ -26,7 +26,9 @@
 			z-index -1
 			border-bottom 1px solid fontColor
 	.section
-		padding (buffer * 3.5) 0 0
+		padding (buffer * 3.5) 0
+		&.noPadding
+			padding 0
 		p
 			text-align center
 		ul
@@ -88,6 +90,41 @@
 							border-top 1px solid primaryColor
 							font-weight 900
 							color bgColor
-					
+			.profiles
+				padding buffer
+				.profile
+					position relative
+					border-radius radius
+					overflow hidden
+					.details
+						h1
+							text-align center
+							margin-bottom (buffer/2)
+						p
+							font-size 15px
+							height 20px
+							line-height 20px
+							.icon
+								padding 0
+								padding-right (buffer/2)
+								height 20px
+					.image
+						border-radius 50%
+						width 150px
+						height 150px
+						margin buffer auto
+						background-size cover
+						background-repeat no-repeat
+						background-position center
+						overflow hidden
+						border 1px solid strokeColor
+					.bio
+						padding buffer
+						p
+							font-size 18px
+							padding buffer
+							background bgColor
+							border-radius radius
+							border 1px solid strokeColor
 
 			

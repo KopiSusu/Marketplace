@@ -36,9 +36,9 @@ const mapStateToProp = (state) => {
 
     _.forEach(state.sections.sectionIndex, (section) => {
         newState[section] = state.sections[section]
-        newState[`content-${section}`] = state.sections[`content-${section}`]
+        if(state.sections[section].type !== 'contentOnly')
+            newState[`content-${section}`] = state.sections[`content-${section}`]
     })
-
     return newState
 }
 
