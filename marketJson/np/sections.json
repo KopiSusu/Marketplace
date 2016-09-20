@@ -8,21 +8,21 @@
       "lineHeight": "1.5"
     },
     "contentStyle": {
-      "color": "#F87974",
-      "borderBottom": "1px dotted #F87974"
+      "color":"#F87974",
+      "borderBottom":"1px dotted #F87974"
     }
   },
   {
-    "nestedKey" : "Baked",
-    "type" : "default",
-    "title" : "Baked Goods",
-    "requestType": "Meal",
-    "queries": ["tRLFjE7Fby", "wDq31PFCHb", "sNmaUrMIpR"]
+    "nestedKey" : "Chefs",
+    "type" : "profileList",
+    "title" : "Featured Chefs",
+    "requestType": "User",
+    "queries": ["C9Zy1J2KUz", "SYW3vDTJ03"]
   },
   {
-    "nestedKey" : "Canned",
-    "type" : "default",
-    "title" : "Canned Goods",
+    "nestedKey" : "Baked",
+    "type" : "cardList",
+    "title" : "Baked Goods",
     "requestType": "Meal",
     "queries": ["tRLFjE7Fby", "wDq31PFCHb", "sNmaUrMIpR", "NflccRJiAr", "VMFxv0py2L"]
   }

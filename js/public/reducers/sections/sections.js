@@ -25,9 +25,9 @@ const sections = [
     "queries": ["C9Zy1J2KUz", "SYW3vDTJ03"]
   },
   {
-    "nestedKey" : "Canned",
+    "nestedKey" : "Baked",
     "type" : "cardList",
-    "title" : "Canned Goods",
+    "title" : "Baked Goods",
     "requestType": "Meal",
     "queries": ["tRLFjE7Fby", "wDq31PFCHb", "sNmaUrMIpR", "NflccRJiAr", "VMFxv0py2L"]
   }
