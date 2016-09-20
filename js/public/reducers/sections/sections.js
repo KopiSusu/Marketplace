@@ -20,7 +20,7 @@ const sections = [
   {
     "nestedKey" : "Chefs",
     "type" : "profileList",
-    "title" : "Our Chefs",
+    "title" : "Featured Chefs",
     "requestType": "User",
     "queries": ["C9Zy1J2KUz", "SYW3vDTJ03"]
   },
