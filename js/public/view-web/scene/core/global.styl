@@ -1,0 +1,272 @@
+
+//Global Color vars
+primaryColor = #F87974 
+secondaryColor = #ff7b7b 
+bgColor = #fff
+bgColorDark = #f5f2ee
+strokeColor = #dce0e0
+fbColor = #4c69ba
+radius = 3px
+fontColor = #675e52
+fontColorLight = #888
+
+searchWidth = 200px
+
+buffer = 12px
+
+border = 1px solid strokeColor
+
+ribbonHeight = 50px
+
+// Global styles
+
+body 
+	background bgColorDark
+	font-family "EB Garamond" !important
+	color fontColor
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	text-shadow rgba(0, 0, 0, .01) 0 0 1px
+	*
+		box-sizing border-box
+		vertical-align top
+		
+.scroll
+	overflow auto
+
+//Global Mixins
+shadow()
+	-webkit-box-shadow 0px 1px 2px 0px rgba(0,0,0,0.2)
+	-moz-box-shadow 0px 1px 2px 0px rgba(0,0,0,0.2)
+	box-shadow 0px 1px 2px 0px rgba(0,0,0,0.2)
+
+//Button groups
+
+
+//Buttons
+
+		
+//Columns
+// ex .column-4 === width 25%
+generate-column()
+	for n, x in 1..12
+		.column-{x}
+			display inline-block
+			vertical-align top
+			width (100% / x)
+			padding-left (buffer/2)
+			padding-right (buffer/2)
+			&.center
+				margin-left: ((100% / x)/ 2);
+				@media only screen and (max-width: 600px)
+					margin-left 0 
+			&.first
+				padding-left 0
+				@media only screen and (max-width: 600px)
+					padding-left (buffer/2)
+			&.last
+				padding-right 0
+				@media only screen and (max-width: 600px)
+					padding-right (buffer/2) 
+			@media only screen and (max-width: 600px)
+				width 100%
+
+// ex .column-5-3 === width 60% 
+// ex .column-5-2 === width 40%
+generate-column-fill()
+	for n, x in 1..12
+		for n, y in 1..x
+			.column-{x}-{y}
+				display inline-block
+				vertical-align top
+				width (100% / x) * y
+				@media only screen and (max-width: 600px)
+					width 100%
+						
+				
+// ex .column-5-offset-2
+generate-column-offset()
+	for n, x in 1..12
+		for n, y in 1..x
+			.column-{x}-offset-{y + 1}
+				display inline-block
+				vertical-align top
+				margin-left (100% / x) * y
+				width (100% / x)
+				@media only screen and (max-width: 600px)
+					width 100%
+				
+
+generate-column()
+generate-column-fill()
+generate-column-offset()
+
+// Rows
+// ex .rows-4 === height 25%
+generate-rows()
+	for n, x in 1..12
+		.rows-{x}
+			height (100% / x)
+			@media only screen and (max-width: 600px)
+				height (100% / x)
+
+// ex .rows-5-3 === height 60% 
+// ex .rows-5-2 === height 40%
+generate-rows-fill()
+	for n, x in 1..12
+		for n, y in 1..x
+			.rows-{x}-{y}
+				height (100% / x) * y
+				@media only screen and (max-width: 600px)
+					height (100% / x) * y
+				
+// ex .rows-5-offset-2
+generate-rows-offset()
+	for n, x in 1..12
+		for n, y in 1..x
+			.rows-{x}-offset-{y + 1}
+				margin-top (100% / x) * y
+				height (100% / x)
+				@media only screen and (max-width: 600px)
+					height (100% / x)
+generate-rows()
+generate-rows-fill()
+generate-rows-offset()
+		
+//Forms
+
+//Search
+.search
+	display inline-block
+	width searchWidth
+	margin buffer
+	border 1px solid strokeColor
+	&.right 
+		float right
+	input
+		padding 0
+		height (ribbonHeight / 2)
+		display inline-block
+		font-size 13px
+		border 0
+		width "calc(100% - %s)" % ((searchWidth / 8) * 2)
+		&:focus
+			outline none
+			border 0
+	.icon
+		padding (buffer/4) 0 
+		height (ribbonHeight / 2)
+		display inline-block
+		width (searchWidth / 8)
+
+//inputs
+input
+	width 100%
+	height ribbonHeight
+	padding buffer
+	border 1px solid strokeColor
+	border-radius 0
+	-webkit-appearance none
+	&:focus
+		outline none
+		border 1px solid secondaryColor
+
+input[type='checkbox']
+	width auto
+	margin-right buffer
+	min-width 10px
+	min-height 10px
+	&:checked
+		background #333
+	
+label.checkboxLabel
+	color fontColorLight
+
+//Typogrophy
+h1
+	font-size 17px
+	margin 0
+	
+p
+	font-size 13px
+	margin 0
+	&.secondaryText
+		color fontColorLight
+
+//Containers
+.window
+	position absolute
+	overflow hidden
+	width 100%
+	height 100%
+	
+.scroll
+	position absolute
+	overflow auto
+	width 100%
+	height 100%
+	
+.container
+	width 100%
+	padding 0
+	
+.box
+	background-color bgColorLight
+	padding buffer * 2
+	shadow()
+						
+				
+//Icons
+.icon
+	text-align right
+	display inline-block
+	height ribbonHeight - 1
+	padding buffer (buffer / 2)
+	svg
+		height 100%
+		width 100%
+		vertical-align top !important
+	&.interactive
+		cursor pointer
+		&:hover
+			svg
+				fill primaryColor
+		&:active
+			svg
+				fill primaryColor
+	&.right
+		float right
+	&.left
+		float left
+	&.dim
+		opacity 0.3
+	&.online				
+		svg
+			fill primaryColor
+				
+
+//Tables
+
+//Images
+
+//Dropdowns
+
+//Alerts
+
+//Modals
+
+::-webkit-scrollbar 
+	-webkit-appearance none
+	&:vertical 
+		width 7px
+	&:horizontal 
+		height 7px
+::-webkit-scrollbar-track 
+	background transparent
+::-webkit-scrollbar-thumb 
+	border-radius 10px
+	background-color transparent
+	border 1px solid transparent
+	
+
+

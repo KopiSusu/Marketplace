@@ -1,0 +1,27 @@
+[
+  {
+    "nestedKey" : "topText",
+    "type" : "contentOnly",
+    "text" : "Northern Provisions is a <style>curated marketplace for small batch producers.<style> Every vendor sources responsibly and sells direct to consumers through us. This is how business is meant to be done.",
+    "style": {
+      "fontSize": "22px",
+      "lineHeight": "1.5"
+    },
+    "contentStyle": {
+      "color": "#F87974",
+      "borderBottom": "1px dotted #F87974"
+    }
+  },
+  {
+    "nestedKey" : "Baked",
+    "type" : "default",
+    "title" : "Baked Goods",
+    "queries": ["tRLFjE7Fby", "wDq31PFCHb", "sNmaUrMIpR"]
+  },
+  {
+    "nestedKey" : "Canned",
+    "type" : "default",
+    "title" : "Canned Goods",
+    "queries": ["tRLFjE7Fby", "wDq31PFCHb", "sNmaUrMIpR", "NflccRJiAr", "VMFxv0py2L"]
+  }
+]

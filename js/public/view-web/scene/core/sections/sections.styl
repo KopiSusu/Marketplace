@@ -1,0 +1,93 @@
+@import './../global.styl'
+
+.sections
+	.header
+		position relative
+		text-align center
+		height 50px
+		width 50%
+		margin 0 25%
+		h1
+			display inline-block
+			text-transform uppercase
+			font-size 18px
+			font-weight 500
+			height 50px
+			line-height 50px
+			letter-spacing 5px
+			background bgColorDark
+			padding 0 (buffer * 5)
+		.line
+			position absolute
+			top 0
+			left 0
+			height 25px
+			width 100%
+			z-index -1
+			border-bottom 1px solid fontColor
+	.section
+		padding (buffer * 3.5) 0 0
+		p
+			text-align center
+		ul
+			padding 0 (buffer * 6)
+			.cards
+				padding buffer
+				.card
+					position relative
+					height 300px
+					border-radius radius
+					overflow hidden
+					border 1px solid strokeColor
+					.image
+						background-size cover
+						background-repeat no-repeat
+						background-position center
+						overflow hidden
+						.hidden
+							height 250px
+							width 100%
+							background bgColor
+							transform translate3d(0, 200px, 0)
+							transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
+							nav
+								height 50px
+								padding 0 buffer
+								h2
+									margin 0
+									font-size 20px
+									overflow hidden
+									line-height 50px
+									white-space nowrap
+									display inline-block
+									text-align left
+									overflow hidden
+									text-overflow ellipsis
+								p
+									margin 0
+									font-size 20px
+									overflow hidden
+									white-space nowrap
+									line-height 50px
+									display inline-block
+									text-align right
+					button
+						border none
+						background bgColor
+						letter-spacing 2px
+						text-transform uppercase
+						font-weight 500
+						border-top 1px solid strokeColor
+						transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
+					&:hover
+						.image
+							.hidden
+								transform translate3d(0, 50px, 0)
+						button
+							background primaryColor
+							border-top 1px solid primaryColor
+							font-weight 900
+							color bgColor
+					
+
+			
