@@ -13,13 +13,6 @@ export const selectGroup = (group) => {
     }
 }
 
-export const submitMessage = (message) => {
-  return {
-    meta: {remote: true},
-    type: 'SUBMIT_MESSAGE',
-    payload: message
-  }
-}
 export const receiveData = (json, returnType, nestedKey) => {
 	let returnResponse = {
 		type: returnType,
@@ -31,18 +24,30 @@ export const receiveData = (json, returnType, nestedKey) => {
 
 	return returnResponse
 }
-export function fetchData(idArray, returnType, nestedKey) {
+export function fetchData(requestType, idArray, returnType, nestedKey) {
   return function (dispatch) {
-    let mealsQuery = new Parse.Query('Meal');
-    mealsQuery.include('cook');
-    mealsQuery.notEqualTo("deleted", true);
-    mealsQuery.containedIn("objectId", idArray);
-    return mealsQuery.find()
+    let Query = _exportQueryConstruct(requestType, idArray)
+    return Query.find()
       .then(response => {
         return response
       })
       .then(json => {        
         return dispatch(receiveData(json, returnType, nestedKey))
       })
+  }
+}
+const _exportQueryConstruct = (requestType, idArray) => {
+  let Query;
+  switch(requestType) {
+    case 'User':
+      Query = new Parse.Query(Parse.User);
+      Query.containedIn("objectId", idArray);
+      return Query
+    default:
+      Query = new Parse.Query(requestType);
+      Query.include('cook');
+      Query.notEqualTo("deleted", true);
+      Query.containedIn("objectId", idArray);
+      return Query
   }
 }

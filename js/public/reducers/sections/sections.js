@@ -21,12 +21,14 @@ const sections = [
     "nestedKey" : "Baked",
     "type" : "default",
     "title" : "Baked Goods",
+    "requestType": "Meal",
     "queries": ["tRLFjE7Fby", "wDq31PFCHb", "sNmaUrMIpR"]
   },
   {
     "nestedKey" : "Canned",
     "type" : "default",
     "title" : "Canned Goods",
+    "requestType": "Meal",
     "queries": ["tRLFjE7Fby", "wDq31PFCHb", "sNmaUrMIpR", "NflccRJiAr", "VMFxv0py2L"]
   }
 ]

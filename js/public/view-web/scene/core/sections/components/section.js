@@ -13,8 +13,7 @@ class Section extends React.Component {
     // This goes out and fetchs our data's
     componentWillMount() {
         if(this.props.queries)
-            debugger
-            this.props.fetchData(this.props.queries, '_FETCH_SECTION', this.props.nestedKey)
+            this.props.fetchData(this.props.requestType, this.props.queries, '_FETCH_SECTION', this.props.nestedKey)
     }
 
   	render() {
