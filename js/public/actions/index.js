@@ -35,7 +35,7 @@ export function fetchData(requestType, idArray, returnType, nestedKey) {
   return function (dispatch) {
     let Query = _exportQueryConstruct(requestType, idArray)
     return Query.find()
-      .then(response => {        
+      .then(response => { 
         return response
       })
       .then(json => {
@@ -49,6 +49,7 @@ const _exportQueryConstruct = (requestType, idArray) => {
     case 'User':
       Query = new Parse.Query(Parse.User);
       Query.containedIn("objectId", idArray);
+
       return Query
     default:
       Query = new Parse.Query(requestType);

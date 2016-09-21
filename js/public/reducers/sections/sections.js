@@ -22,7 +22,6 @@ const sections = [
     "type" : "cardList",
     "title" : "Homemade Cookies",
     "requestType": "Meal",
-    "callbackTypes": "Review Follower",
     "queries": [
       "HXUGkW5J5N", 
       "DVAFrotMng", 
@@ -46,7 +45,7 @@ const sections = [
     "type" : "profileListImageOnly",
     "title" : "Featured Chefs",
     "requestType": "User",
-    "callbackType": "Review",
+    "callbackTypes": "Review",
     "queries": [
       "AyfD3njgLV", 
       "SYW3vDTJ03", 
@@ -83,8 +82,24 @@ export default (state = {
       let newSection = Object.assign({}, state);
       newSection[`content-${action.nestedKey}`] = action.payload
       return newSection
+    case '_FETCH_REVIEWS':
+      let newReview = Object.assign({}, state);
+      newReview[`content-${action.nestedKey}`][action.nestedIndex].set("totalReviews", action.payload.length)
+      newReview[`content-${action.nestedKey}`][action.nestedIndex].set("averageReview", _caluclateAverageRating(action.payload))      
+      return newReview
     default:
       return state
   }
-  
 }; 
+
+const _caluclateAverageRating = (reviews) => {
+  let _reviewsSum = 0;
+  for(let i = 0; i < reviews.length; i++) {
+    _reviewsSum += reviews[i].get("rating");
+  }
+  return _reviewsSum / reviews.length;
+}
+
+
+
+

@@ -2,18 +2,13 @@
 import React from 'react'
 import _ from 'lodash'
 
-import Blob from './blob'
-import Cards from './cards'
-import Profiles from './profiles'
+import Blob from './components/blob'
+import Cards from './components/cards'
+import Profiles from './components/profiles'
 
 class Section extends React.Component {
     constructor(props) {
         super(props)
-    }
-
-    // This goes out and fetchs our data's
-    componentWillMount() {
-        // this.props.fetchData('chat', '_FETCH_MESSAGES')
     }
 
   	render() {
@@ -37,11 +32,41 @@ class Section extends React.Component {
             case 'contentOnly':
                 return <Blob {...this.props}/>
             case 'cardList':
-                return <Cards {...this.props}/>
+                return (
+                    <ul className='column-1'>
+                        {
+                            _.map(this.props.content, (card, index) => {
+                                const cardJSON = card.toJSON()
+
+                                return <Cards key={index} {...this.props} {...cardJSON}/>
+                            })
+                        }
+                    </ul>
+                )
             case 'profileList':
-                return <Profiles {...this.props}/>
+                return (
+                    <ul className='column-1'>
+                        {
+                            _.map(this.props.content, (profile, index) => {
+                                const profileJSON = profile.toJSON();
+
+                                return <Profiles key={index} {...this.props} {...profileJSON}/>
+                            })
+                        }
+                    </ul>
+                )
             case 'profileListImageOnly':
-                return <Profiles noBio={true} {...this.props}/>
+                return (
+                    <ul className='column-1'>
+                        {
+                            _.map(this.props.content, (profile, index) => {
+                                const profileJSON = profile.toJSON();
+
+                                return <Profiles noBio={true} key={index} index={index} {...this.props} {...profileJSON}/>
+                            })
+                        }
+                    </ul>
+                )
         }
     }
 

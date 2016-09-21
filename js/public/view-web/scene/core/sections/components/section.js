@@ -14,9 +14,6 @@ class Section extends React.Component {
     componentWillMount() {
         if(this.props.queries)
             this.props.fetchData(this.props.requestType, this.props.queries, '_FETCH_SECTION', this.props.nestedKey)
-
-        // if(this.props.callbackType)
-        //     this.props.fetchData(this.props.callbackType, this.props.queries, '_FETCH_CALLBACKS', this.props.nestedKey)
     }
 
   	render() {

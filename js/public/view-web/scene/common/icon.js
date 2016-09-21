@@ -6,7 +6,8 @@ import {
 	IoCloseCircled,
 	IoPerson,
 	IoIosNutrition,
-	IoPricetags
+	IoPricetags,
+	IoAndroidStar
 } from 'react-icons/lib/io'
 
 class Icon extends React.Component {
@@ -37,6 +38,8 @@ class Icon extends React.Component {
 	        	return <IoIosNutrition/>
 	        case 'Market':
 	        	return <IoPricetags/>
+	        case 'Star':
+	        	return <IoAndroidStar/>
       	}
     }
 }
