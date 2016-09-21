@@ -19,16 +19,18 @@ class Profiles extends React.Component {
                         return (
                             <li key={index} className={`profiles column-${column}`}>
                                 <div className='profile'>
-                                    <div className='details column-3-1 rows-1'> 
+                                    <div className={`details column-${this.props.noBio ? '1' : '3'} rows-1`}> 
                                         <div className='image rows-2' style={{backgroundImage: `url(${profile.imageURL})`}}></div>
                                         <div className='details rows-2'>
                                             <h1>{profile.displayName}</h1>
                                             <span><Icon icon='Location'/><p>{`${profile.city}, ${profile.state}`}</p></span>
                                         </div>
                                     </div>
-                                    <div className='bio column-3-2 rows-1'>
-                                        <p>{profile.bio}</p>
-                                    </div>
+                                    {
+                                        this.props.noBio ? null : <div className='bio column-3-2 rows-1'>
+                                            <p>{profile.bio}</p>
+                                        </div>
+                                    }
                                 </div>
                             </li>
                         )

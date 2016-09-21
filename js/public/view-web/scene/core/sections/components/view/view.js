@@ -40,6 +40,8 @@ class Section extends React.Component {
                 return <Cards {...this.props}/>
             case 'profileList':
                 return <Profiles {...this.props}/>
+            case 'profileListImageOnly':
+                return <Profiles noBio={true} {...this.props}/>
         }
     }
 

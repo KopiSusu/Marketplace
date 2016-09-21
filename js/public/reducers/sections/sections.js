@@ -7,29 +7,56 @@ const sections = [
   {
     "nestedKey" : "topText",
     "type" : "contentOnly",
-    "text" : "Northern Provisions is a <style>curated marketplace for small batch producers.<style> Every vendor sources responsibly and sells direct to consumers through us. This is how business is meant to be done.",
+    "text" : "Homemade is a <style>curated marketplace for small batch producers.<style> Every vendor sources responsibly and sells direct to consumers through us. This is how business is meant to be done.",
     "style": {
       "fontSize": "22px",
       "lineHeight": "1.5"
     },
     "contentStyle": {
-      color:'#F87974',
-      borderBottom:'1px dotted #F87974'
+      "color": "#F87974",
+      "borderBottom": "1px dotted #F87974"
     }
   },
   {
-    "nestedKey" : "Chefs",
-    "type" : "profileList",
-    "title" : "Featured Chefs",
-    "requestType": "User",
-    "queries": ["C9Zy1J2KUz", "SYW3vDTJ03"]
+    "nestedKey" : "Cookies",
+    "type" : "cardList",
+    "title" : "Homemade Cookies",
+    "requestType": "Meal",
+    "callbackTypes": "Review Follower",
+    "queries": [
+      "HXUGkW5J5N", 
+      "DVAFrotMng", 
+      "KU4JnBOXsI", 
+      "EPqInn8k2o", 
+      "cmlG8zrDdU", 
+      "s0yHrrNgKy",
+      "NeoLvlvlrT",
+      "s71ECwHFEX",
+      "FBFF8AFT2I",
+      "menFtSGiA3",
+      "6V9XkWcTh9",
+      "g91nDfQ4K0",
+      "P389nT5dwy",
+      "oAy0oghMdB",
+      "Ek8lSB0Od9" 
+    ]
   },
   {
-    "nestedKey" : "Baked",
-    "type" : "cardList",
-    "title" : "Baked Goods",
-    "requestType": "Meal",
-    "queries": ["tRLFjE7Fby", "wDq31PFCHb", "sNmaUrMIpR", "NflccRJiAr", "VMFxv0py2L"]
+    "nestedKey" : "Chefs",
+    "type" : "profileListImageOnly",
+    "title" : "Featured Chefs",
+    "requestType": "User",
+    "callbackType": "Review",
+    "queries": [
+      "AyfD3njgLV", 
+      "SYW3vDTJ03", 
+      "DyV2nAGCAs", 
+      "mEWIEU9qqL", 
+      "p3QfkwB4LM", 
+      "uqyFHTY2xP", 
+      "e1bImZvhyV", 
+      "C9Zy1J2KUz"
+    ]
   }
 ]
 

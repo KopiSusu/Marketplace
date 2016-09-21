@@ -20,10 +20,12 @@ class Cards extends React.Component {
                                     <div className='image rows-6-5' style={{backgroundImage: `url(${card.imageURLS[0]})`}}> 
                                         <div className='hidden'>
                                             <nav className='shown'>
-                                                <h2 className='column-4-3'>{card.name}</h2>
-                                                <p className='column-4-1'>${card.price}</p>
+                                                <h2 className='column-6-5'>{card.name}</h2>
+                                                <p className='column-6-1'>${card.price}</p>
                                             </nav>
-                                            <div></div>
+                                            <div className='ingredients'>
+                                                <p><span className='label'>INGREDIANTS: </span>{card.ingredients}</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <button className='image rows-6-1 column-1'>ADD TO CART</button>

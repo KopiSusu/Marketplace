@@ -29,6 +29,8 @@
 		padding (buffer * 3.5) 0
 		&.noPadding
 			padding 0
+		.blob
+			text-align center
 		ul
 			padding 0 (buffer * 6)
 			.cards
@@ -55,7 +57,7 @@
 								padding 0 buffer
 								h2
 									margin 0
-									font-size 20px
+									font-size 16px
 									overflow hidden
 									line-height 50px
 									white-space nowrap
@@ -65,12 +67,23 @@
 									text-overflow ellipsis
 								p
 									margin 0
-									font-size 20px
+									font-size 18px
 									overflow hidden
 									white-space nowrap
 									line-height 50px
 									display inline-block
 									text-align right
+						.ingredients
+							padding 0 (buffer)
+							.label
+								font-size 17px
+								color fontColorLight
+							p
+								font-size 16px
+								overflow hidden
+								display -webkit-box
+								-webkit-line-clamp 6
+								-webkit-box-orient vertical  
 					button
 						border none
 						background bgColor

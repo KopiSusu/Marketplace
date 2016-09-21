@@ -11,7 +11,7 @@ class Blob extends React.Component {
         const findStyle = this.props.text.split('<style>')
         const style = this.props.contentStyle
         return (
-            <p className='column-2 center' style={this.props.style}>
+            <p className='blob column-2 center' style={this.props.style}>
                 {
                     _.map(findStyle, (string, index) => {
                         if(index === 0 || index === (findStyle.length - 1))
