@@ -13,6 +13,13 @@ export const selectGroup = (group) => {
     }
 }
 
+export const toggle = (group, boolean) => {
+    return {
+        type: `TOGGLE_${group}`,
+        payload: boolean
+    }
+}
+
 export const receiveData = (json, returnType, nestedKey) => {
 	let returnResponse = {
 		type: returnType,

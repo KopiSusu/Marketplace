@@ -29,8 +29,6 @@
 		padding (buffer * 3.5) 0
 		&.noPadding
 			padding 0
-		p
-			text-align center
 		ul
 			padding 0 (buffer * 6)
 			.cards
@@ -100,11 +98,16 @@
 						h1
 							text-align center
 							margin-bottom (buffer/2)
-						p
-							font-size 15px
-							height 20px
-							line-height 20px
+						span
+							display block
+							text-align center
+							p
+								display inline-block
+								font-size 15px
+								height 20px
+								line-height 20px
 							.icon
+								display inline-block
 								padding 0
 								padding-right (buffer/2)
 								height 20px

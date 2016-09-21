@@ -23,7 +23,7 @@ class Profiles extends React.Component {
                                         <div className='image rows-2' style={{backgroundImage: `url(${profile.imageURL})`}}></div>
                                         <div className='details rows-2'>
                                             <h1>{profile.displayName}</h1>
-                                            <p><Icon icon='Location'/>{`${profile.city}, ${profile.state}`}</p>
+                                            <span><Icon icon='Location'/><p>{`${profile.city}, ${profile.state}`}</p></span>
                                         </div>
                                     </div>
                                     <div className='bio column-3-2 rows-1'>

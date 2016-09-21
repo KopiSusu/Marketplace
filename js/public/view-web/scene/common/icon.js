@@ -1,15 +1,18 @@
 /* @flow */
 import React from 'react'
 import {
-	IoLocation
+	IoLocation,
+	IoSearch,
+	IoCloseCircled,
+	IoPerson,
+	IoIosNutrition,
+	IoPricetags
 } from 'react-icons/lib/io'
 
 class Icon extends React.Component {
 	render() {
 		return (
-			<div 
-				className={ (this.props.iconClass ? this.props.iconClass : '' ) + (this.props.under ? ' under' : '' ) + " icon"}
-			>
+			<div className={ (this.props.iconClass ? this.props.iconClass : '' ) + (this.props.under ? ' under' : '' ) + " icon"}>
 				{this.renderIcon()}
 				{
 					this.props.under ? (
@@ -24,6 +27,16 @@ class Icon extends React.Component {
     	switch (this.props.icon) {
 	        case 'Location':
 	          	return <IoLocation/>
+	        case 'Search':
+	        	return <IoSearch/>
+	        case 'Cancel':
+	        	return <IoCloseCircled/>
+	        case 'Person':
+	        	return <IoPerson/>
+	        case 'Food':
+	        	return <IoIosNutrition/>
+	        case 'Market':
+	        	return <IoPricetags/>
       	}
     }
 }

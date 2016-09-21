@@ -26,7 +26,9 @@ store.dispatch({
 store.dispatch({
   type: '_FETCH_SECTIONS'
 })
-
+store.dispatch({
+  type: '_FETCH_SEARCH'
+})
 ReactDOM.render(
   <Provider store={store}>
     { /* Tell the Router to use our enhanced history */ }

@@ -1,0 +1,90 @@
+@import './../global.styl'
+
+.search
+	position fixed
+	z-index 100
+	display inline-block
+	background bgColor
+	border-radius radius
+	right buffer
+	margin buffer
+	border 1px solid strokeColor
+	transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
+	.icon
+		padding (buffer/2) 0 
+		height (ribbonHeight * 0.6)
+		display inline-block
+		width (ribbonHeight * 0.6)
+	&.closed
+		padding 0 0 0 buffer
+		cursor pointer
+		span
+			display block
+			p
+				color fontColorLight
+				display inline-block
+				height (ribbonHeight * 0.6)
+				line-height (ribbonHeight * 0.6)
+		&:hover
+			-webkit-transform scale(1.1)
+			-moz-transform scale(1.1)
+			-ms-transform scale(1.1)
+			transform scale(1.1)
+	&.open
+		height 300px
+		width 450px
+		border 1px solid strokeColor
+		.inputs
+			padding buffer
+			border-bottom 1px solid strokeColor
+			.input
+				padding 0 (buffer/2) 0 0
+				border 1px solid strokeColor
+				height 100%
+				div
+					display inline-block
+					height 100%
+					width 5%
+					cursor pointer
+					&:hover
+						-webkit-transform scale(1.1)
+						-moz-transform scale(1.1)
+						-ms-transform scale(1.1)
+						transform scale(1.1)
+				input
+					display inline-block
+					height 100%
+					width 95%
+					border 0
+					&:focus
+						border 0
+				.icon
+					height 100%
+					width 100%
+					border-left 0
+		.view
+			.nav
+				nav
+					display table
+					width 100%
+					text-align center
+					div
+						display table-cell
+						vertical-align middle	
+				.tab
+					border-left 1px solid strokeColor
+					border-bottom 1px solid strokeColor
+					background bgColorDark
+					text-align center
+					cursor pointer
+					padding (buffer/2)
+					&:first-of-type
+						border-top 1px solid strokeColor
+						&.selected
+							border-top 1px solid transparent
+					&:last-of-type
+						border-bottom 0
+					&.selected
+						background bgColor
+						border-top 0
+						border-left 1px solid white

@@ -1,5 +1,5 @@
 var Server = require('./serverConfig.js');
-var port = (process.env.PORT || 3001);
+var port = (process.env.PORT || 3030);
 var app = Server.app();
 var http = require('http');
 var WebpackDevServer = require("webpack-dev-server");
@@ -10,7 +10,7 @@ Config.plugins.unshift(new webpack.DefinePlugin({'process.env': {'NODE_ENV': '"d
 
 Config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
 Config.entry.unshift('webpack/hot/only-dev-server');
-console.log('Port: ', port)
+
 Config.entry.unshift("webpack-dev-server/client?http://localhost:" + port + "/");
 Config.devTool = "eval";
 

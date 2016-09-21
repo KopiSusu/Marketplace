@@ -26,7 +26,6 @@ class Sections extends React.Component {
     		</section>
     	)
   	}
-
 }
 
 const mapStateToProp = (state) => {
@@ -39,6 +38,7 @@ const mapStateToProp = (state) => {
         if(state.sections[section].type !== 'contentOnly')
             newState[`content-${section}`] = state.sections[`content-${section}`]
     })
+    
     return newState
 }
 

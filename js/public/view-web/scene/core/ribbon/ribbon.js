@@ -19,7 +19,7 @@ class Ribbon extends React.Component {
 
   renderTitle() {
     const lineHeight = this.props.app.navStyle.height ? this.props.app.navStyle.height : '50px'
-
+    
     if(this.props.app.image)
       return <div className='column-3-offset-2 image' style={{height: lineHeight, backgroundImage: `url(${this.props.app.image})`}}/>
     
