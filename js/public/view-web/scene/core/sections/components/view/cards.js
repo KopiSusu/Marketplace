@@ -5,8 +5,11 @@ import _ from 'lodash'
 class Cards extends React.Component {
     constructor(props) {
         super(props)
+        this.clickedCard = this.clickedCard.bind(this)
     }
-
+    clickedCard (meal) {
+        location.href = "http://shop.eathomemade.com/" + meal.cook.uniqueName + "/" + meal.objectId
+    }
     render () {
         return (
             <ul className='column-1'>
@@ -16,7 +19,7 @@ class Cards extends React.Component {
                         card = card.toJSON()
                         return (
                             <li key={index} className={`cards column-${column}`}>
-                                <div className='card'>
+                                <div className='card' onClick={() => this.clickedCard(card)}>
                                     <div className='image rows-6-5' style={{backgroundImage: `url(${card.imageURLS[0]})`}}> 
                                         <div className='hidden'>
                                             <nav className='shown'>
@@ -24,7 +27,7 @@ class Cards extends React.Component {
                                                 <p className='column-6-1'>${card.price}</p>
                                             </nav>
                                             <div className='ingredients'>
-                                                <p><span className='label'>INGREDIANTS: </span>{card.ingredients}</p>
+                                                <p><span className='label'>INGREDIENTS: </span>{card.ingredients}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -37,7 +40,6 @@ class Cards extends React.Component {
             </ul>
         )
     }
-
 }
 
 export default Cards;
