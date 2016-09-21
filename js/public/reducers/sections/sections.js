@@ -7,7 +7,7 @@ const sections = [
   {
     "nestedKey" : "topText",
     "type" : "contentOnly",
-    "text" : "Homemade is a <style>curated marketplace for small batch producers.<style> Every vendor sources responsibly and sells direct to consumers through us. This is how business is meant to be done.",
+    "text" : "Homemade is a <style>curated marketplace for small batch producers.<style> Enjoy some of these delicious cookies made by one of our fantastic chefs.",
     "style": {
       "fontSize": "22px",
       "lineHeight": "1.5"
