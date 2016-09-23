@@ -1,5 +1,5 @@
 var Server = require('./serverConfig.js');
-var port = (process.env.PORT || 3030);
+var port = (process.env.PORT || 8000);
 var app = Server.app();
 var http = require('http');
 var WebpackDevServer = require("webpack-dev-server");
