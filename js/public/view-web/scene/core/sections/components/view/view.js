@@ -71,11 +71,12 @@ class Section extends React.Component {
                     </ul>
                 )
             case 'contentOnly Map':
+                const center = {lat: 40.688583, lng: -73.930166}
                 return (
-                    <section className='map' style={{height: '200px'}}>
+                    <section className='map'>
                         <GoogleMap
-                            defaultCenter={{lat: 40.730610, lng: -73.935242}}
-                            defaultZoom={9}>
+                            defaultCenter={center}
+                            defaultZoom={13}>
                                 {
                                     _.map(this.props.content, (profile, index) => {
 
@@ -84,7 +85,7 @@ class Section extends React.Component {
                                         let location = profileJSON.location
 
                                         if(!location)
-                                            location = {lat: 40.730610, lng: -73.935242}
+                                            location = center
 
                                         return <Marker key={index} lat={location.latitude} lng={location.longitude} {...profileJSON} zIndex={2} /* Kreyser Avrora */ />
                                     }) 
