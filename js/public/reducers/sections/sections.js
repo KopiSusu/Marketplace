@@ -15,14 +15,14 @@ const sections = [
     "contentStyle": {
       "color": "#fff",
       "backgroundColor": "#FFC13C",
-      "paddingLeft": "6px",
-      "paddingRight": "6px"
+      "paddingLeft": "3px",
+      "paddingRight": "3px"
     }
   },
   {
     "nestedKey" : "Hot",
     "type" : "cardList",
-    "title" : "Hot Plates",
+    "title" : "MENU",
     "requestType": "Meal",
     "queries": [
       "JIi7dV4xid",

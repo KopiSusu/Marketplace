@@ -148,17 +148,33 @@
 							border-radius radius
 							border 1px solid strokeColor
 		.map
-			height 200px
+			height 600px
 			.marker
 				position 'absolute'
 				width markerSize
 				height markerSize
-				left -markerSize / 2
-				top -markerSize / 2
+				left (markerSize / -2)
+				top (-markerSize - 10)
 				border-radius 50%
 				overflow hidden
 				background-size cover
 				background-repeat no-repeat
 				background-position center
-				border 1px solid strokeColor
+				border 2px solid primaryColor
+				&:after
+					top: 48px;
+					left: 25px;
+					border: solid transparent;
+					content: " ";
+					height: 0;
+					width: 0;
+					position: absolute;
+					pointer-events: none;
+					border-top-color: primaryColor;
+					border-width: 10px;
+					margin-left: -10px;
+				&:hover
+					border 2px solid #333
+					&:after
+						border-top-color: #333;
 			
