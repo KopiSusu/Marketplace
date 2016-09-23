@@ -18,8 +18,13 @@ class Sections extends React.Component {
     		<section className='sections column-1'>
                 {
                     _.map(this.props.sectionIndex, (section, index) => {
+                        let content = this.props[`content-${section}`]
+
+                        if (this.props[section]['useData'])
+                            content = this.props[`content-${this.props[section]['useData']}`]
+
                         return (
-                            <Section key={index} {...this.props[section]} content={this.props[`content-${section}`]} fetchData={this.props.fetchData}/>
+                            <Section key={index} {...this.props[section]} content={content} fetchData={this.props.fetchData}/>
                         )
                     })
                 }

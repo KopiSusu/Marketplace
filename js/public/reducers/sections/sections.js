@@ -18,26 +18,22 @@ const sections = [
     }
   },
   {
-    "nestedKey" : "Cookies",
+    "nestedKey" : "Hot",
     "type" : "cardList",
-    "title" : "Homemade Cookies",
+    "title" : "Hot Plates",
     "requestType": "Meal",
     "queries": [
-      "HXUGkW5J5N", 
-      "DVAFrotMng", 
-      "KU4JnBOXsI", 
-      "EPqInn8k2o", 
-      "cmlG8zrDdU", 
-      "s0yHrrNgKy",
-      "NeoLvlvlrT",
-      "s71ECwHFEX",
-      "FBFF8AFT2I",
-      "menFtSGiA3",
-      "6V9XkWcTh9",
-      "g91nDfQ4K0",
-      "P389nT5dwy",
-      "oAy0oghMdB",
-      "Ek8lSB0Od9" 
+      "JIi7dV4xid",
+      "5WoNMOfQMD",
+      "5cwaZZcNDf",
+      "SdQbclV6yp",
+      "3zIlOK7z0V",
+      "zLHTRv1CgH",
+      "9TvCgp2y8n",
+      "6Hd5t10oZw",
+      "xsJ8A0skww",
+      "iFcxzXuttw",
+      "RmlPoharvS"
     ]
   },
   {
@@ -47,15 +43,23 @@ const sections = [
     "requestType": "User",
     "callbackTypes": "Review",
     "queries": [
-      "AyfD3njgLV", 
-      "SYW3vDTJ03", 
-      "DyV2nAGCAs", 
-      "mEWIEU9qqL", 
-      "p3QfkwB4LM", 
-      "uqyFHTY2xP", 
-      "e1bImZvhyV", 
-      "C9Zy1J2KUz"
+      "v7G5jxYzOM",
+      "8Sp8Rky0qN",
+      "f56N56Oyht",
+      "WLRGQJ8wSY",
+      "4MIWhy53xN",
+      "8ZHiQfrQPX",
+      "WOXHTevgju",
+      "USKnp2Sd02",
+      "B2vr7TB3Ju",
+      "eAX7GDaOZF",
+      "Gto3aQQk09"
     ]
+  },
+  {
+    "nestedKey" : "Map",
+    "type" : "contentOnly Map",
+    "useData": "Chefs"
   }
 ]
 

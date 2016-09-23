@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Marketplaces",
+    "filter": "market",
+    "icon": "Market"
+  },
+  {
+    "title": "Chefs",
+    "filter": "chef",
+    "icon": "Person"
+  },
+  {
+    "title": "Meals",
+    "filter": "meal",
+    "icon": "Food"
+  }
+]

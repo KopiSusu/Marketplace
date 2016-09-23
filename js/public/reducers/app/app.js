@@ -1,7 +1,7 @@
 import * as  Actions from './../../actions'
 
 const app = {
-  "title": "Homemade",
+  "title": "BedstyEats",
   "image": "http://homemade-images.s3.amazonaws.com/homemadeLogo.svg",
   "navStyle": {
     "backgroundImage": "linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) ), url(https://homemade-images.s3.amazonaws.com/np_hero.jpg)",
