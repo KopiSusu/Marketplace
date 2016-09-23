@@ -1,11 +1,10 @@
 import * as  Actions from './../../actions'
 
 const app = {
-  "title": "BedstyEats",
-  "image": "http://homemade-images.s3.amazonaws.com/homemadeLogo.svg",
+  "title": "BedStuyEats",
+  "image": "http://homemade-images.s3.amazonaws.com/bedstuyEats.svg",
   "navStyle": {
-    "backgroundImage": "linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) ), url(https://homemade-images.s3.amazonaws.com/np_hero.jpg)",
-    "backgroundSize": "cover",
+    "background": "url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/food.png')",
     "height": "120px"
   }
 }

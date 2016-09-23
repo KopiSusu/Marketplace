@@ -7,14 +7,16 @@ const sections = [
   {
     "nestedKey" : "topText",
     "type" : "contentOnly",
-    "text" : "Bed Stuy Eats is a <style>curated marketplace for small batch producers.<style> Enjoy some of these delicious cookies made by one of our fantastic chefs.",
+    "text" : "Bed Stuy Eats is a community of <style>amazing cooks in your neighborhood<style>. Order amazing meals and pick them up right around the corner.",
     "style": {
       "fontSize": "22px",
       "lineHeight": "1.5"
     },
     "contentStyle": {
-      "color": "#F87974",
-      "borderBottom": "1px dotted #F87974"
+      "color": "#fff",
+      "backgroundColor": "#FFC13C",
+      "paddingLeft": "6px",
+      "paddingRight": "6px"
     }
   },
   {

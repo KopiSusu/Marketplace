@@ -25,7 +25,7 @@ class Cards extends React.Component {
                                 <p className='column-6-1'>${this.props.price}</p>
                             </nav>
                             <div className='ingredients'>
-                                <p><span className='label'>INGREDIANTS: </span>{this.props.ingredients}</p>
+                                <p><span className='label'>INGREDIENTS: </span>{this.props.ingredients}</p>
                             </div>
                         </div>
                     </div>
