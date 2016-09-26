@@ -23,7 +23,7 @@ class Cards extends React.Component {
                             <nav className='shown'>
                                 <h2 className='column-6-5'>{this.props.name}</h2>
                                 <p className='column-6-1'>${this.props.price}</p>
-                                <p className='cook'>{this.props.cook.displayName}</p>
+                                <p className='cook'><span className="byText">by </span>{this.props.cook.displayName}</p>
                             </nav>
                             <div className='ingredients'>
                                 <p><span className='label'>INGREDIENTS: </span>{this.props.ingredients}</p>
