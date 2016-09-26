@@ -9,6 +9,13 @@ import Cards from './components/cards'
 import Profiles from './components/profiles'
 import Marker from './components/marker'
 
+const mapOptions = {
+    panControl: false,
+    mapTypeControl: false,
+    scrollwheel: false,
+    styles: [{ stylers: [{ 'saturation': -100 }, { 'gamma': 0.8 }, { 'lightness': 4 }, { 'visibility': 'on' }] }]
+}
+
 class Section extends React.Component {
     constructor(props) {
         super(props)
@@ -76,6 +83,7 @@ class Section extends React.Component {
                     <section className='map'>
                         <GoogleMap
                             defaultCenter={center}
+                            options={mapOptions}
                             defaultZoom={13}>
                                 {
                                     _.map(this.props.content, (profile, index) => {

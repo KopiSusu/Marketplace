@@ -54,16 +54,16 @@
 							background #fff
 							border-top 1px solid strokeColor
 							color fontColor
-							transform translate3d(0, 200px, 0)
+							transform translate3d(0, 190px, 0)
 							transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
 							nav
-								height 50px
-								padding 0 buffer
+								height 60px
+								padding 5px buffer
 								h2
 									margin 0
 									font-size 16px
 									overflow hidden
-									line-height 50px
+									line-height 25px
 									white-space nowrap
 									display inline-block
 									text-align left
@@ -74,9 +74,15 @@
 									font-size 18px
 									overflow hidden
 									white-space nowrap
-									line-height 50px
+									line-height 25px
 									display inline-block
 									text-align right
+									text-overflow ellipsis
+									&.cook
+										font-size 15px
+										font-color fontColorLight
+										display block
+										text-align center
 						.ingredients
 							padding 0 (buffer)
 							.label
@@ -100,7 +106,7 @@
 					&:hover
 						.image
 							.hidden
-								transform translate3d(0, 50px, 0)
+								transform translate3d(0, 30px, 0)
 						button
 							background primaryColor
 							border-top 1px solid primaryColor

@@ -10,9 +10,7 @@ class Marker extends React.Component {
     render () {
 
         return (
-        	<div className='marker' style={{backgroundImage: `url(${this.props.imageURL})`}}>
-        		
-            </div>
+        	<div className='marker' style={{backgroundImage: `url(${this.props.imageURL})`}}></div>
         )
     }
 
