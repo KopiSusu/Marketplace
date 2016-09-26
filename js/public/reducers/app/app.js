@@ -1,7 +1,7 @@
 import * as  Actions from './../../actions'
 
 const app = {
-  "title": "BedStuyEats",
+  "title": "Homemade Producer List",
   "image": "http://homemade-images.s3.amazonaws.com/bedstuyEats.svg",
   "navStyle": {
     "background": "url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/food.png')",

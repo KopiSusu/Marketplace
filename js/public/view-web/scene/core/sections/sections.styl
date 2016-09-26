@@ -141,6 +141,22 @@
 								padding 0
 								padding-right (buffer/2)
 								height 20px
+						.map
+							margin-top buffer
+							border 1px solid strokeColor
+							border-radius radius
+							height 150px
+							.marker
+								position absolute
+								width 25px
+								height 25px
+								top -12.5px
+								left -12.5px
+								border-radius 50%
+								overflow hidden
+								z-index 10
+								background primaryColor !important
+								transition()
 					.image
 						border-radius 50%
 						width 150px
@@ -162,11 +178,11 @@
 		.map
 			height 600px
 			.marker
-				position 'absolute'
+				position absolute
 				width markerSize
 				height markerSize
 				left (markerSize / -2)
-				top (-markerSize - 10)
+				top (-1 * (markerSize - 10))
 				border-radius 50%
 				overflow hidden
 				background-size cover
@@ -176,8 +192,8 @@
 				z-index 10
 				transition()
 				&:after
-					top: 48px;
-					left: 25px;
+					top: (markerSize - 2);
+					left: (markerSize / 2);
 					border: solid transparent;
 					content: " ";
 					height: 0;

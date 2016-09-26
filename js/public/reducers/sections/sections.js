@@ -20,27 +20,8 @@ const sections = [
     }
   },
   {
-    "nestedKey" : "Hot",
-    "type" : "cardList",
-    "title" : "MENU",
-    "requestType": "Meal",
-    "queries": [
-      "JIi7dV4xid",
-      "5WoNMOfQMD",
-      "5cwaZZcNDf",
-      "SdQbclV6yp",
-      "3zIlOK7z0V",
-      "zLHTRv1CgH",
-      "9TvCgp2y8n",
-      "6Hd5t10oZw",
-      "xsJ8A0skww",
-      "iFcxzXuttw",
-      "RmlPoharvS"
-    ]
-  },
-  {
     "nestedKey" : "Chefs",
-    "type" : "profileListImageOnly",
+    "type" : "profileList Map",
     "title" : "Featured Chefs",
     "requestType": "User",
     "callbackTypes": "Review",

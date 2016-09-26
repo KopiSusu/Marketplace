@@ -54,6 +54,8 @@ class Section extends React.Component {
                     </ul>
                 )
             case 'profileList':
+            case 'profileList Map':
+            case 'profileList ImageOnly':
                 return (
                     <ul className='column-1'>
                         {
@@ -61,18 +63,6 @@ class Section extends React.Component {
                                 const profileJSON = profile.toJSON();
 
                                 return <Profiles key={index} {...this.props} {...profileJSON}/>
-                            })
-                        }
-                    </ul>
-                )
-            case 'profileListImageOnly':
-                return (
-                    <ul className='column-1'>
-                        {
-                            _.map(this.props.content, (profile, index) => {
-                                const profileJSON = profile.toJSON();
-
-                                return <Profiles noBio={true} key={index} index={index} {...this.props} {...profileJSON}/>
                             })
                         }
                     </ul>
