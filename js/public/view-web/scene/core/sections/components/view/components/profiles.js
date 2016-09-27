@@ -129,6 +129,7 @@ class Profiles extends React.Component {
                                 </div>
                             </div>
                             <div className='bio popover'>
+                                <p className="aboutMeTitle">About Me</p>
                                 <p>{this.props.bio}</p>
                             </div>
                         </div>
