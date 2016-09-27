@@ -3,7 +3,8 @@
 primaryColor = #FFC13C 
 secondaryColor = #ff7b7b 
 bgColor = #fff
-bgColorDark = #f5f2ee
+bgColorDark = #f3f3f3
+bgColorExtraDark = #ddd
 strokeColor = #dce0e0
 fbColor = #4c69ba
 radius = 3px
@@ -44,10 +45,10 @@ shadow()
 	box-shadow 0px 1px 2px 0px rgba(0,0,0,0.2)
 
 transition()
-	-webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
+	-webkit-transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
+	-moz-transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
+	-o-transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
 
 //Button groups
 

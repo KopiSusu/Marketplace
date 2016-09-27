@@ -113,7 +113,7 @@ class Profiles extends React.Component {
             case 'profileList Map ImageOnly Slideover':
                 const split = this.props.type.split(' ');
                 const className = split[split.length - 1].toLowerCase()
-
+                
                 return (
                     <li className={`profiles column-${column}` }>
                         <div className={`profile ${className}`}>
@@ -133,8 +133,9 @@ class Profiles extends React.Component {
                                 </div>
                             </div>
                             <div className={`bio ${className}`}>
-                                <p className='rows-6-5'>{this.props.bio}</p>
-                                <button className='rows-6-1'>Message Me</button>
+                                <p className="aboutMeTitle rows-7-1">About Me</p>
+                                <p className='rows-7-5'>{this.props.bio}</p>
+                                <button className='rows-7-1'>Message Me</button>
                             </div>
                         </div>
                     </li>

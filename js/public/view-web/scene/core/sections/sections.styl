@@ -135,10 +135,10 @@ hidden(shift, height)
 						overflow hidden
 					&:hover
 						border 1px solid strokeColor
-						// -webkit-transform scale(1.05)
-						// -moz-transform scale(1.05)
-						// -ms-transform scale(1.05)
-						// transform scale(1.05)
+						-webkit-transform scale(1.05)
+						-moz-transform scale(1.05)
+						-ms-transform scale(1.05)
+						transform scale(1.05)
 						.bio
 							&.slideover
 								transform translate3d(0, -300px, 0)
@@ -223,6 +223,17 @@ hidden(shift, height)
 								border-radius radius
 								border 1px solid strokeColor
 								border-bottom 0
+								border-top 0
+								border-top-left-radius 0
+								border-top-right-radius 0
+								&.aboutMeTitle
+									text-transform uppercase
+									text-align center
+									font-weight bold
+									border-bottom-left-radius 0
+									border-bottom-right-radius 0
+									border-bottom 0
+									border-top 1px solid strokeColor
 							button
 								width 100%
 								border none
@@ -233,13 +244,20 @@ hidden(shift, height)
 							hidden(0px, 300px)
 							p
 								font-size 18px
-								padding buffer
+								padding 0 buffer
 								background bgColor
 								border-radius radius
 								overflow hidden
 								display -webkit-box
-								-webkit-line-clamp 9
+								-webkit-line-clamp 8
 								-webkit-box-orient vertical 
+								&.aboutMeTitle
+									text-transform uppercase
+									text-align center
+									line-height 45px
+									margin 0
+									padding 0
+									font-weight bold
 							button
 								width 100%
 								border none
