@@ -3,23 +3,23 @@
 import * as  Actions from './../../actions'
 import _ from 'lodash'
 
-const searchConfig = [
-  {
+const searchConfig = {
+  marketplaces: {
     'title': 'Marketplaces',
     'filter': 'market',
     'icon': 'Market'
   },
-  {
+  chefs: {
     'title': 'Chefs',
     'filter': 'chef',
     'icon': 'Person'
   },
-  {
+  meals: {
     'title': 'Meals',
     'filter': 'meal',
     'icon': 'Food'
   }
-]
+}
 
 const marketplaces = [
   {
@@ -44,9 +44,7 @@ export default (state = {
   config: null,
   active: false,
   filter: 'market',
-  marketplaces: [],
-  chefs: [],
-  meals: [],
+  marketplaces: marketplaces,
   query: null
 }, action) => {
 
@@ -54,7 +52,7 @@ export default (state = {
     case '_FETCH_SEARCH':
       return Object.assign({}, state, {
         isFetching: false,
-        config: searchConfig
+        config: [searchConfig['marketplaces']]
       });
     case 'TOGGLE_SEARCH':
       return Object.assign({}, state, {
@@ -66,8 +64,22 @@ export default (state = {
         isFetching: false,
         filter: action.payload
       });
+    case '_FETCH_SECTION':
+      let newSection = Object.assign({}, state, newSection);
+      newSection[action.nestedKey.toLowerCase()] = action.payload
+      newSection['config'].push(searchConfig[action.nestedKey.toLowerCase()])
+      return newSection
     default:
       return state
   }
   
 }; 
+
+
+
+
+
+
+
+
+

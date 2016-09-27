@@ -53,7 +53,7 @@ export default (state = {
 
   switch (action.type) {
     case '_FETCH_SECTIONS':
-      let newSections = Object.assign({}, state, newSections);
+      let newSections = Object.assign({}, state);
 
       _.forEach(sections, (section) => {
         newSections[section.nestedKey] = section;
@@ -73,14 +73,6 @@ export default (state = {
       return state
   }
 }; 
-
-const _caluclateAverageRating = (reviews) => {
-  let _reviewsSum = 0;
-  for(let i = 0; i < reviews.length; i++) {
-    _reviewsSum += reviews[i].get("rating");
-  }
-  return _reviewsSum / reviews.length;
-}
 
 
 

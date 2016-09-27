@@ -13,11 +13,16 @@ export const selectGroup = (group) => {
     }
 }
 
-export const toggle = (group, boolean) => {
-    return {
+export const toggle = (group, boolean, secondaryProperty) => {
+    let returnResponse = {
         type: `TOGGLE_${group}`,
         payload: boolean
     }
+
+    if (secondaryProperty)
+      returnResponse.secondaryProperty = secondaryProperty
+
+    return returnResponse
 }
 
 export const receiveData = (json, returnType, nestedKey) => {
