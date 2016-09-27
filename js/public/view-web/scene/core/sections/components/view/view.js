@@ -56,13 +56,13 @@ class Section extends React.Component {
             case 'profileList':
             case 'profileList Map':
             case 'profileList ImageOnly':
+            case 'profileList Map ImageOnly Popover':
                 return (
                     <ul className='column-1'>
                         {
                             _.map(this.props.content, (profile, index) => {
                                 const profileJSON = profile.toJSON();
-
-                                return <Profiles key={index} {...this.props} {...profileJSON}/>
+                                return <Profiles key={index} index={index} {...this.props} {...profileJSON}/>
                             })
                         }
                     </ul>

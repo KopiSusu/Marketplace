@@ -10,7 +10,7 @@ const mapOptions = {
     panControl: false,
     mapTypeControl: false,
     scrollwheel: false,
-    styles: [{ stylers: [{ 'saturation': -100 }, { 'gamma': 0.8 }, { 'lightness': 4 }, { 'visibility': 'on' }] }]
+    styles: [{ stylers: [{ 'saturation': -100 }, { 'gamma': 0.8 }, { 'lightness': 1 }, { 'visibility': 'on' }] }]
 }
 
 class Profiles extends React.Component {
@@ -84,6 +84,53 @@ class Profiles extends React.Component {
                                 <p>{this.props.bio}</p>
                             </div>
 
+                        </div>
+                    </li>
+                )
+            case 'profileList Map ImageOnly':
+                return (
+                    <li className={`profiles column-${column}`}>
+                        <div className='profile'>
+                            <div className={`details column-1 rows-1`}> 
+                                <div className='image rows-2' style={{backgroundImage: `url(${this.props.imageURL})`}} />
+                                <div className='rows-2'>
+                                    <h1>{this.props.displayName}</h1>
+                                    <span><Icon icon='Location'/><p>{`${this.props.city}, ${this.props.state}`}</p></span>
+                                    <section className='map'>
+                                        <GoogleMap
+                                            defaultCenter={center}
+                                            options={mapOptions}
+                                            defaultZoom={15}>
+                                            <Marker lat={center.lat} lng={center.lng} {...this.props} zIndex={2} /* Kreyser Avrora */ />
+                                        </GoogleMap>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                )
+            case 'profileList Map ImageOnly Popover':
+                return (
+                    <li className={`profiles column-${column}`}>
+                        <div className='profile'>
+                            <div className={`details column-1 rows-1`}> 
+                                <div className='image rows-2' style={{backgroundImage: `url(${this.props.imageURL})`}} />
+                                <div className='rows-2'>
+                                    <h1>{this.props.displayName}</h1>
+                                    <span><Icon icon='Location'/><p>{`${this.props.city}, ${this.props.state}`}</p></span>
+                                    <section className='map'>
+                                        <GoogleMap
+                                            defaultCenter={center}
+                                            options={mapOptions}
+                                            defaultZoom={15}>
+                                            <Marker lat={center.lat} lng={center.lng} {...this.props} zIndex={2} /* Kreyser Avrora */ />
+                                        </GoogleMap>
+                                    </section>
+                                </div>
+                            </div>
+                            <div className='bio popover'>
+                                <p>{this.props.bio}</p>
+                            </div>
                         </div>
                     </li>
                 )

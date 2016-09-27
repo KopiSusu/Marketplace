@@ -21,7 +21,7 @@ const sections = [
   },
   {
     "nestedKey" : "Chefs",
-    "type" : "profileList Map",
+    "type" : "profileList Map ImageOnly Popover",
     "title" : "Featured Chefs",
     "requestType": "User",
     "callbackTypes": "Review",

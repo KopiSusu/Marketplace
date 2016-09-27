@@ -123,8 +123,21 @@
 				.profile
 					position relative
 					border-radius radius
-					overflow hidden
+					border 1px solid transparent
+					&:hover
+						border 1px solid strokeColor
+						-webkit-transform scale(1.05)
+						-moz-transform scale(1.05)
+						-ms-transform scale(1.05)
+						transform scale(1.05)
+						z-index 100
+						.bio
+							&.popover
+								opacity 1
+								display block
+					transition()
 					.details
+						overflow hidden
 						h1
 							text-align center
 							margin-bottom (buffer/2)
@@ -143,8 +156,6 @@
 								height 20px
 						.map
 							margin-top buffer
-							border 1px solid strokeColor
-							border-radius radius
 							height 150px
 							.marker
 								position absolute
@@ -169,12 +180,60 @@
 						border 1px solid strokeColor
 					.bio
 						padding buffer
+						transition()
 						p
 							font-size 18px
 							padding buffer
 							background bgColor
 							border-radius radius
 							border 1px solid strokeColor
+						&.popover
+							display none
+							position absolute
+							width 200%
+							opacity 0
+							z-index 1
+							top 0
+							right -193%
+							&:hover
+								display none
+								opacity 0
+							&::after 
+								content ""
+								width 0
+								height 0
+								position absolute
+								top 50px
+								left -3px
+								opacity 0.8
+								border-style solid
+								border-top 10px solid transparent
+								border-bottom 10px solid transparent 
+								border-right 15px solid strokeColor 
+								border-left	0
+
+				&:nth-of-type(4n-1)
+					.bio
+						&.popover
+							left -193%
+							right auto
+							&::after 
+								top 50px
+								left auto
+								right -3px
+								border-left 15px solid strokeColor 
+								border-right 0
+				&:nth-of-type(4n)
+					.bio
+						&.popover
+							left -193%
+							right auto
+							&::after 
+								top 50px
+								left auto
+								right -3px
+								border-left 15px solid strokeColor 
+								border-right 0
 		.map
 			height 600px
 			.marker
