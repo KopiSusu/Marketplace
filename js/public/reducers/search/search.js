@@ -21,11 +21,32 @@ const searchConfig = [
   }
 ]
 
+const marketplaces = [
+  {
+    title: "Homemade",
+    logo: "http://homemade-images.s3.amazonaws.com/homemadeLogo.svg",
+    tags: "Meals Healty Community Fresh"
+  },
+  {
+    title: "Northern Provisions",
+    logo: "http://static1.squarespace.com/static/57aaa5399f7456bea43f815d/t/57aaa8613e00be3f30785489/1470802058570/?format=1000w",
+    tags: "Baked Canned Non-perishable"
+  },
+  {
+    title: "Bedstuy Eats",
+    logo: "http://homemade-images.s3.amazonaws.com/bedstuyEats.svg",
+    tags: "Local Foodworks Homemade Fresh"
+  }
+]
+
 export default (state = {
   isFetching: false,
   config: null,
   active: false,
   filter: 'market',
+  marketplaces: [],
+  chefs: [],
+  meals: [],
   query: null
 }, action) => {
 

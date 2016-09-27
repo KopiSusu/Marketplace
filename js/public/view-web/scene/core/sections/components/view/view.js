@@ -56,7 +56,7 @@ class Section extends React.Component {
             case 'profileList':
             case 'profileList Map':
             case 'profileList ImageOnly':
-            case 'profileList Map ImageOnly Popover':
+            case 'profileList Map ImageOnly Slideover':
                 return (
                     <ul className='column-1'>
                         {

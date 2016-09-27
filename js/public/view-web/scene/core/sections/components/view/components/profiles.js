@@ -110,9 +110,13 @@ class Profiles extends React.Component {
                     </li>
                 )
             case 'profileList Map ImageOnly Popover':
+            case 'profileList Map ImageOnly Slideover':
+                const split = this.props.type.split(' ');
+                const className = split[split.length - 1].toLowerCase()
+
                 return (
-                    <li className={`profiles column-${column}`}>
-                        <div className='profile'>
+                    <li className={`profiles column-${column}` }>
+                        <div className={`profile ${className}`}>
                             <div className={`details column-1 rows-1`}> 
                                 <div className='image rows-2' style={{backgroundImage: `url(${this.props.imageURL})`}} />
                                 <div className='rows-2'>
@@ -128,8 +132,9 @@ class Profiles extends React.Component {
                                     </section>
                                 </div>
                             </div>
-                            <div className='bio popover'>
-                                <p>{this.props.bio}</p>
+                            <div className={`bio ${className}`}>
+                                <p className='rows-6-5'>{this.props.bio}</p>
+                                <button className='rows-6-1'>Message Me</button>
                             </div>
                         </div>
                     </li>
@@ -140,8 +145,4 @@ class Profiles extends React.Component {
 }
 
 export default Profiles;
-
-
-
-
 

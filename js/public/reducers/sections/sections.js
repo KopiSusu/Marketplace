@@ -21,7 +21,7 @@ const sections = [
   },
   {
     "nestedKey" : "Chefs",
-    "type" : "profileList Map ImageOnly Popover",
+    "type" : "profileList Map ImageOnly Slideover",
     "title" : "Featured Chefs",
     "requestType": "User",
     "callbackTypes": "Review",
@@ -69,11 +69,6 @@ export default (state = {
       let newSection = Object.assign({}, state);
       newSection[`content-${action.nestedKey}`] = action.payload
       return newSection
-    case '_FETCH_REVIEWS':
-      let newReview = Object.assign({}, state);
-      newReview[`content-${action.nestedKey}`][action.nestedIndex].set("totalReviews", action.payload.length)
-      newReview[`content-${action.nestedKey}`][action.nestedIndex].set("averageReview", _caluclateAverageRating(action.payload))      
-      return newReview
     default:
       return state
   }
