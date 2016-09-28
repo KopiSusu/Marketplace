@@ -24,6 +24,7 @@ const sections = [
     "type" : "profileList Map ImageOnly Slideover",
     "title" : "Featured Chefs",
     "requestType": "User",
+    "search": true,
     "callbackTypes": "Review",
     "queries": [
       "v7G5jxYzOM",

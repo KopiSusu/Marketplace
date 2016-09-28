@@ -13,14 +13,14 @@ class Filter extends React.Component {
         const filteredItems = _.filter(this.props.items, (item) => {
             switch (this.props.filter) {
                 case 'market':
-                    return item.title.toLowerCase().indexOf(this.props.query) > -1 ||
-                        item.tags.toLowerCase().indexOf(this.props.query) > -1
+                    return item.title.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
+                        item.tags.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
                 case 'chefs':
                     item = item.toJSON()
-                    return item.displayName.toLowerCase().indexOf(this.props.query) > -1 ||
-                        item.city.toLowerCase().indexOf(this.props.query) > -1 ||
-                        item.state.toLowerCase().indexOf(this.props.query) > -1 ||
-                        item.neighborhood.toLowerCase().indexOf(this.props.query) > -1
+                    return item.displayName.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
+                        item.city.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
+                        item.state.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
+                        item.neighborhood.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
             }
         })
         return (
