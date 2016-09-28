@@ -4,55 +4,63 @@ import * as  Actions from './../../actions'
 import _ from 'lodash'
 
 const searchConfig = {
-  marketplaces: {
+  market: {
+    'id': 1,
     'title': 'Marketplaces',
     'filter': 'market',
     'icon': 'Market'
   },
   chefs: {
+    'id': 2,
     'title': 'Chefs',
-    'filter': 'chef',
+    'filter': 'chefs',
     'icon': 'Person'
   },
   meals: {
+    'id': 3,
     'title': 'Meals',
-    'filter': 'meal',
+    'filter': 'meals',
     'icon': 'Food'
   }
 }
 
-const marketplaces = [
+const market = [
   {
     title: "Homemade",
-    logo: "http://homemade-images.s3.amazonaws.com/homemadeLogo.svg",
+    imageURL: "http://homemade-images.s3.amazonaws.com/homemadeLogo.svg",
     tags: "Meals Healty Community Fresh"
   },
   {
     title: "Northern Provisions",
-    logo: "http://static1.squarespace.com/static/57aaa5399f7456bea43f815d/t/57aaa8613e00be3f30785489/1470802058570/?format=1000w",
+    imageURL: "http://static1.squarespace.com/static/57aaa5399f7456bea43f815d/t/57aaa8613e00be3f30785489/1470802058570/?format=1000w",
     tags: "Baked Canned Non-perishable"
   },
   {
     title: "Bedstuy Eats",
-    logo: "http://homemade-images.s3.amazonaws.com/bedstuyEats.svg",
+    imageURL: "http://homemade-images.s3.amazonaws.com/bedstuyEats.svg",
     tags: "Local Foodworks Homemade Fresh"
   }
 ]
 
 export default (state = {
   isFetching: false,
-  config: null,
+  config: [],
   active: false,
   filter: 'market',
-  marketplaces: marketplaces,
-  query: null
+  market: market,
+  query: ''
 }, action) => {
 
   switch (action.type) {
     case '_FETCH_SEARCH':
       return Object.assign({}, state, {
         isFetching: false,
-        config: [searchConfig['marketplaces']]
+        config: [searchConfig['market']]
+      });
+    case 'SET_QUERY':
+      return Object.assign({}, state, {
+        isFetching: false,
+        query: action.payload
       });
     case 'TOGGLE_SEARCH':
       return Object.assign({}, state, {

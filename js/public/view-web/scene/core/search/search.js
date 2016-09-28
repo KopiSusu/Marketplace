@@ -26,8 +26,8 @@ class Ribbon extends React.Component {
             case true:
                 return (
                     <span>
-                        <Input toggle={this.props.toggle}/>
-                        <View items={this.props.items} config={this.props.config} filter={this.props.filter} toggle={this.props.toggle}/>
+                        <Input toggle={this.props.toggle} setQuery={this.props.setQuery} query={this.props.query}/>
+                        <View items={this.props.items} config={this.props.config} filter={this.props.filter} query={this.props.query} toggle={this.props.toggle}/>
                     </span>
                 )
             default:
@@ -41,7 +41,7 @@ class Ribbon extends React.Component {
     }
 }
 
-const mapStateToProp = (state) => {
+const mapStateToProp = (state) => {    
     return {
         config: state.search.config,
         active: state.search.active,

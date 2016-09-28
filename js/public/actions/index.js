@@ -13,6 +13,13 @@ export const selectGroup = (group) => {
     }
 }
 
+export const setQuery = (query) => {
+  return {
+    type: 'SET_QUERY',
+    payload: query
+  }
+}
+
 export const toggle = (group, boolean, secondaryProperty) => {
     let returnResponse = {
         type: `TOGGLE_${group}`,

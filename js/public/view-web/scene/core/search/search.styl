@@ -63,6 +63,7 @@
 					width 100%
 					border-left 0
 		.view
+			overflow hidden
 			.nav
 				nav
 					display table
@@ -88,3 +89,45 @@
 						background bgColor
 						border-top 0
 						border-left 1px solid white
+			.filter
+				overflow auto
+				.item
+					background bgColor
+					min-height 50px
+					border 1px
+					cursor pointer
+					transition()
+					&:hover
+						background bgColorDark
+					.image
+						display inline-block
+						background-size contain
+						background-repeat no-repeat
+						background-position center
+						height 65px
+						width 100px
+					.text 
+						display inline-block
+						padding (buffer / 2)
+						width 'calc(100% - %s)' % 100px 
+						p
+							line-height 25px
+							&.tag
+								font-size 11px
+								height 20px
+								line-height 20px
+								margin (buffer / 3)
+								padding 0 (buffer / 3)
+								display inline-block
+								background primaryColor
+								color #fff	
+							&.address
+								font-size 11px
+								color fontColorLight
+					&.chefs	
+						.image
+							height 50px
+							width 50px
+							margin 7.5px
+							border-radius 50%	
+							background-size cover					
