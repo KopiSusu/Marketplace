@@ -7,7 +7,9 @@ import {
 	IoPerson,
 	IoIosNutrition,
 	IoPricetags,
-	IoAndroidStar
+	IoAndroidStar,
+	IoAndroidStarOutline,
+	IoPersonStalker
 } from 'react-icons/lib/io'
 
 class Icon extends React.Component {
@@ -40,6 +42,10 @@ class Icon extends React.Component {
 	        	return <IoPricetags/>
 	        case 'Star':
 	        	return <IoAndroidStar/>
+	       	case 'StarOutline':
+	       		return <IoAndroidStarOutline/>
+	       	case 'Follower':
+	       		return <IoPersonStalker/>
       	}
     }
 }

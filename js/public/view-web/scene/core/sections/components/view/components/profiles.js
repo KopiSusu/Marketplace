@@ -121,7 +121,7 @@ class Profiles extends React.Component {
             case 'profileList Map ImageOnly Slideover':
                 const split = this.props.type.split(' ');
                 const className = split[split.length - 1].toLowerCase()
-                
+                const followers = this.props.followers ? this.props.followers : 0
                 return (
                     <li className={`profiles column-${column}` }>
                         <div className={`profile ${className}`}>
@@ -130,6 +130,16 @@ class Profiles extends React.Component {
                                 <div className='rows-2'>
                                     <h1>{this.props.displayName}</h1>
                                     <span><Icon icon='Location'/><p>{`${this.props.city}, ${this.props.state}`}</p></span>
+                                    <span><Icon icon='Follower'/><p>{`${followers} Followers`}</p></span>
+                                    <span className='reviews'>
+                                        {
+                                            _.map([1,2,3,4,5], (rating) => {
+                                                if(this.props.rating > rating)
+                                                    return <Icon icon='Star'/>
+                                                return <Icon icon='StarOutline'/>
+                                            })
+                                        }
+                                    </span>
                                     <section className='map'>
                                         <GoogleMap
                                             defaultCenter={center}

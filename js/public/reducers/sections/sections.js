@@ -93,6 +93,6 @@ export default (state = {
   }
 }; 
 
-
+// We could merge the haywheel metaphor with our multiple markets. E.g instead of each card being a producer, each card could be separate marketplace, and we could list out all our chefs in each marketplace similar to how they do it (since they could essentially be the same thing). 
 
 
