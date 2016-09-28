@@ -73,6 +73,10 @@ class Profiles extends React.Component {
                                         <GoogleMap
                                             defaultCenter={center}
                                             options={mapOptions}
+                                            bootstrapURLKeys={{
+                                                key: 'AIzaSyDCeKLxobeBWkVBqysHso00KSiCeX0EiD4',
+                                                language: 'en'
+                                            }}
                                             defaultZoom={15}>
                                             <Marker lat={center.lat} lng={center.lng} {...this.props} zIndex={2} /* Kreyser Avrora */ />
                                         </GoogleMap>
@@ -100,6 +104,10 @@ class Profiles extends React.Component {
                                         <GoogleMap
                                             defaultCenter={center}
                                             options={mapOptions}
+                                            bootstrapURLKeys={{
+                                                key: 'AIzaSyDCeKLxobeBWkVBqysHso00KSiCeX0EiD4',
+                                                language: 'en'
+                                            }}
                                             defaultZoom={15}>
                                             <Marker lat={center.lat} lng={center.lng} {...this.props} zIndex={2} /* Kreyser Avrora */ />
                                         </GoogleMap>
@@ -126,6 +134,10 @@ class Profiles extends React.Component {
                                         <GoogleMap
                                             defaultCenter={center}
                                             options={mapOptions}
+                                            bootstrapURLKeys={{
+                                                key: 'AIzaSyDCeKLxobeBWkVBqysHso00KSiCeX0EiD4',
+                                                language: 'en'
+                                            }}
                                             defaultZoom={15}>
                                             <Marker lat={center.lat} lng={center.lng} {...this.props} zIndex={2} /* Kreyser Avrora */ />
                                         </GoogleMap>

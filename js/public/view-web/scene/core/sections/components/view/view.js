@@ -74,6 +74,10 @@ class Section extends React.Component {
                         <GoogleMap
                             defaultCenter={center}
                             options={mapOptions}
+                            bootstrapURLKeys={{
+                                key: 'AIzaSyDCeKLxobeBWkVBqysHso00KSiCeX0EiD4',
+                                language: 'en'
+                            }}
                             defaultZoom={13}>
                                 {
                                     _.map(this.props.content, (profile, index) => {
