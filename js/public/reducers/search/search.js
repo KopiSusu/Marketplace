@@ -46,17 +46,11 @@ export default (state = {
   isFetching: false,
   config: [],
   active: false,
-  filter: 'market',
-  market: market,
+  filter: null,
   query: ''
 }, action) => {
 
   switch (action.type) {
-    case '_FETCH_SEARCH':
-      return Object.assign({}, state, {
-        isFetching: false,
-        config: [searchConfig['market']]
-      });
     case 'SET_QUERY':
       return Object.assign({}, state, {
         isFetching: false,
@@ -76,6 +70,10 @@ export default (state = {
       let newSection = Object.assign({}, state, newSection);
       newSection[action.nestedKey.toLowerCase()] = action.payload
       newSection['config'].push(searchConfig[action.nestedKey.toLowerCase()])
+
+      if(!newSection['filter'])
+        newSection['filter'] = action.nestedKey.toLowerCase()
+
       return newSection
     default:
       return state
