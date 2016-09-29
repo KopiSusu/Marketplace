@@ -20,8 +20,13 @@ class Sections extends React.Component {
                     _.map(this.props.sectionIndex, (section, index) => {
                         let content = this.props[`content-${section}`]
 
-                        if (this.props[section]['useData'])
-                            content = this.props[`content-${this.props[section]['useData']}`]
+                        if (this.props[section]['useData']) {
+                            if ( this.props[section].type.indexOf('mixed') > -1 ) {
+                                content = _.concat(content, this.props[`content-${this.props[section]['useData']}`])
+                            } else {
+                                content = this.props[`content-${this.props[section]['useData']}`]
+                            }
+                        }
 
                         if (
                             this.props.selectedSection === section ||

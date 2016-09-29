@@ -41,6 +41,20 @@ class Section extends React.Component {
 
     renderView() {
         switch (this.props.type) {
+            case 'mixed':
+                return (
+                    <ul className='column-1'>
+                        {
+                            _.map(this.props.content, (item, index) => {
+                                const itemJSON = item.toJSON();
+                                if (itemJSON.displayName)
+                                    return <Profiles key={index} index={index} {...this.props} {...itemJSON}/>
+
+                                return <Cards key={index} {...this.props} {...itemJSON}/>
+                            })
+                        }
+                    </ul>
+                )
             case 'contentOnly':
                 return <Blob {...this.props}/>
             case 'contentOnly navigation sections':

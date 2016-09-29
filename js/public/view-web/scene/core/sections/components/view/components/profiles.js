@@ -18,18 +18,21 @@ class Profiles extends React.Component {
         super(props)
     }
 
-    componentWillMount() {
-        this.props.fetchData(this.props.callbackTypes, this.props.id, '_FETCH_REVIEWS', this.props.nestedKey, this.props.index)
-    }
-
     render () {
-        const totalColumnsAllowed = this.props.type.indexOf('ImageOnly') > -1 ? 4 : 2
+
+        const totalColumnsAllowed = ( 
+            this.props.type.indexOf('ImageOnly') > -1 ||
+            this.props.type.indexOf('mixed') > -1
+            ? 4 : 2 
+        )
         const column = this.props.content.length > totalColumnsAllowed ? totalColumnsAllowed : this.props.content.length
         const center = {lat: this.props.location.latitude, lng: this.props.location.longitude}
 
         const split = this.props.type.split(' ');
-        const className = split[split.length - 1].toLowerCase()
         const followers = this.props.followerCount ? this.props.followerCount : 0
+
+        let className = split[split.length - 1].toLowerCase()
+
         switch (this.props.type) {
             case 'profileList':
                 return (
@@ -55,6 +58,7 @@ class Profiles extends React.Component {
                         </div>
                     </li>
                 )
+            case 'mixed':
             case 'profileList ImageOnly':
                 return (
                     <li className={`profiles column-${column}`}>
@@ -181,7 +185,7 @@ class Profiles extends React.Component {
                             </div>
                         </div>
                     </li>
-                )
+                )            
         }
     }
 

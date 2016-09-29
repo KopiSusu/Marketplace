@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import Parse from 'parse';
 import {fetchJSON} from './../actions';
@@ -32,7 +32,6 @@ ReactDOM.render(
     { /* Tell the Router to use our enhanced history */ }
     <Router history={history}>
       <Route path="/" component={Scene}>
-      	<Route path="/" component={Scene}/>
       </Route>
       <Route path="/styleguide" component={Styleguide}/>
     </Router>
