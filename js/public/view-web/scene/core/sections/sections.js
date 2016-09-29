@@ -23,9 +23,11 @@ class Sections extends React.Component {
                         if (this.props[section]['useData'])
                             content = this.props[`content-${this.props[section]['useData']}`]
 
-                        return (
-                            <Section key={index} {...this.props[section]} content={content} fetchData={this.props.fetchData}/>
+                        if (
+                            this.props.selectedSection === section ||
+                            this.props[section].type.indexOf('contentOnly') > -1
                         )
+                            return (<Section key={index} selectedSection={this.props.selectedSection} {...this.props[section]} listIndex={this.props.listIndex} content={content} selectItem={this.props.selectItem} fetchData={this.props.fetchData}/>)
                     })
                 }
     		</section>
@@ -37,10 +39,12 @@ const mapStateToProp = (state) => {
     let newState = {}
 
     newState.sectionIndex = state.sections.sectionIndex
+    newState.listIndex = state.sections.listIndex
+    newState.selectedSection = state.sections.selectedSection
 
     _.forEach(state.sections.sectionIndex, (section) => {
         newState[section] = state.sections[section]
-        if(state.sections[section].type !== 'contentOnly')
+        if(state.sections[section].type.indexOf('contentOnly') < 0)
             newState[`content-${section}`] = state.sections[`content-${section}`]
     })
     

@@ -27,6 +27,9 @@ class Profiles extends React.Component {
         const column = this.props.content.length > totalColumnsAllowed ? totalColumnsAllowed : this.props.content.length
         const center = {lat: this.props.location.latitude, lng: this.props.location.longitude}
 
+        const split = this.props.type.split(' ');
+        const className = split[split.length - 1].toLowerCase()
+        const followers = this.props.followerCount ? this.props.followerCount : 0
         switch (this.props.type) {
             case 'profileList':
                 return (
@@ -37,6 +40,12 @@ class Profiles extends React.Component {
                                 <div className='details rows-2'>
                                     <h1>{this.props.displayName}</h1>
                                     <span><Icon icon='Location'/><p>{`${this.props.city}, ${this.props.state}`}</p></span>
+                                    <span><Icon icon='Follower'/><p>{`${followers} Followers`}</p></span>
+                                    <span className='reviews'>
+                                        {
+                                            this.props.averageRating ? this.renderRating() : <span><Icon icon='Star'/><p>No Reviews</p></span>
+                                        }
+                                    </span>
                                 </div>
                             </div>
                             
@@ -55,6 +64,12 @@ class Profiles extends React.Component {
                                 <div className='details rows-2'>
                                     <h1>{this.props.displayName}</h1>
                                     <span><Icon icon='Location'/><p>{`${this.props.city}, ${this.props.state}`}</p></span>
+                                    <span><Icon icon='Follower'/><p>{`${followers} Followers`}</p></span>
+                                    <span className='reviews'>
+                                        {
+                                            this.props.averageRating ? this.renderRating() : <span><Icon icon='Star'/><p>No Reviews</p></span>
+                                        }
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -69,6 +84,12 @@ class Profiles extends React.Component {
                                 <div className='details rows-2'>
                                     <h1>{this.props.displayName}</h1>
                                     <span><Icon icon='Location'/><p>{`${this.props.city}, ${this.props.state}`}</p></span>
+                                    <span><Icon icon='Follower'/><p>{`${followers} Followers`}</p></span>
+                                    <span className='reviews'>
+                                        {
+                                            this.props.averageRating ? this.renderRating() : <span><Icon icon='Star'/><p>No Reviews</p></span>
+                                        }
+                                    </span>
                                     <section className='map'>
                                         <GoogleMap
                                             defaultCenter={center}
@@ -100,6 +121,12 @@ class Profiles extends React.Component {
                                 <div className='rows-2'>
                                     <h1>{this.props.displayName}</h1>
                                     <span><Icon icon='Location'/><p>{`${this.props.city}, ${this.props.state}`}</p></span>
+                                    <span><Icon icon='Follower'/><p>{`${followers} Followers`}</p></span>
+                                    <span className='reviews'>
+                                        {
+                                            this.props.averageRating ? this.renderRating() : <span><Icon icon='Star'/><p>No Reviews</p></span>
+                                        }
+                                    </span>
                                     <section className='map'>
                                         <GoogleMap
                                             defaultCenter={center}
@@ -119,9 +146,6 @@ class Profiles extends React.Component {
                 )
             case 'profileList Map ImageOnly Popover':
             case 'profileList Map ImageOnly Slideover':
-                const split = this.props.type.split(' ');
-                const className = split[split.length - 1].toLowerCase()
-                const followers = this.props.followers ? this.props.followers : 0
                 return (
                     <li className={`profiles column-${column}` }>
                         <div className={`profile ${className}`}>
@@ -133,11 +157,7 @@ class Profiles extends React.Component {
                                     <span><Icon icon='Follower'/><p>{`${followers} Followers`}</p></span>
                                     <span className='reviews'>
                                         {
-                                            _.map([1,2,3,4,5], (rating) => {
-                                                if(this.props.rating > rating)
-                                                    return <Icon key={rating} icon='Star'/>
-                                                return <Icon key={rating} icon='StarOutline'/>
-                                            })
+                                            this.props.averageRating ? this.renderRating() : <span><Icon icon='Star'/><p>No Reviews</p></span>
                                         }
                                     </span>
                                     <section className='map'>
@@ -163,6 +183,15 @@ class Profiles extends React.Component {
                     </li>
                 )
         }
+    }
+
+    renderRating () {
+        return _.map([1,2,3,4,5], (rating) => {
+            if(this.props.averageRating > rating)
+                return <Icon key={rating} icon='Star'/>
+
+            return <Icon key={rating} icon='StarOutline'/>
+        })
     }
 
 }

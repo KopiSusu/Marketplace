@@ -19,33 +19,27 @@ const sections = [
       "paddingRight": "3px"
     }
   },
-  // {
-  //   "nestedKey" : "Hero",
-  //   "type" : "contentOnly Hero Image",
-  //   "imageURL": "http://wallpapers-and-backgrounds.net/wp-content/uploads/2015/11/graffiti-full-hd-background_1.jpg"
-  // },
   {
-    "nestedKey" : "Hero",
-    "type" : "contentOnly Hero Video",
-    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+    "nestedKey" : "Navigation",
+    "type" : "contentOnly navigation sections"
   },
   {
     "nestedKey" : "Meals",
     "type" : "cardList",
     "title" : "MENU",
-    "requestType": "Meal",
+    "requestType": "User Meal",
     "queries": [
-      "JIi7dV4xid",
-      "5WoNMOfQMD",
-      "5cwaZZcNDf",
-      "SdQbclV6yp",
-      "3zIlOK7z0V",
-      "zLHTRv1CgH",
-      "9TvCgp2y8n",
-      "6Hd5t10oZw",
-      "xsJ8A0skww",
-      "iFcxzXuttw",
-      "RmlPoharvS"
+      "v7G5jxYzOM",
+      "8Sp8Rky0qN",
+      "f56N56Oyht",
+      "WLRGQJ8wSY",
+      "4MIWhy53xN",
+      "8ZHiQfrQPX",
+      "WOXHTevgju",
+      "USKnp2Sd02",
+      "B2vr7TB3Ju",
+      "eAX7GDaOZF",
+      "Gto3aQQk09"
     ]
   },
   {
@@ -77,19 +71,29 @@ const sections = [
 
 export default (state = {
   isFetching: false,
-  sectionIndex: []
+  selectedSection: null,
+  sectionIndex: [],
+  listIndex: []
 }, action) => {
 
   switch (action.type) {
+    case 'SELECT_SECTION':
+      return Object.assign({}, state, {
+        isFetching: false,
+        selectedSection: action.payload
+      });
     case '_FETCH_SECTIONS':
       let newSections = Object.assign({}, state);
 
       _.forEach(sections, (section) => {
         newSections[section.nestedKey] = section;
 
-        if(section.type !== 'contentOnly') {
+        if(section.type.indexOf('contentOnly') < 0) {
           newSections[`content-${section.nestedKey}`] = []
+          newSections['listIndex'].push(section.nestedKey)
+          newSections['selectedSection'] = section.nestedKey
         }
+
         newSections.sectionIndex.push(section.nestedKey);
       })
 
@@ -102,6 +106,7 @@ export default (state = {
       return state
   }
 }; 
+
 
 // We could merge the haywheel metaphor with our multiple markets. E.g instead of each card being a producer, each card could be separate marketplace, and we could list out all our chefs in each marketplace similar to how they do it (since they could essentially be the same thing). 
 

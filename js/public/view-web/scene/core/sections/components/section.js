@@ -20,7 +20,10 @@ class Section extends React.Component {
     	return (
             <section className={'section column-1 ' + ( this.props.type !== 'contentOnly' ? 'noPadding' : '')}>
 
-                {this.props.type.indexOf("contentOnly") < 0 ? <Header {...this.props}/> : null}
+                {
+                    this.props.type.indexOf("contentOnly") < 0 ?
+                    <Header {...this.props}/> : null
+                }
 
                 <View {...this.props}/>
             </section>

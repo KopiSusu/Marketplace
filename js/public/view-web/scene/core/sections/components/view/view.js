@@ -1,8 +1,8 @@
 /* @flow */
 import React from 'react'
 import _ from 'lodash'
-import GoogleMap from 'google-map-react';
-import Video from 'react-html5video';
+import GoogleMap from 'google-map-react'
+import Video from 'react-html5video'
 
 import Blob from './components/blob'
 import Cards from './components/cards'
@@ -43,6 +43,21 @@ class Section extends React.Component {
         switch (this.props.type) {
             case 'contentOnly':
                 return <Blob {...this.props}/>
+            case 'contentOnly navigation sections':
+                return (
+                    <section className='navigation'>
+                        <div className='wrapper'>
+                            {
+                                _.map(this.props.listIndex, (sectionHeader) => {
+                                    const selected = this.props.selectedSection
+                                    return (
+                                        <h2 onClick={() => { this.props.selectItem(sectionHeader, 'section') }}className={this.props.selectedSection === sectionHeader ? 'selected' : ''} key={sectionHeader}>{sectionHeader}</h2>
+                                    )
+                                })
+                            }
+                        </div>
+                    </section>
+                )
             case 'contentOnly Hero Image':
                 return (
                     <section className='hero' style={{backgroundImage: `url(${this.props.imageURL})`}}>
@@ -55,6 +70,7 @@ class Section extends React.Component {
                         <source src={this.props.videoURL} type="video/webm" />
                     </Video>
                 )
+
             case 'cardList':
                 return (
                     <ul className='column-1'>

@@ -6,10 +6,10 @@ import {Parse} from 'parse'
 // ParseReact sits on top of your Parse singleton
 import ParseReact from 'parse-react'
 
-export const selectGroup = (group) => {
+export const selectItem = (item, type) => {
     return {
-        type: 'SELECT_GROUP',
-        payload: group
+        type: `SELECT_${type.toUpperCase()}`,
+        payload: item
     }
 }
 
@@ -62,6 +62,16 @@ const _exportQueryConstruct = (requestType, idArray) => {
       Query = new Parse.Query(Parse.User);
       Query.containedIn("objectId", idArray);
 
+      return Query
+    case 'User Meal':
+      Query = new Parse.Query(requestType.split(' ')[1]);
+      Query.notEqualTo("deleted", true);
+      Query.notEqualTo("hidden", true);
+      Query.ascending("name");
+
+      let innerQuery = new Parse.Query(Parse.User);
+      innerQuery.containedIn("objectId", idArray);
+      Query.matchesQuery("cook", innerQuery);
       return Query
     default:
       Query = new Parse.Query(requestType);

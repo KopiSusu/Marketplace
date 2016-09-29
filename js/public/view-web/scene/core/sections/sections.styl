@@ -285,6 +285,26 @@ hidden(shift, height)
 								right -3px
 								border-left 15px solid strokeColor 
 								border-right 0
+		.navigation
+			text-align center
+			padding-bottom (buffer * 4)
+			.wrapper
+				display inline-block
+				transition()
+				&:hover 
+					h2
+						opacity 0.5
+				h2
+					display inline-block
+					padding 0 buffer
+					margin 0 buffer
+					cursor pointer
+					border-bottom 3px solid bgColor
+					transition()
+					&:hover
+						opacity 1
+					&.selected
+						border-bottom 3px solid primaryColor
 		.hero
 			height 400px
 			width 100%	
