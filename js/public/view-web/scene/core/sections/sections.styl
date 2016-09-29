@@ -275,6 +275,7 @@ hidden(shift, height)
 								border-right 0
 		.navigation
 			text-align center
+			text-transform uppercase
 			padding-bottom (buffer * 4)
 			.wrapper
 				display inline-block
@@ -284,15 +285,15 @@ hidden(shift, height)
 						opacity 0.5
 				h2
 					display inline-block
-					padding 0 buffer
-					margin 0 buffer
+					padding-bottom buffer
+					margin 0 buffer*2
 					cursor pointer
-					border-bottom 3px solid bgColor
+					border-bottom 1px solid bgColor
 					transition()
 					&:hover
 						opacity 1
 					&.selected
-						border-bottom 3px solid primaryColor
+						border-bottom 1px solid secondaryColor
 		.hero
 			height 400px
 			width 100%	
