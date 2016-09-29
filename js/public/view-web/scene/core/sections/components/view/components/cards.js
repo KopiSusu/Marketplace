@@ -13,7 +13,7 @@ class Cards extends React.Component {
     }
 
     render () {
-        const column = this.props.content.length > 4 ? 4 : this.props.content.length
+        const column = this.props.content.length > 3 ? 3 : this.props.content.length
 
         return (
             <li className={`cards column-${column}`}>

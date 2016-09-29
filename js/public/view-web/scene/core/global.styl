@@ -10,6 +10,7 @@ fbColor = #4c69ba
 radius = 3px
 fontColor = #333
 fontColorLight = #888
+fontFamily = "Poppins", sans-serif
 
 markerSize = 50px
 
@@ -19,14 +20,13 @@ buffer = 12px
 
 border = 1px solid strokeColor
 
-ribbonHeight = 50px
+ribbonHeight = 100px
 
 // Global styles
 
 body 
 	background bgColor
-	font-family "Oswald" !important
-	text-transform uppercase !important
+	font-family fontFamily !important
 	color fontColor
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
@@ -169,10 +169,7 @@ input[type='checkbox']
 label.checkboxLabel
 	color fontColorLight
 
-//Typogrophy
-h1
-	font-size 17px
-	margin 0
+//Typogrphy
 	
 p
 	font-size 13px
@@ -201,7 +198,11 @@ p
 	background-color bgColorLight
 	padding buffer * 2
 	shadow()
-						
+
+#styleguide
+	position relative
+	width 1200px
+	margin 0 auto			
 				
 //Icons
 .icon

@@ -2,11 +2,7 @@ import * as  Actions from './../../actions'
 
 const app = {
   "title": "Homemade Producer List",
-  "image": "http://homemade-images.s3.amazonaws.com/bedstuyEats.svg",
-  "navStyle": {
-    "background": "url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/food.png')",
-    "height": "120px"
-  }
+  "image": "https://s3.amazonaws.com/homemade-images/homemadeLogo.svg"
 }
 
 export default (state = {

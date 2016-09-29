@@ -7,7 +7,7 @@ const sections = [
   {
     "nestedKey" : "topText",
     "type" : "contentOnly",
-    "text" : "Bed Stuy Eats is a community of <style>amazing cooks in your neighborhood<style>. Order amazing meals and pick them up right around the corner.",
+    "text" : "A curated marketplace of the absolute best small batch foods",
     "style": {
       "fontSize": "22px",
       "lineHeight": "1.5"
