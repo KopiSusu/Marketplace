@@ -15,9 +15,10 @@ hidden(shift, height)
 	.header
 		position relative
 		text-align center
+		display block
 		height 50px
 		width 50%
-		margin 0 25%
+		margin buffer*2 auto buffer*4 auto
 		h1
 			display inline-block
 			text-transform uppercase
@@ -32,7 +33,7 @@ hidden(shift, height)
 			position absolute
 			top 0
 			left 0
-			height 25px
+			height 36px
 			width 100%
 			z-index -1
 			border-bottom 1px solid fontColor
@@ -83,7 +84,7 @@ hidden(shift, height)
 						margin buffer 0
 						.productPrice
 							text-align right
-							font-weight 800
+							font-weight 600
 							font-size 18px
 						.productName
 							font-family fontFamily
@@ -127,10 +128,6 @@ hidden(shift, height)
 						overflow hidden
 					&:hover
 						border 1px solid strokeColor
-						-webkit-transform scale(1.05)
-						-moz-transform scale(1.05)
-						-ms-transform scale(1.05)
-						transform scale(1.05)
 						.bio
 							&.slideover
 								transform translate3d(0, -300px, 0)
