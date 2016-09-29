@@ -45,53 +45,76 @@ hidden(shift, height)
 		ul
 			padding 0 (buffer * 6)
 			.cards
-				padding buffer
+				padding buffer*2
 				.card
+					transition()
 					position relative
-					height 300px
+					height auto
 					border-radius radius
 					overflow hidden
-					border 1px solid strokeColor
-					color white
-					background #333
 					cursor pointer
-					.image
+					color fontColorLight
+					.productImage
+						position relative
+						height 270px
 						background-size cover
 						background-repeat no-repeat
 						background-position center
 						overflow hidden
-						.hidden
-							hidden(190px, 250px)
-						.ingredients
-							padding 0 (buffer)
-							.label
-								color fontColorLight
-								font-style italic
-								margin-right 5px
-							p
-								font-size 16px
-								overflow hidden
-								display -webkit-box
-								-webkit-line-clamp 6
-								-webkit-box-orient vertical  
-					button
-						border none
-						background #333
-						color white
-						letter-spacing 2px
-						text-transform uppercase
-						font-weight 500
-						border-top 1px solid strokeColor
-						transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
+					.cardActions
+						display inline-block
+						position absolute
+						top -60px
+						right buffer*2
+						transition()
+						.action
+							height 32px
+							width 32px
+							svg
+								path
+									transition()
+									fill white
+						&:hover
+							.action svg path
+								transition()
+								fill primaryColor
+							
+					.namePrice
+						margin buffer 0
+						.productPrice
+							text-align right
+							font-weight 800
+							font-size 18px
+						.productName
+							font-family fontFamily
+							font-size 18px
+					.profileImage
+						display inline-block
+						border-radius 100%
+						height 30px
+						width 30px
+						margin-right buffer
+						background-size cover
+						opacity .5
+						transition()
+					.cook
+						// text-align center
+						.profileImage
+							display inline-block
+						.cookName
+							display inline-block
+							font-size 13px
+							margin-top 5px
 					&:hover
-						.image
-							.hidden
-								transform translate3d(0, 30px, 0)
-						button
-							background primaryColor
-							border-top 1px solid primaryColor
-							font-weight 900
-							color bgColor
+						opacity .9
+						color fontColor
+						transition()
+						.profileImage
+							transition()
+							opacity 1
+						.cardActions
+							transition()
+							top buffer*2
 			.profiles
 				padding buffer
 				.profile
