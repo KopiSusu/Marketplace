@@ -66,7 +66,7 @@ const sections = [
   },
   {
     "nestedKey" : "Chefs",
-    "type" : "profileList Map ImageOnly Slideover",
+    "type" : "profileList ImageOnly",
     "title" : "CHEFS",
     "requestType": "User",
     "callbackTypes": "Review",

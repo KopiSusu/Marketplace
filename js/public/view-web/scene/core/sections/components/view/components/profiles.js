@@ -58,6 +58,7 @@ class Profiles extends React.Component {
                         </div>
                     </li>
                 )
+            case 'mixed':
             case 'profileList ImageOnly':
                 return (
                     <li className={`profiles column-${column}`}>
@@ -147,8 +148,6 @@ class Profiles extends React.Component {
                         </div>
                     </li>
                 )
-            case 'mixed':
-                className = 'slideover';
             case 'profileList Map ImageOnly Popover':
             case 'profileList Map ImageOnly Slideover':
                 return (
