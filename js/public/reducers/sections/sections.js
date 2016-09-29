@@ -24,42 +24,65 @@ const sections = [
     "type" : "contentOnly navigation sections"
   },
   {
+    "nestedKey" : "Featured",
+    "type" : "mixed",
+    "title" : "FEATURED",
+    "requestType": "User Meal",
+    "useData": "Chefs",
+    "queries": [
+      "13hsxOcVzT",
+      "JKJDIAMUxe",
+      "yFAVY4MPFG",
+      "yfjrIk9X7D",
+      "4nNagUWxZm",
+      "hwtvjancuO",
+      "KYfTo0IOZw",
+      "CFEmBDNAxC",
+      "UhnWAmQPQn",
+      "j77vAf9ZKA",
+      "XPmaRjITwf",
+      "B99QUaTbtE"
+    ]
+  },
+  {
     "nestedKey" : "Meals",
     "type" : "cardList",
     "title" : "MENU",
     "requestType": "User Meal",
     "queries": [
-      "v7G5jxYzOM",
-      "8Sp8Rky0qN",
-      "f56N56Oyht",
-      "WLRGQJ8wSY",
-      "4MIWhy53xN",
-      "8ZHiQfrQPX",
-      "WOXHTevgju",
-      "USKnp2Sd02",
-      "B2vr7TB3Ju",
-      "eAX7GDaOZF",
-      "Gto3aQQk09"
+      "13hsxOcVzT",
+      "JKJDIAMUxe",
+      "yFAVY4MPFG",
+      "yfjrIk9X7D",
+      "4nNagUWxZm",
+      "hwtvjancuO",
+      "KYfTo0IOZw",
+      "CFEmBDNAxC",
+      "UhnWAmQPQn",
+      "j77vAf9ZKA",
+      "XPmaRjITwf",
+      "B99QUaTbtE"
     ]
   },
   {
     "nestedKey" : "Chefs",
     "type" : "profileList Map ImageOnly Slideover",
-    "title" : "Featured Chefs",
+    "title" : "CHEFS",
     "requestType": "User",
     "callbackTypes": "Review",
     "queries": [
-      "v7G5jxYzOM",
-      "8Sp8Rky0qN",
-      "f56N56Oyht",
-      "WLRGQJ8wSY",
-      "4MIWhy53xN",
-      "8ZHiQfrQPX",
-      "WOXHTevgju",
-      "USKnp2Sd02",
-      "B2vr7TB3Ju",
-      "eAX7GDaOZF",
-      "Gto3aQQk09"
+      "13hsxOcVzT",
+      "JKJDIAMUxe",
+      "yFAVY4MPFG",
+      "yfjrIk9X7D",
+      "4nNagUWxZm",
+      "hwtvjancuO",
+      "KYfTo0IOZw",
+      "CFEmBDNAxC",
+      "UhnWAmQPQn",
+      "j77vAf9ZKA",
+      "XPmaRjITwf",
+      "B99QUaTbtE"
     ]
   },
   {
@@ -68,6 +91,20 @@ const sections = [
     "useData": "Chefs"
   }
 ]
+
+// Foodworks demo marketplace
+// "13hsxOcVzT",
+// "JKJDIAMUxe",
+// "yFAVY4MPFG",
+// "yfjrIk9X7D",
+// "4nNagUWxZm",
+// "hwtvjancuO",
+// "KYfTo0IOZw",
+// "CFEmBDNAxC",
+// "UhnWAmQPQn",
+// "j77vAf9ZKA",
+// "XPmaRjITwf",
+// "B99QUaTbtE"
 
 export default (state = {
   isFetching: false,
@@ -99,7 +136,7 @@ export default (state = {
 
       return newSections;
     case '_FETCH_SECTION':
-      let newSection = Object.assign({}, state);
+      let newSection = Object.assign({}, state);      
       newSection[`content-${action.nestedKey}`] = action.payload
       return newSection
     default:

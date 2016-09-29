@@ -57,6 +57,7 @@ export function fetchData(requestType, idArray, returnType, nestedKey) {
 }
 const _exportQueryConstruct = (requestType, idArray) => {
   let Query;
+  let innerQuery
   switch(requestType) {
     case 'User':
       Query = new Parse.Query(Parse.User);
@@ -64,12 +65,13 @@ const _exportQueryConstruct = (requestType, idArray) => {
 
       return Query
     case 'User Meal':
-      Query = new Parse.Query(requestType.split(' ')[1]);
+      Query = new Parse.Query("Meal");
       Query.notEqualTo("deleted", true);
       Query.notEqualTo("hidden", true);
+      Query.include("cook");
       Query.ascending("name");
 
-      let innerQuery = new Parse.Query(Parse.User);
+      innerQuery = new Parse.Query(Parse.User);
       innerQuery.containedIn("objectId", idArray);
       Query.matchesQuery("cook", innerQuery);
       return Query
@@ -77,6 +79,7 @@ const _exportQueryConstruct = (requestType, idArray) => {
       Query = new Parse.Query(requestType);
       Query.include('cook');
       Query.notEqualTo("deleted", true);
+      Query.notEqualTo("hidden", true);
       Query.containedIn("objectId", idArray);
       return Query
   }
