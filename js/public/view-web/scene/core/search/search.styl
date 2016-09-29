@@ -6,15 +6,16 @@
 	display inline-block
 	background bgColor
 	border-radius radius
-	right buffer
+	left buffer
 	margin buffer
 	border 1px solid strokeColor
 	transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
 	.icon
 		padding (buffer/2) 0 
-		height (ribbonHeight * 0.6)
+		height (ribbonHeight * 0.4)
 		display inline-block
-		width (ribbonHeight * 0.6)
+		width (ribbonHeight * 0.4)
+		margin-top buffer
 	&.closed
 		padding 0 0 0 buffer
 		cursor pointer
@@ -26,10 +27,7 @@
 				height (ribbonHeight * 0.6)
 				line-height (ribbonHeight * 0.6)
 		&:hover
-			-webkit-transform scale(1.1)
-			-moz-transform scale(1.1)
-			-ms-transform scale(1.1)
-			transform scale(1.1)
+			background bgColorDark
 	&.open
 		height 300px
 		width 450px

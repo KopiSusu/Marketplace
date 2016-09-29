@@ -1,7 +1,8 @@
 
 //Global Color vars
-primaryColor = #FFC13C 
-secondaryColor = #ff7b7b 
+primaryColor = #FF665E
+secondaryColor = #888
+
 bgColor = #fff
 bgColorDark = #f3f3f3
 bgColorExtraDark = #ddd
@@ -10,6 +11,7 @@ fbColor = #4c69ba
 radius = 3px
 fontColor = #333
 fontColorLight = #888
+fontFamily = "Muli", sans-serif
 
 markerSize = 50px
 
@@ -19,14 +21,13 @@ buffer = 12px
 
 border = 1px solid strokeColor
 
-ribbonHeight = 50px
+ribbonHeight = 100px
 
 // Global styles
 
 body 
 	background bgColor
-	font-family "Oswald" !important
-	text-transform uppercase !important
+	font-family fontFamily !important
 	color fontColor
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
@@ -169,13 +170,10 @@ input[type='checkbox']
 label.checkboxLabel
 	color fontColorLight
 
-//Typogrophy
-h1
-	font-size 17px
-	margin 0
+//Typogrphy
 	
 p
-	font-size 13px
+	font-size 16px
 	margin 0
 	&.secondaryText
 		color fontColorLight
@@ -201,7 +199,11 @@ p
 	background-color bgColorLight
 	padding buffer * 2
 	shadow()
-						
+
+#styleguide
+	position relative
+	width 1200px
+	margin 0 auto			
 				
 //Icons
 .icon
