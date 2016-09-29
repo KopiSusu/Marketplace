@@ -135,8 +135,8 @@ class Profiles extends React.Component {
                                         {
                                             _.map([1,2,3,4,5], (rating) => {
                                                 if(this.props.rating > rating)
-                                                    return <Icon icon='Star'/>
-                                                return <Icon icon='StarOutline'/>
+                                                    return <Icon key={rating} icon='Star'/>
+                                                return <Icon key={rating} icon='StarOutline'/>
                                             })
                                         }
                                     </span>

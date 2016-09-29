@@ -2,12 +2,14 @@
 import React from 'react'
 import _ from 'lodash'
 import GoogleMap from 'google-map-react';
-
+import Video from 'react-html5video';
 
 import Blob from './components/blob'
 import Cards from './components/cards'
 import Profiles from './components/profiles'
 import Marker from './components/marker'
+
+import './components/video.css'
 
 const mapOptions = {
     panControl: false,
@@ -41,6 +43,18 @@ class Section extends React.Component {
         switch (this.props.type) {
             case 'contentOnly':
                 return <Blob {...this.props}/>
+            case 'contentOnly Hero Image':
+                return (
+                    <section className='hero' style={{backgroundImage: `url(${this.props.imageURL})`}}>
+
+                    </section>
+                )
+            case 'contentOnly Hero Video':
+                return (
+                    <Video className='hero' controls autoPlay loop muted >
+                        <source src={this.props.videoURL} type="video/webm" />
+                    </Video>
+                )
             case 'cardList':
                 return (
                     <ul className='column-1'>

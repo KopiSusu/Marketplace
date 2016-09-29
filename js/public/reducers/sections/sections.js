@@ -19,6 +19,16 @@ const sections = [
       "paddingRight": "3px"
     }
   },
+  // {
+  //   "nestedKey" : "Hero",
+  //   "type" : "contentOnly Hero Image",
+  //   "imageURL": "http://wallpapers-and-backgrounds.net/wp-content/uploads/2015/11/graffiti-full-hd-background_1.jpg"
+  // },
+  {
+    "nestedKey" : "Hero",
+    "type" : "contentOnly Hero Video",
+    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+  },
   {
     "nestedKey" : "Meals",
     "type" : "cardList",

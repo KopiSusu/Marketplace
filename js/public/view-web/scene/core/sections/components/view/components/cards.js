@@ -9,7 +9,7 @@ class Cards extends React.Component {
     }
 
     clickHandler () {
-        location.href = "http://shop.eathomemade.com/" + this.props.cook.uniqueName + "/" + this.props.objectId
+        location.href = "http://shop.eathomemade.com/" + this.props.cook.uniqueName + "/" + this.props.objectId + "/true"
     }
 
     render () {
