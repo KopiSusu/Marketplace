@@ -8,6 +8,7 @@ import {fetchJSON} from './../actions';
 import _ from 'lodash';
 import {configureStore} from "./../store/configure-store";
 import Scene from "./scene/scene.js"
+import Styleguide from "./scene/styleguide.js"
 
 //Production Keys
 Parse.initialize("zAOPmmOBH8zN9r5iX6LFHFxLJEnycHIqV7a7QO5F", "z8IhWLkM0NWV82CvWBeKttjVTgKkGib3ICzCyMnN");
@@ -33,6 +34,7 @@ ReactDOM.render(
       <Route path="/" component={Scene}>
       	<Route path="/" component={Scene}/>
       </Route>
+      <Route path="/styleguide" component={Styleguide}/>
     </Router>
   </Provider>,
   document.getElementById('App')
