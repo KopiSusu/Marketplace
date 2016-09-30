@@ -67,7 +67,7 @@ const sections = [
   {
     "nestedKey" : "Chefs",
     "type" : "profileList ImageOnly",
-    "title" : "CHEFS",
+    "title" : "PRODUCERS",
     "requestType": "User",
     "callbackTypes": "Review",
     "queries": [
