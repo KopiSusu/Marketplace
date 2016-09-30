@@ -4,9 +4,9 @@ import * as  Actions from './../../actions'
 import _ from 'lodash'
 
 const searchConfig = {
-  market: {
+  featured: {
     'id': 1,
-    'title': 'Marketplaces',
+    'title': 'Featured',
     'filter': 'market',
     'icon': 'Market'
   },
