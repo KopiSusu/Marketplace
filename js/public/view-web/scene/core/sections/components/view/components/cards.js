@@ -18,7 +18,7 @@ class Cards extends React.Component {
         return (
             <li className={`cards column-${column}`}>
                 <div className='card' onClick={() => this.clickHandler()}>
-                    <div className='productImage rows-6-5' style={{backgroundImage: `url(${this.props.imageURLS[0]})`}}> 
+                    <div className='image rows-6-5' style={{backgroundImage: `url(${this.props.imageURLS[0]})`}}> 
                         <div className='cardActions'>
                             <div className='action favorite'>
                                 <svg>
@@ -31,8 +31,8 @@ class Cards extends React.Component {
                         </div>
                     </div>
                     <div className="namePrice">
-                        <p className='column-6-5 productName'>{this.props.name}</p>
-                        <p className='column-6-1 productPrice'>${this.props.price}</p>
+                        <p className='column-6-5 name'>{this.props.name}</p>
+                        <p className='column-6-1 price'>${this.props.price}</p>
                     </div>
                     <div className='cook'>
                         <div className="profileImage" style={{backgroundImage: `url(${this.props.cook.imageURL})`}} ></div>
