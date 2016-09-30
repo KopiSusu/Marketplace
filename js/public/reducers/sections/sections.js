@@ -92,20 +92,6 @@ const sections = [
   }
 ]
 
-// Foodworks demo marketplace
-// "13hsxOcVzT",
-// "JKJDIAMUxe",
-// "yFAVY4MPFG",
-// "yfjrIk9X7D",
-// "4nNagUWxZm",
-// "hwtvjancuO",
-// "KYfTo0IOZw",
-// "CFEmBDNAxC",
-// "UhnWAmQPQn",
-// "j77vAf9ZKA",
-// "XPmaRjITwf",
-// "B99QUaTbtE"
-
 export default (state = {
   isFetching: false,
   selectedSection: null,
