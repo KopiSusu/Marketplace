@@ -32,12 +32,17 @@ export const toggle = (group, boolean, secondaryProperty) => {
     return returnResponse
 }
 
-export const initializePage = (pageJSON, returnType) => {
-  return {
+export const initializePage = (pageJSON, returnType, parms) => {
+  let returnResponse = {
     type: returnType,
     payload: pageJSON
   }
-}
+
+  if (parms)
+    returnResponse.parms = parms
+
+  return returnResponse
+} 
 
 export const receiveData = (json, returnType, nestedKey) => {
 	let returnResponse = {

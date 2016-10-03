@@ -15,11 +15,11 @@ export default [
     }
   },
   {
-    "nestedKey" : "Navigation",
+    "nestedKey" : "navigation",
     "type" : "contentOnly navigation sections"
   },
   {
-    "nestedKey" : "Featured",
+    "nestedKey" : "featured",
     "type" : "mixed",
     "title" : "FEATURED",
     "requestType": "User Meal",
@@ -40,9 +40,10 @@ export default [
     ]
   },
   {
-    "nestedKey" : "Products",
+    "nestedKey" : "products",
     "type" : "cardList",
     "title" : "MENU",
+    "search": true,
     "requestType": "User Meal",
     "queries": [
       "13hsxOcVzT",
@@ -60,9 +61,10 @@ export default [
     ]
   },
   {
-    "nestedKey" : "Producers",
+    "nestedKey" : "producers",
     "type" : "profileList ImageOnly",
     "title" : "PRODUCERS",
+    "search": true,
     "requestType": "User",
     "queries": [
       "13hsxOcVzT",
@@ -80,7 +82,7 @@ export default [
     ]
   },
   {
-    "nestedKey" : "Map",
+    "nestedKey" : "map",
     "type" : "contentOnly Map",
     "useData": "Producers"
   }

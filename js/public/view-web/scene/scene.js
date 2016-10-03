@@ -2,14 +2,12 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import _ from 'lodash'
 import * as  Actions from './../../actions'
 
 import Search from './core/search/search'
 import Ribbon from './core/ribbon/ribbon'
 import Sections from './core/sections/sections'
-
-import Marketplace from './sceneJson/marketplace.js'
-import Producer from './sceneJson/producer.js'
 
 import './core/global.styl'
 
@@ -31,15 +29,10 @@ class Scene extends React.Component {
 
     	switch (path) {
 			case '':
-				this.props.initializePage(Marketplace, '_INITIALIZE_PAGE')
+				this.props.initializePage('marketplace', '_INITIALIZE_PAGE')
                 break;
 			case 'p':
-				let producerJSON = Producer
-
-				producerJSON[1].queries.push(pageParms)
-				producerJSON[2].queries.push(pageParms)
-
-				this.props.initializePage(producerJSON, '_INITIALIZE_PAGE')
+				this.props.initializePage('producer', '_INITIALIZE_PAGE', pageParms)
                 break;
 		}
     }
@@ -58,7 +51,7 @@ class Scene extends React.Component {
 			<section className="scroll">
 				<Search />
 				<Ribbon app={this.props.app} />
-				{this.props.sectionIndex.length > 0 ? <Sections/> : null}
+				{this.props.sectionIndex ? <Sections/> : null}
     		</section>
 		)
   	}

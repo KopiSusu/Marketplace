@@ -15,7 +15,7 @@ export default [
     }
   },
   {
-    "nestedKey" : "Producers",
+    "nestedKey" : "producers",
     "type" : "profileList ImageOnly",
     "title" : "PRODUCERS",
     "requestType": "User",
@@ -24,16 +24,17 @@ export default [
     ]
   },
   {
-    "nestedKey" : "Products",
+    "nestedKey" : "products",
     "type" : "cardList",
     "title" : "MENU",
+    "search": true,
     "requestType": "User Meal",
     "queries": [
 
     ]
   },
   {
-    "nestedKey" : "Map",
+    "nestedKey" : "map",
     "type" : "contentOnly Map",
     "useData": "Producers"
   }
