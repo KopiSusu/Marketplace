@@ -3,95 +3,6 @@
 import * as  Actions from './../../actions'
 import _ from 'lodash'
 
-const sections = [
-  {
-    "nestedKey" : "topText",
-    "type" : "contentOnly",
-    "text" : "A curated marketplace of the absolute best small batch foods",
-    "style": {
-      "fontSize": "22px",
-      "lineHeight": "1.5"
-    },
-    "contentStyle": {
-      "color": "#fff",
-      "backgroundColor": "#FFC13C",
-      "paddingLeft": "3px",
-      "paddingRight": "3px"
-    }
-  },
-  {
-    "nestedKey" : "Navigation",
-    "type" : "contentOnly navigation sections"
-  },
-  {
-    "nestedKey" : "Featured",
-    "type" : "mixed",
-    "title" : "FEATURED",
-    "requestType": "User Meal",
-    "useData": "Chefs",
-    "queries": [
-      "13hsxOcVzT",
-      "JKJDIAMUxe",
-      "yFAVY4MPFG",
-      "yfjrIk9X7D",
-      "4nNagUWxZm",
-      "hwtvjancuO",
-      "KYfTo0IOZw",
-      "CFEmBDNAxC",
-      "UhnWAmQPQn",
-      "j77vAf9ZKA",
-      "XPmaRjITwf",
-      "B99QUaTbtE"
-    ]
-  },
-  {
-    "nestedKey" : "Meals",
-    "type" : "cardList",
-    "title" : "MENU",
-    "requestType": "User Meal",
-    "queries": [
-      "13hsxOcVzT",
-      "JKJDIAMUxe",
-      "yFAVY4MPFG",
-      "yfjrIk9X7D",
-      "4nNagUWxZm",
-      "hwtvjancuO",
-      "KYfTo0IOZw",
-      "CFEmBDNAxC",
-      "UhnWAmQPQn",
-      "j77vAf9ZKA",
-      "XPmaRjITwf",
-      "B99QUaTbtE"
-    ]
-  },
-  {
-    "nestedKey" : "Chefs",
-    "type" : "profileList ImageOnly",
-    "title" : "PRODUCERS",
-    "requestType": "User",
-    "callbackTypes": "Review",
-    "queries": [
-      "13hsxOcVzT",
-      "JKJDIAMUxe",
-      "yFAVY4MPFG",
-      "yfjrIk9X7D",
-      "4nNagUWxZm",
-      "hwtvjancuO",
-      "KYfTo0IOZw",
-      "CFEmBDNAxC",
-      "UhnWAmQPQn",
-      "j77vAf9ZKA",
-      "XPmaRjITwf",
-      "B99QUaTbtE"
-    ]
-  },
-  {
-    "nestedKey" : "Map",
-    "type" : "contentOnly Map",
-    "useData": "Chefs"
-  }
-]
-
 export default (state = {
   isFetching: false,
   selectedSection: null,
@@ -105,10 +16,10 @@ export default (state = {
         isFetching: false,
         selectedSection: action.payload
       });
-    case '_FETCH_SECTIONS':
+    case '_INITIALIZE_PAGE':
       let newSections = Object.assign({}, state);
 
-      _.forEach(sections, (section) => {
+      _.forEach(action.payload, (section) => {
         newSections[section.nestedKey] = section;
 
         if(section.type.indexOf('contentOnly') < 0) {

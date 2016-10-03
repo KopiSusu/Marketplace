@@ -39,7 +39,7 @@ export default [
 	},
 	{
 		"nestedKey" : "Chefs",
-		"type" : "profileList Map ImageOnly Slideover",
+		"type" : "profileList Map",
 		"title" : "Featured Chefs",
 		"requestType": "User",
 		"callbackTypes": "Review",
@@ -63,3 +63,8 @@ export default [
 		"useData": "Chefs"
 	}
 ]
+
+
+
+
+
