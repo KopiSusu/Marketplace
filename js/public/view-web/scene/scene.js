@@ -8,7 +8,8 @@ import Search from './core/search/search'
 import Ribbon from './core/ribbon/ribbon'
 import Sections from './core/sections/sections'
 
-import Marketplace from "./sceneJson/marketplace.js"
+import Marketplace from './sceneJson/marketplace.js'
+import Producer from './sceneJson/producer.js'
 
 import './core/global.styl'
 
@@ -16,14 +17,40 @@ class Scene extends React.Component {
 
 	constructor(props) {
         super(props)
+        this._constructPageJSON = this._constructPageJSON.bind(this)
+    }
+
+    _constructPageJSON (pathname) {
+        let path = pathname
+        let pageParms;
+
+        if(path.indexOf('/') > -1) {
+    	    path = pathname.split('/')[1]
+            pageParms = pathname.split('/')[2]
+        }
+
+    	switch (path) {
+			case '':
+				this.props.initializePage(Marketplace, '_INITIALIZE_PAGE')
+                break;
+			case 'p':
+				let producerJSON = Producer
+
+				producerJSON[1].queries.push(pageParms)
+				producerJSON[2].queries.push(pageParms)
+
+				this.props.initializePage(producerJSON, '_INITIALIZE_PAGE')
+                break;
+		}
     }
 
     componentWillMount() {
-       	switch (this.props.location.pathname) {
-			case '/':
-				this.props.initializePage(Marketplace, '_INITIALIZE_PAGE')
-				return Marketplace
-		}
+        this._constructPageJSON(this.props.location.pathname)
+   	}
+
+    componentWillReceiveProps (nextProps) {
+    	if (nextProps.location.pathname !== this.props.location.pathname)
+    		this._constructPageJSON(nextProps.location.pathname)
     }
 
   	render() {

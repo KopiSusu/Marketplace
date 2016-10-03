@@ -1,11 +1,11 @@
 var webpack = require('webpack');
 
 module.exports = {
- entry: [
-   './js/public/view-web/root.js'
- ],
- module: {
-   loaders: [
+  entry: [
+    './js/public/view-web/root.js'
+  ],
+  module: {
+    loaders: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -28,19 +28,19 @@ module.exports = {
         loader: 'style!css!stylus-loader' 
       }
     ]
- },
- resolve: {
-   extensions: ['', '.js', '.jsx', '.json']
- },
- output: {
-   path: __dirname + '/dist',
-   publicPath: '/',
-   filename: 'bundle.js'
- },
-   devServer: {
-    contentBase: './dist',
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.json']
+  },
+  output: {
+    path: __dirname + '/dist',
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  devServer: {
+    contentBase: __dirname + '/dist',
     historyApiFallback: true,
     hot: true
   },
- plugins: []
+  plugins: []
 };

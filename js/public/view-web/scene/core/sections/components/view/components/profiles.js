@@ -2,6 +2,7 @@
 import React from 'react'
 import _ from 'lodash'
 import GoogleMap from 'google-map-react'
+import { browserHistory } from 'react-router'
 
 import Icon from './../../../../../common/icon'
 import Marker from './marker'
@@ -36,7 +37,7 @@ class Profiles extends React.Component {
         switch (this.props.type) {
             case 'profileList':
                 return (
-                    <li className={`profiles cards column-${column}`}>
+                    <li className={`profiles cards column-${column}`} >
                         <div className='profile card'>
                             <div className={`details column-3 rows-1`}> 
                                 <div className='image rows-2' style={{backgroundImage: `url(${this.props.imageURL})`}}>
@@ -84,7 +85,7 @@ class Profiles extends React.Component {
             case 'mixed':
             case 'profileList ImageOnly':
                 return (
-                    <li className={`profiles cards column-${column}`}>
+                    <li className={`profiles cards column-${column}`} onClick={() => { browserHistory.push(`/p/${this.props.objectId}`) }}>
                         <div className='profile card'>
                             <div className={`details column-1 rows-1`}> 
                                 <div className='image rows-2' style={{backgroundImage: `url(${this.props.imageURL})`}}>

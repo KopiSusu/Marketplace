@@ -32,9 +32,15 @@ ReactDOM.render(
     { /* Tell the Router to use our enhanced history */ }
     <Router history={history}>
       <Route path="/" component={Scene}>
-        <Route path="home"/>
+        <IndexRoute component={Scene}/>
+
+        <Route path="/p" component={Scene}>
+          <Route path=":productID" component={Scene}>
+          </Route>
+        </Route>
+
+        <Route path="styleguide" component={Styleguide}/>
       </Route>
-      <Route path="/styleguide" component={Styleguide}/>
     </Router>
   </Provider>,
   document.getElementById('App')

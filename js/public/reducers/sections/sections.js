@@ -3,12 +3,14 @@
 import * as  Actions from './../../actions'
 import _ from 'lodash'
 
-export default (state = {
+const initalState = { 
   isFetching: false,
   selectedSection: null,
   sectionIndex: [],
   listIndex: []
-}, action) => {
+}
+
+export default (state = Object.assign({}, initalState), action) => {
 
   switch (action.type) {
     case 'SELECT_SECTION':
@@ -17,8 +19,11 @@ export default (state = {
         selectedSection: action.payload
       });
     case '_INITIALIZE_PAGE':
-      let newSections = Object.assign({}, state);
-
+      let newSections =  Object.assign({}, initalState)
+      
+      initalState.sectionIndex = []
+      initalState.listIndex = []
+      
       _.forEach(action.payload, (section) => {
         newSections[section.nestedKey] = section;
 

@@ -9,10 +9,10 @@ module.exports = {
     const publicPath = express.static(path.join(__dirname, '../dist'));
 
     app.use('../dist', publicPath);
-    
-    app.get('/*', function (_, res) { 
-    	res.sendFile(indexPath) 
-    });
+
+    app.all('*', function(req, res) {
+      res.sendFile(path.join(__dirname, indexPath));
+    })
 
     return app
   }
