@@ -45,7 +45,7 @@ const sections = [
     ]
   },
   {
-    "nestedKey" : "Meals",
+    "nestedKey" : "Products",
     "type" : "cardList",
     "title" : "MENU",
     "requestType": "User Meal",
@@ -65,7 +65,7 @@ const sections = [
     ]
   },
   {
-    "nestedKey" : "Chefs",
+    "nestedKey" : "Producers",
     "type" : "profileList ImageOnly",
     "title" : "PRODUCERS",
     "requestType": "User",

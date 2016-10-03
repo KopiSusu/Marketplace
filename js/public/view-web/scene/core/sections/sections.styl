@@ -44,7 +44,9 @@ hidden(shift, height)
 		.blob
 			text-align center
 		ul
-			padding 0 (buffer * 6)
+			max-width 1200px
+			margin 0 auto
+			display block
 			.cards
 				padding buffer*2
 				.card
@@ -83,14 +85,16 @@ hidden(shift, height)
 									transition()
 									fill primaryColor
 					.price
-						margin buffer 0
+						margin buffer 0 (buffer/1.5) 0
 						text-align right
 						font-weight 600
 						font-size 16px
+						line-height 18px
 					.name
-						margin buffer 0
+						margin buffer 0 (buffer/1.5) 0
 						font-size 16px
-						font-weight 600
+						font-weight 400
+						line-height 18px
 					.profileImage
 						display inline-block
 						border-radius 100%
@@ -139,10 +143,11 @@ hidden(shift, height)
 						opacity 0.5
 				h2
 					display inline-block
-					padding-bottom buffer
+					padding-bottom (buffer/2)
 					margin 0 buffer*2
 					cursor pointer
 					border-bottom 1px solid bgColor
+					font-weight 400
 					transition()
 					&:hover
 						opacity 1
