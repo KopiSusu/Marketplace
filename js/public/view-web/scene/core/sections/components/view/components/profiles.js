@@ -56,7 +56,7 @@ class Profiles extends React.Component {
                             </div>
                             
                             <div className='bio'>
-                                <p className='bioText'>{this.props.bio}</p>
+                                <pre className='bioText'>{this.props.bio}</pre>
                             </div>
                         </div>
                     </li>

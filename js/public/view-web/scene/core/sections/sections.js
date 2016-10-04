@@ -22,7 +22,9 @@ class Sections extends React.Component {
                         let content = this.props[`content-${section}`]
 
                         if (this.props[section]['useData']) {
-                            if ( this.props[section].type.indexOf('mixed') > -1 ) {
+                            if (this.props[section].hardData) {
+                                content = this.props[section].hardData
+                            } else if ( this.props[section].type.indexOf('mixed') > -1 ) {
                                 content = _.concat(content, this.props[`content-${this.props[section]['useData']}`])
                             } else {
                                 content = this.props[`content-${this.props[section]['useData']}`]
@@ -36,13 +38,13 @@ class Sections extends React.Component {
                         ) {
                             return (
                                 <Section 
-                                key={index} s
-                                selectedSection={this.props.selectedSection} 
-                                {...this.props[section]} 
-                                listIndex={this.props.listIndex} 
-                                content={content} 
-                                selectItem={this.props.selectItem} 
-                                fetchData={this.props.fetchData}
+                                    key={index}
+                                    selectedSection={this.props.selectedSection} 
+                                    {...this.props[section]} 
+                                    listIndex={this.props.listIndex} 
+                                    content={content} 
+                                    selectItem={this.props.selectItem} 
+                                    fetchData={this.props.fetchData}
                                 />)
                         }
                     })
