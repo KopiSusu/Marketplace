@@ -14,7 +14,7 @@ class Cards extends React.Component {
 
     render () {
         const column = this.props.content.length > 3 ? 3 : this.props.content.length
-
+        
         return (
             <li className={`cards column-${column}`}>
                 <div className='card' onClick={() => this.clickHandler()}>
@@ -25,10 +25,13 @@ class Cards extends React.Component {
                         <p className='column-6-5 name'>{this.props.name}</p>
                         <p className='column-6-1 price'>${this.props.price}</p>
                     </div>
-                    <div className='cook'>
-                        <div className="profileImage" style={{backgroundImage: `url(${this.props.cook.imageURL})`}} ></div>
-                        <p className="cookName">{this.props.cook.displayName}</p>
-                    </div>
+                    {
+                        this.props.page === 'Profile' ? null :
+                        <div className='cook'>
+                            <div className="profileImage" style={{backgroundImage: `url(${this.props.cook.imageURL})`}} ></div>
+                            <p className="cookName">{this.props.cook.displayName}</p>
+                        </div>
+                    }
                 </div>
             </li>
         )
