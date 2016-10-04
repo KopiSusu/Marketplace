@@ -180,35 +180,35 @@ class Temp extends React.Component {
                     </div>
                     <ul>
                         <li className="cards content column-3">
-                            <div className="videoCard">
+                            <div className="videoCard card">
                                 <Video className='video rows-6-5' controls loop muted poster="https://images.unsplash.com/photo-1471017204627-b28469ba98cc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1026&q=80&cs=tinysrgb" >
                                     <source src="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov" type="video/webm" />
                                 </Video>
-                                <div className="namePrice">
+                                <div className='details rows-2'>
                                     <p className='column-1 name'>Izzys Bizzy Biscuits</p>
-                                    <p className='column-1 price'>Izzy gets bizzy in this hella dope interview about his biscuits to die for</p>
+                                    <p className="description">Izzy gets bizzy in this hella dope interview about his biscuits to die for</p>
                                 </div>
                             </div>
                         </li>
                         <li className="cards content column-3">
-                            <div className="videoCard">
+                            <div className="videoCard card">
                                 <Video className='video rows-6-5' controls loop muted poster="https://images.unsplash.com/photo-1471017204627-b28469ba98cc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1026&q=80&cs=tinysrgb" >
                                     <source src="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov" type="video/webm" />
                                 </Video>
-                                <div className="namePrice">
+                                <div className='details rows-2'>
                                     <p className='column-1 name'>Izzys Bizzy Biscuits</p>
-                                    <p className='column-1 price'>Izzy gets bizzy in this hella dope interview about his biscuits to die for</p>
+                                    <p className="description">Izzy gets bizzy in this hella dope interview about his biscuits to die for</p>
                                 </div>
                             </div>
                         </li>
                         <li className="cards content column-3">
-                            <div className="videoCard">
+                            <div className="videoCard card">
                                 <Video className='video rows-6-5' controls loop muted poster="https://images.unsplash.com/photo-1471017204627-b28469ba98cc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1026&q=80&cs=tinysrgb" >
                                     <source src="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov" type="video/webm" />
                                 </Video>
-                                <div className="namePrice">
+                                <div className='details rows-2'>
                                     <p className='column-1 name'>Izzys Bizzy Biscuits</p>
-                                    <p className='column-1 price'>Izzy gets bizzy in this hella dope interview about his biscuits to die for</p>
+                                    <p className="description">Izzy gets bizzy in this hella dope interview about his biscuits to die for</p>
                                 </div>
                             </div>
                         </li>
