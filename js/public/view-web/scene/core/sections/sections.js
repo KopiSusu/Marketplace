@@ -31,6 +31,9 @@ class Sections extends React.Component {
                             }
                         }
 
+                        if (this.props[section].type.indexOf('capture email') > -1)
+                            content = this.props.emailCaptured
+
                         if (
                             this.props[section].noNavigation ||
                             this.props.selectedSection === section ||
@@ -67,6 +70,8 @@ const mapStateToProp = (state) => {
         newState[section] = state.sections[section]
         if(state.sections[section].type.indexOf('contentOnly') < 0)
             newState[`content-${section}`] = state.sections[`content-${section}`]
+        if(state.sections[section].type.indexOf('capture email') > -1)
+            newState['emailCaptured'] = state.sections.emailCaptured
     })
     
     return newState

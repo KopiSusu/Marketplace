@@ -19,6 +19,11 @@ const JSONlist = {
 export default (state = Object.assign({}, initalState), action) => {
 
     switch (action.type) {
+        case '_CAPTURE_EMAIL':
+            return Object.assign({}, state, {
+                isFetching: false,
+                emailCaptured: true
+            }); 
         case 'SELECT_SECTION':
             return Object.assign({}, state, {
                 isFetching: false,
@@ -48,7 +53,12 @@ const _constructPageJSON = (pageJSON, parms) => {
         if(section.type.indexOf('contentOnly') < 0) {
             json[`content-${section.nestedKey}`] = []
             json['listIndex'].push(section.nestedKey)
-            json['selectedSection'] = section.nestedKey
+
+            if(section.nestedKey === "featured")
+                json['selectedSection'] = section.nestedKey
+
+            if(section.type.indexOf('capture email') > -1)
+                json['emailCaptured'] = false
 
             if(parms)
                 json[section.nestedKey].queries = [parms]

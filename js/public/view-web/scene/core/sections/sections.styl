@@ -163,6 +163,8 @@ hidden(shift, height)
 					margin 0
 					height 33px
 					line-height 33px
+				&.captured
+					text-align center
 			input
 				height 100%
 			.button
@@ -174,6 +176,12 @@ hidden(shift, height)
 					border 0
 					height 100%
 					width 100%
+			@media only screen and (max-width: 600px)
+				height auto
+				padding buffer
+				input
+					margin-bottom buffer
+			
 
 		.navigation
 			text-align center

@@ -40,11 +40,11 @@ export default [
   },
   {
     "nestedKey" : "email",
-    "type" : "contentOnly capture sections"
+    "type" : "contentOnly capture email"
   },
   {
     "nestedKey" : "navigation",
-    "type" : "contentOnly navigation sections"
+    "type" : "contentOnly navigation"
   },
   {
     "nestedKey" : "featured",
