@@ -152,13 +152,16 @@ hidden(shift, height)
 							top buffer*2
 		.capture
 			margin 0 0 (buffer * 3)
-			padding buffer (buffer * 8)
-			height 90px
+			padding buffer*2
+			height 100px
+			background bgColorDark
+			margin buffer*4 buffer*2
 			.text
 				h1
 					margin 0
 					height 33px
 					line-height 33px
+					text-align left
 				p
 					margin 0
 					height 33px
@@ -178,7 +181,7 @@ hidden(shift, height)
 		.navigation
 			text-align center
 			text-transform uppercase
-			padding-bottom (buffer * 4)
+			padding (buffer * 4) 0
 			.wrapper
 				display inline-block
 				transition()
@@ -321,5 +324,7 @@ hidden(shift, height)
 	max-width maxPageWidth
 	margin 0 auto
 	
-	h1
+	.featureHeader
 		text-align center
+		font-size 22px
+		text-transform uppercase

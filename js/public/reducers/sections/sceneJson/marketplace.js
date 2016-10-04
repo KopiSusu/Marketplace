@@ -24,25 +24,6 @@ const featuredData = [
 
 export default [
   {
-    "nestedKey" : "topText",
-    "type" : "contentOnly",
-    "text" : "A curated marketplace of the absolute best small batch foods",
-    "style": {
-      "fontSize": "22px",
-      "lineHeight": "1.5"
-    },
-    "contentStyle": {
-      "color": "#fff",
-      "backgroundColor": "#FFC13C",
-      "paddingLeft": "3px",
-      "paddingRight": "3px"
-    }
-  },
-  {
-    "nestedKey" : "email",
-    "type" : "contentOnly capture sections"
-  },
-  {
     "nestedKey" : "navigation",
     "type" : "contentOnly navigation sections"
   },

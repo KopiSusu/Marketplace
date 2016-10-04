@@ -48,7 +48,9 @@ const _constructPageJSON = (pageJSON, parms) => {
         if(section.type.indexOf('contentOnly') < 0) {
             json[`content-${section.nestedKey}`] = []
             json['listIndex'].push(section.nestedKey)
-            json['selectedSection'] = section.nestedKey
+
+            if(section.nestedKey === "featured")
+                json['selectedSection'] = section.nestedKey
 
             if(parms)
                 json[section.nestedKey].queries = [parms]

@@ -31,7 +31,7 @@ class Temp extends React.Component {
 
                 <section className='section column-1 featured'>
 
-                    <h1>Staff picks</h1>
+                    <h1 className="featuredHeader">Staff picks</h1>
 
                     <ul>
                         <li className="cards column-3">
@@ -67,6 +67,17 @@ class Temp extends React.Component {
                             </div>
                         </li>
                     </ul>
+
+                     <section className='capture'>
+                        <div className='text rows-1 column-6-2'>
+                            <h1>Get the newsletter</h1>
+                            <p>Sign up and never miss an exciting meal!</p>
+                        </div>
+                        <input ref='emailCapture' className='rows-1 column-6-3'/>
+                        <div className='button rows-1 column-6-1'>
+                            <button onClick={() => { this._clickHandler() }}>SUBMIT</button>
+                        </div>
+                    </section>
 
                     <Video className='video rows-6-5' controls loop muted >
                         <source src={"http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"} type="video/webm" />
