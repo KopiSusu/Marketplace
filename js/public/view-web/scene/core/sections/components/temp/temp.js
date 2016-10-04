@@ -34,18 +34,38 @@ class Temp extends React.Component {
             <div>
                 <section className="section featuredHero">
                     <div className="hero">
-                        <h1 className="heroTitle">Never stop munching.</h1>
+                        <h1 className="heroTitle">YUM.</h1>
                         <p className="heroText">
-                            Homemade is a community of foodies and food producers telling their stories and sharing their products.
+                            Homemade tells the stories of Brooklyn’s independent food producers and sells their products alongside, inviting you to help forge the new path in food from wherever you are.
                         </p>
                     </div>
                 </section>
 
                 <section className='section column-1 featured'>
 
+                    <section className='capture'>
+                        {
+                            this.state.emailCapture ?
+                            <div className='text captured rows-1 column-1'>
+                                <h1>You are signed up for updates!</h1>
+                                <p>We will keep you on track for some tasty food!</p>
+                            </div> : <span>
+                                <div className='text rows-1 column-10-4'>
+                                    <h1>Get the newsletter</h1>
+                                    <p>Sign up and never miss an exciting meal!</p>
+                                </div>
+                                <input ref='emailCapture' className='rows-1 column-10-4'/>
+                                <div className='button rows-1 column-10-2'>
+                                    <button onClick={() => { this._clickHandler() }}>SUBMIT</button>
+                                </div>
+                            </span>
+                        }
+                    </section>
+
                     <div className="header">
-                        <h1 className="featuredHeader">Staff picks</h1>
+                        <h1 className="featuredHeader">SHAKING & BAKING</h1>
                         <div className="line"></div>
+                        <p className="featuredText">These are the people making waves right now.</p>
                     </div>
 
                     <ul className="content">
@@ -99,28 +119,10 @@ class Temp extends React.Component {
                         </li>
                     </ul>
 
-                    <section className='capture'>
-                        {
-                            this.state.emailCapture ?
-                            <div className='text captured rows-1 column-1'>
-                                <h1>You are signed up for updates!</h1>
-                                <p>We will keep you on track for some tasty food!</p>
-                            </div> : <span>
-                                <div className='text rows-1 column-6-2'>
-                                    <h1>Get the newsletter</h1>
-                                    <p>Sign up and never miss an exciting meal!</p>
-                                </div>
-                                <input ref='emailCapture' className='rows-1 column-6-3'/>
-                                <div className='button rows-1 column-6-1'>
-                                    <button onClick={() => { this._clickHandler() }}>SUBMIT</button>
-                                </div>
-                            </span>
-                        }
-                    </section>
-
                     <div className="header">
-                        <h1 className="featuredHeader">Bestsellers</h1>
+                        <h1 className="featuredHeader">TASTE</h1>
                         <div className="line"></div>
+                        <p className="featuredText">See what’s on tap in our shop.</p>
                     </div>
 
                     <ul className="content">
@@ -186,7 +188,7 @@ class Temp extends React.Component {
                                 </Video>
                                 <div className='details rows-2'>
                                     <p className='column-1 name'>Izzys Bizzy Biscuits</p>
-                                    <p className="description">Izzy gets bizzy in this hella dope interview about his biscuits to die for</p>
+                                    <p className="description">Izzy gets bizzy in this dope interview about his biscuits to die for</p>
                                 </div>
                             </div>
                         </li>
@@ -197,7 +199,7 @@ class Temp extends React.Component {
                                 </Video>
                                 <div className='details rows-2'>
                                     <p className='column-1 name'>Izzys Bizzy Biscuits</p>
-                                    <p className="description">Izzy gets bizzy in this hella dope interview about his biscuits to die for</p>
+                                    <p className="description">Izzy gets bizzy in this dope interview about his biscuits to die for</p>
                                 </div>
                             </div>
                         </li>
@@ -208,7 +210,7 @@ class Temp extends React.Component {
                                 </Video>
                                 <div className='details rows-2'>
                                     <p className='column-1 name'>Izzys Bizzy Biscuits</p>
-                                    <p className="description">Izzy gets bizzy in this hella dope interview about his biscuits to die for</p>
+                                    <p className="description">Izzy gets bizzy in this dope interview about his biscuits to die for</p>
                                 </div>
                             </div>
                         </li>
