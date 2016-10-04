@@ -22,6 +22,12 @@ const mapOptions = {
 class Section extends React.Component {
     constructor(props) {
         super(props)
+        this._clickHandler = this._clickHandler.bind(this)
+    }
+
+    _clickHandler () {
+        debugger
+        this.props.postData('emailCapture', this.refs.emailCapture.value, '_EMAIL_CAPTURED')
     }
 
   	render() {
@@ -54,6 +60,19 @@ class Section extends React.Component {
                 )
             case 'contentOnly':
                 return <Blob {...this.props}/>
+            case 'contentOnly capture sections':
+                return (
+                    <section className='capture'>
+                        <div className='text rows-1 column-6-2'>
+                            <h1>Get the newsletter</h1>
+                            <p>Sign up and never miss an exciting meal!</p>
+                        </div>
+                        <input ref='emailCapture' className='rows-1 column-6-3'/>
+                        <div className='button rows-1 column-6-1'>
+                            <button onClick={() => { this._clickHandler() }}>SUBMIT</button>
+                        </div>
+                    </section>
+                )
             case 'contentOnly navigation sections':
                 return (
                     <section className='navigation'>
