@@ -11,6 +11,7 @@ import Input from './components/input'
 import './search.styl'
 
 class Ribbon extends React.Component {
+
     render() {
         return (
         	<section className={'search ' + ( this.props.active ? 'open' : 'closed') }>

@@ -120,7 +120,7 @@ class Section extends React.Component {
                         {
                             _.map(this.props.content, (card, index) => {
                                 const cardJSON = card.toJSON()
-
+                                
                                 return <Cards key={index} {...this.props} {...cardJSON}/>
                             })
                         }
