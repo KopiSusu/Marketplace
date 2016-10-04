@@ -23,8 +23,9 @@ class Section extends React.Component {
 
 
   	render() {
+        const className = this.props.class || ''
     	return (
-            <section className={'section column-1 ' + ( this.props.type !== 'contentOnly' ? 'noPadding' : '')}>
+            <section className={`section column-1 ${this.props.type !== 'contentOnly' ? 'noPadding' : ''} ${className}`}>
 
                 <View {...this.props}/>
             </section>

@@ -13,9 +13,10 @@ class Sections extends React.Component {
         super(props)
     }
 
-  	render() {        
+  	render() {    
+        const pageClass = this.props.location.pathname.indexOf('/p/') > -1 ? 'Profile' : 'Marketplace'    
     	return (
-    		<section className='sections column-1'>
+    		<section className={`sections column-1 ${pageClass}`}>
                 {
                     _.map(this.props.sectionIndex, (section, index) => {
                         let content = this.props[`content-${section}`]
@@ -41,8 +42,8 @@ class Sections extends React.Component {
                                 listIndex={this.props.listIndex} 
                                 content={content} 
                                 selectItem={this.props.selectItem} 
-                                fetchData={this.props.fetchData}/
-                            >)
+                                fetchData={this.props.fetchData}
+                                />)
                         }
                     })
                 }
@@ -54,6 +55,7 @@ class Sections extends React.Component {
 const mapStateToProp = (state) => {
     let newState = {}
 
+    newState.location = state.routing.locationBeforeTransitions
     newState.sectionIndex = state.sections.sectionIndex
     newState.listIndex = state.sections.listIndex
     newState.selectedSection = state.sections.selectedSection

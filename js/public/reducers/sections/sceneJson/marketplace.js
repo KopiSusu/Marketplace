@@ -21,7 +21,8 @@ export default [
   {
     "nestedKey" : "featured",
     "type" : "mixed",
-    "title" : "FEATURED",
+    "class" : "featured",
+    "title" : "Featured",
     "requestType": "User Meal",
     "useData": "producers",
     "queries": [
@@ -42,7 +43,8 @@ export default [
   {
     "nestedKey" : "products",
     "type" : "cardList",
-    "title" : "MENU",
+    "class" : "menu",
+    "title" : "Menu",
     "search": true,
     "requestType": "User Meal",
     "queries": [
@@ -63,7 +65,8 @@ export default [
   {
     "nestedKey" : "producers",
     "type" : "profileList ImageOnly",
-    "title" : "PRODUCERS",
+    "class" : "producers",
+    "title" : "Producers",
     "search": true,
     "requestType": "User",
     "queries": [
@@ -90,5 +93,15 @@ export default [
 
 
 
-
+// const featuredData = [
+//   {
+//     "type" : "cardList video",
+//     "title" : "First Video Content",
+//     "search": true,
+//     "requestType": "User",
+//     "nestedKey" : "Hero",
+//     "type" : "contentOnly Hero Video",
+//     "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+//   }
+// ]
 

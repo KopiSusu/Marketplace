@@ -7,7 +7,8 @@ export default [
   {
     "nestedKey" : "producers",
     "type" : "profileList",
-    "title" : "PRODUCERS",
+    "title" : "Profile",
+    "class" : "singleProfile",
     "requestType": "User",
     "noNavigation": true,
     "queries": [
@@ -17,7 +18,8 @@ export default [
   {
     "nestedKey" : "products",
     "type" : "cardList",
-    "title" : "MENU",
+    "title" : "menu",
+    "class" : "menu",
     "search": true,
     "requestType": "User Meal",
     "noNavigation": true,
