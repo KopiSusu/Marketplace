@@ -26,7 +26,7 @@ hidden(shift, height)
 			font-weight 500
 			height 50px
 			line-height 50px
-			letter-spacing 5px
+			letter-spacing 3px
 			background bgColor
 			padding 0 (buffer * 5)
 		.line
@@ -181,7 +181,8 @@ hidden(shift, height)
 		.navigation
 			text-align center
 			text-transform uppercase
-			padding (buffer * 4) 0
+			letter-spacing 3px
+			padding (buffer * 3) 0
 			.wrapper
 				display inline-block
 				transition()
@@ -191,10 +192,11 @@ hidden(shift, height)
 				h2
 					display inline-block
 					padding-bottom (buffer/2)
-					margin 0 buffer*2
+					margin 0 buffer*3
 					cursor pointer
 					border-bottom 1px solid bgColor
 					font-weight 400
+					font-size 20px
 					transition()
 					&:hover
 						opacity 1
@@ -324,7 +326,38 @@ hidden(shift, height)
 	max-width maxPageWidth
 	margin 0 auto
 	
-	.featureHeader
-		text-align center
-		font-size 22px
-		text-transform uppercase
+	.header
+		position relative
+		margin buffer auto
+		width 100%
+		padding 0 buffer*3
+		.featuredHeader
+			text-align center
+			font-size 22px
+			text-transform uppercase
+			background bgColor
+		.line
+			height 1px
+			background strokeColor
+			position absolute
+			top 38px
+			left buffer*3
+			right buffer*3
+			border none
+			width auto
+			
+	.content
+		margin-bottom buffer*4
+	
+	.video
+		display block
+		margin buffer*6 buffer*3
+		.video__el
+			width 100%
+
+
+
+
+
+
+

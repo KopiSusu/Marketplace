@@ -31,9 +31,28 @@ class Temp extends React.Component {
 
                 <section className='section column-1 featured'>
 
-                    <h1 className="featuredHeader">Staff picks</h1>
+                    <div className="header">
+                        <h1 className="featuredHeader">Staff picks</h1>
+                        <div className="line"></div>
+                    </div>
 
-                    <ul>
+                    <ul className="content">
+                        <li className="cards column-3">
+                            <div className='card'>
+                                <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/0neH9RMVHs")`}} > 
+                                </div>
+                                <div className="namePrice">
+                                    <p className='column-6-5 name'>15 Brown Butter Hazelnut - SPECIAL - For Local Youth Charity VARIETY</p>
+                                    <p className='column-6-1 price'>$22</p>
+                                </div>
+                                {
+                                    <div className='cook'>
+                                        <div className="profileImage" style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/TGOJfh4bid")`}} ></div>
+                                        <p className="cookName">Gooey and Co</p>
+                                    </div>
+                                }
+                            </div>
+                        </li>
                         <li className="cards column-3">
                             <div className='card'>
                                 <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/0neH9RMVHs")`}} > 
@@ -79,9 +98,59 @@ class Temp extends React.Component {
                         </div>
                     </section>
 
-                    <Video className='video rows-6-5' controls loop muted >
+                    <div className="header">
+                        <h1 className="featuredHeader">Bestsellers</h1>
+                        <div className="line"></div>
+                    </div>
+
+                    <ul className="content">
+                        <li className="cards column-3">
+                            <div className='card'>
+                                <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/0neH9RMVHs")`}} > 
+                                </div>
+                                <div className="namePrice">
+                                    <p className='column-6-5 name'>15 Brown Butter Hazelnut - SPECIAL - For Local Youth Charity VARIETY</p>
+                                    <p className='column-6-1 price'>$22</p>
+                                </div>
+                                {
+                                    <div className='cook'>
+                                        <div className="profileImage" style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/TGOJfh4bid")`}} ></div>
+                                        <p className="cookName">Gooey and Co</p>
+                                    </div>
+                                }
+                            </div>
+                        </li>
+                        <li className="cards column-3">
+                            <div className='card'>
+                                <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/0neH9RMVHs")`}} > 
+                                </div>
+                                <div className="namePrice">
+                                    <p className='column-6-5 name'>15 Brown Butter Hazelnut - SPECIAL - For Local Youth Charity VARIETY</p>
+                                    <p className='column-6-1 price'>$22</p>
+                                </div>
+                                {
+                                    <div className='cook'>
+                                        <div className="profileImage" style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/TGOJfh4bid")`}} ></div>
+                                        <p className="cookName">Gooey and Co</p>
+                                    </div>
+                                }
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div className="header">
+                        <h1 className="featuredHeader">Video of the Week</h1>
+                        <div className="line"></div>
+                    </div>
+
+                    <Video className='video' controls loop muted >
                         <source src={"http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"} type="video/webm" />
                     </Video>
+
+                    <div className="header">
+                        <h1 className="featuredHeader">Where the Magic Happens</h1>
+                        <div className="line"></div>
+                    </div>
 
                 </section>
             </div>
