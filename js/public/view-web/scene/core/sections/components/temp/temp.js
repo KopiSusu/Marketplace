@@ -13,6 +13,18 @@ import './temp.css'
 class Temp extends React.Component {
     constructor(props) {
         super(props)
+
+        this._clickHandler
+        this.state = {
+            emailCapture: false
+        }
+    }
+
+    _clickHandler () {
+        this.setState({
+            emailCapture: true
+        })
+        this.props.postData('emailCapture', this.refs.emailCapture.value, '_CAPTURE_EMAIL')
     }
 
   	render() {
@@ -68,15 +80,23 @@ class Temp extends React.Component {
                         </li>
                     </ul>
 
-                     <section className='capture'>
-                        <div className='text rows-1 column-6-2'>
-                            <h1>Get the newsletter</h1>
-                            <p>Sign up and never miss an exciting meal!</p>
-                        </div>
-                        <input ref='emailCapture' className='rows-1 column-6-3'/>
-                        <div className='button rows-1 column-6-1'>
-                            <button onClick={() => { this._clickHandler() }}>SUBMIT</button>
-                        </div>
+                    <section className='capture'>
+                        {
+                            this.state.emailCapture ?
+                            <div className='text captured rows-1 column-1'>
+                                <h1>You are signed up for updates!</h1>
+                                <p>We will keep you on track for some tasty food!</p>
+                            </div> : <span>
+                                <div className='text rows-1 column-6-2'>
+                                    <h1>Get the newsletter</h1>
+                                    <p>Sign up and never miss an exciting meal!</p>
+                                </div>
+                                <input ref='emailCapture' className='rows-1 column-6-3'/>
+                                <div className='button rows-1 column-6-1'>
+                                    <button onClick={() => { this._clickHandler() }}>SUBMIT</button>
+                                </div>
+                            </span>
+                        }
                     </section>
 
                     <Video className='video rows-6-5' controls loop muted >

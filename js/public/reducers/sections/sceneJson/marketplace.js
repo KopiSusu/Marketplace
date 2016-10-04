@@ -38,10 +38,10 @@ export default [
       "paddingRight": "3px"
     }
   },
-  {
-    "nestedKey" : "email",
-    "type" : "contentOnly capture email"
-  },
+  // {
+  //   "nestedKey" : "email",
+  //   "type" : "contentOnly capture email"
+  // },
   {
     "nestedKey" : "navigation",
     "type" : "contentOnly navigation"

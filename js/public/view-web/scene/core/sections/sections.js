@@ -14,7 +14,8 @@ class Sections extends React.Component {
     }
 
   	render() {    
-        const pageClass = this.props.location.pathname.indexOf('/p/') > -1 ? 'Profile' : 'Marketplace'    
+        const pageClass = this.props.location.pathname.indexOf('/p/') > -1 ? 'Profile' : 'Marketplace'
+            
     	return (
     		<section className={`sections column-1 ${pageClass}`}>
                 {
