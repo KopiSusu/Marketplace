@@ -164,7 +164,7 @@ class Temp extends React.Component {
                     </div>
 
                     <Video className='video' controls loop muted >
-                        <source src={"http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"} type="video/webm" />
+                        <source src={"http://youtu.be/-hGm9Y_XGso?list=RDSH-o7edhqss"} type="video/webm" />
                     </Video>
 
                     <div className="header">
