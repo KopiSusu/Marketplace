@@ -41,13 +41,14 @@ class Ribbon extends React.Component {
     }
 }
 
-const mapStateToProp = (state) => {      
+const mapStateToProp = (state) => {
+    const selectedSection = state.sections.selectedSection ? state.sections.selectedSection : 'products'      
     return {
-        config: [state.search.config[state.sections.selectedSection]],
+        config: [state.search.config[selectedSection]],
         active: state.search.active,
-        filter: state.sections.selectedSection,
+        filter: selectedSection,
         query: state.search.query,
-        items: state.sections[`content-${state.sections.selectedSection}`]
+        items: state.sections[`content-${selectedSection}`]
     }
 }
 

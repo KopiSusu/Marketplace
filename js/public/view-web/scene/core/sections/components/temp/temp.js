@@ -178,7 +178,6 @@ class Temp extends React.Component {
                         <h1 className="featuredHeader">Featured Videos</h1>
                         <div className="line"></div>
                     </div>
-
                     <ul>
                         <li className="cards content column-3">
                             <div className="videoCard card">
@@ -214,7 +213,6 @@ class Temp extends React.Component {
                             </div>
                         </li>
                     </ul>
-
                     <div className="header">
                         <h1 className="featuredHeader">Where the Magic Happens</h1>
                         <div className="line"></div>
