@@ -12,6 +12,8 @@ hidden(shift, height)
 	transition()
 
 .sections
+	// @media only screen and (max-width: 900px)
+	// padding 0 buffer*3
 	.header
 		position relative
 		text-align center
@@ -151,11 +153,10 @@ hidden(shift, height)
 							transition()
 							top buffer*2
 		.capture
-			margin 0 0 (buffer * 3)
+			margin 0 0 (buffer * 3) 0
 			padding buffer*2
 			height 100px
 			background bgColorDark
-			margin buffer*4 buffer*2
 			.text
 				h1
 					margin 0
@@ -340,11 +341,13 @@ hidden(shift, height)
 		margin buffer auto
 		width 100%
 		padding 0 buffer*3
+		height auto
 		.featuredHeader
 			text-align center
 			font-size 22px
 			text-transform uppercase
 			background bgColor
+			margin-bottom 0
 		.line
 			height 1px
 			background strokeColor
@@ -354,6 +357,9 @@ hidden(shift, height)
 			right buffer*3
 			border none
 			width auto
+		.featuredText
+			font-family secondaryFontFamily
+			font-size 17px
 			
 	.content
 		margin-bottom buffer*4
