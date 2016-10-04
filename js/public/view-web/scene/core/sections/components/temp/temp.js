@@ -156,6 +156,22 @@ class Temp extends React.Component {
                                 }
                             </div>
                         </li>
+                        <li className="cards column-3">
+                            <div className='card'>
+                                <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/0neH9RMVHs")`}} > 
+                                </div>
+                                <div className="namePrice">
+                                    <p className='column-6-5 name'>15 Brown Butter Hazelnut - SPECIAL - For Local Youth Charity VARIETY</p>
+                                    <p className='column-6-1 price'>$22</p>
+                                </div>
+                                {
+                                    <div className='cook'>
+                                        <div className="profileImage" style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/TGOJfh4bid")`}} ></div>
+                                        <p className="cookName">Gooey and Co</p>
+                                    </div>
+                                }
+                            </div>
+                        </li>
                     </ul>
 
                     <div className="header">
@@ -163,7 +179,7 @@ class Temp extends React.Component {
                         <div className="line"></div>
                     </div>
 
-                    <Video className='video' controls loop muted >
+                    <Video className='video' controls loop muted poster="https://images.unsplash.com/photo-1471017204627-b28469ba98cc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1026&q=80&cs=tinysrgb">
                         <source src={"http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"} type="video/webm" />
                     </Video>
 
