@@ -152,13 +152,16 @@ hidden(shift, height)
 							top buffer*2
 		.capture
 			margin 0 0 (buffer * 3)
-			padding buffer (buffer * 8)
-			height 90px
+			padding buffer*2
+			height 100px
+			background bgColorDark
+			margin buffer*4 buffer*2
 			.text
 				h1
 					margin 0
 					height 33px
 					line-height 33px
+					text-align left
 				p
 					margin 0
 					height 33px
@@ -186,7 +189,7 @@ hidden(shift, height)
 		.navigation
 			text-align center
 			text-transform uppercase
-			padding-bottom (buffer * 4)
+			padding (buffer * 4) 0
 			.wrapper
 				display inline-block
 				transition()
@@ -307,7 +310,7 @@ hidden(shift, height)
 // MOVE INTO featured.styl
 
 .section.featuredHero
-	background linear-gradient(180deg,rgba(0,0,0,.3), rgba(0,0,0,.3)), url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb')
+	background linear-gradient(180deg,rgba(0,0,0,.35), rgba(0,0,0,.35)), url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb')
 	background-repeat no-repeat
 	background-size cover
 	background-position center center
@@ -317,16 +320,19 @@ hidden(shift, height)
 		margin 0 auto
 		text-align center
 		color white
-		h1
+		.heroTitle
 			font-size 60px
 			margin-top 170px
-		p
-			font-size 24px
+		.heroText
+			font-size 28px
+			font-family secondaryFontFamily
 
 .section.featured
 	display block
 	max-width maxPageWidth
 	margin 0 auto
 	
-	h1
+	.featureHeader
 		text-align center
+		font-size 22px
+		text-transform uppercase
