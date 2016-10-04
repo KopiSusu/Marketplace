@@ -26,8 +26,7 @@ class Section extends React.Component {
     }
 
     _clickHandler () {
-        debugger
-        this.props.postData('emailCapture', this.refs.emailCapture.value, '_EMAIL_CAPTURED')
+        this.props.postData('emailCapture', this.refs.emailCapture.value, '_CAPTURE_EMAIL')
     }
 
   	render() {
@@ -60,20 +59,28 @@ class Section extends React.Component {
                 )
             case 'contentOnly':
                 return <Blob {...this.props}/>
-            case 'contentOnly capture sections':
+            case 'contentOnly capture email':
                 return (
                     <section className='capture'>
-                        <div className='text rows-1 column-6-2'>
-                            <h1>Get the newsletter</h1>
-                            <p>Sign up and never miss an exciting meal!</p>
-                        </div>
-                        <input ref='emailCapture' className='rows-1 column-6-3'/>
-                        <div className='button rows-1 column-6-1'>
-                            <button onClick={() => { this._clickHandler() }}>SUBMIT</button>
-                        </div>
+                        {
+                            this.props.content ?
+                            <div className='text captured rows-1 column-1'>
+                                <h1>You are signed up for updates!</h1>
+                                <p>We will keep you on track for some tasty food!</p>
+                            </div> : <span>
+                                <div className='text rows-1 column-6-2'>
+                                    <h1>Get the newsletter</h1>
+                                    <p>Sign up and never miss an exciting meal!</p>
+                                </div>
+                                <input ref='emailCapture' className='rows-1 column-6-3'/>
+                                <div className='button rows-1 column-6-1'>
+                                    <button onClick={() => { this._clickHandler() }}>SUBMIT</button>
+                                </div>
+                            </span>
+                        }
                     </section>
                 )
-            case 'contentOnly navigation sections':
+            case 'contentOnly navigation':
                 return (
                     <section className='navigation'>
                         <div className='wrapper'>
