@@ -44,6 +44,7 @@ class Sections extends React.Component {
                                     listIndex={this.props.listIndex} 
                                     content={content} 
                                     selectItem={this.props.selectItem} 
+                                    postData={this.props.postData}
                                     fetchData={this.props.fetchData}
                                 />)
                         }

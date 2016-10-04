@@ -45,16 +45,21 @@ export const initializePage = (pageJSON, returnType, parms) => {
 } 
 
 export const receiveData = (json, returnType, nestedKey) => {
-	let returnResponse = {
-		type: returnType,
-		payload: json,
-		receivedAt: Date.now()
-	}
-	if (nestedKey)
-		returnResponse.nestedKey = nestedKey
+  let returnResponse = {
+    type: returnType,
+    payload: json,
+    receivedAt: Date.now()
+  }
+  if (nestedKey)
+    returnResponse.nestedKey = nestedKey
 
-	return returnResponse
+  return returnResponse
 }
+
+////////////////////////////////////////////////
+////////////////// FETCH DATA //////////////////
+////////////////////////////////////////////////
+
 export function fetchData(requestType, idArray, returnType, nestedKey) {
   return function (dispatch) {
     let Query = _exportQueryConstruct(requestType, idArray)
@@ -67,13 +72,42 @@ export function fetchData(requestType, idArray, returnType, nestedKey) {
       })
   }
 }
-const _exportQueryConstruct = (requestType, idArray) => {
+////////////////////////////////////////////////
+////////////////// POST DATA //////////////////
+////////////////////////////////////////////////
+
+export function postData(requestType, postItem, returnType, nestedKey) {
+  return function (dispatch) {
+    let Query = _exportQueryConstruct(requestType, postItem)
+    return Query.save()
+      .then(response => { 
+        return response
+      })
+      .then(json => {
+        return dispatch(receiveData(json, returnType, nestedKey))
+      })
+  }
+}
+
+///////////////////////////////////////////////////////////
+////////////////// Construct Parse Queries //////////////////
+///////////////////////////////////////////////////////////
+
+const _exportQueryConstruct = (requestType, items) => {
   let Query
   let innerQuery
   switch(requestType) {
+    case 'emailCapture':
+      const EmailDrop = Parse.Object.extend("EmailDrop");
+      Query = new EmailDrop();
+
+      Query.set("email", items);
+      Query.set("source", "marketplace");
+      return Query
+
     case 'User':
       Query = new Parse.Query(Parse.User);
-      Query.containedIn("objectId", idArray);
+      Query.containedIn("objectId", items);
 
       return Query
     case 'User Meal':
@@ -84,7 +118,7 @@ const _exportQueryConstruct = (requestType, idArray) => {
       Query.ascending("name");
 
       innerQuery = new Parse.Query(Parse.User);
-      innerQuery.containedIn("objectId", idArray);
+      innerQuery.containedIn("objectId", items);
       Query.matchesQuery("cook", innerQuery);
       return Query
     default:
@@ -92,7 +126,8 @@ const _exportQueryConstruct = (requestType, idArray) => {
       Query.include('cook');
       Query.notEqualTo("deleted", true);
       Query.notEqualTo("hidden", true);
-      Query.containedIn("objectId", idArray);
+      Query.containedIn("objectId", items);
       return Query
   }
 }
+

@@ -39,6 +39,10 @@ export default [
     }
   },
   {
+    "nestedKey" : "email",
+    "type" : "contentOnly capture sections"
+  },
+  {
     "nestedKey" : "navigation",
     "type" : "contentOnly navigation sections"
   },
