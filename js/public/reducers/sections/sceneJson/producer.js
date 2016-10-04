@@ -1,24 +1,15 @@
-export default [
+export default [  
   {
-    "nestedKey" : "topText",
-    "type" : "contentOnly",
-    "text" : "A curated marketplace of the absolute best small batch foods",
-    "style": {
-      "fontSize": "22px",
-      "lineHeight": "1.5"
-    },
-    "contentStyle": {
-      "color": "#fff",
-      "backgroundColor": "#FFC13C",
-      "paddingLeft": "3px",
-      "paddingRight": "3px"
-    }
+    "nestedKey" : "hero",
+    "type" : "contentOnly Hero Image",
+    "useData": "producers"
   },
   {
     "nestedKey" : "producers",
-    "type" : "profileList ImageOnly",
+    "type" : "profileList",
     "title" : "PRODUCERS",
     "requestType": "User",
+    "noNavigation": true,
     "queries": [
     
     ]
@@ -29,6 +20,7 @@ export default [
     "title" : "MENU",
     "search": true,
     "requestType": "User Meal",
+    "noNavigation": true,
     "queries": [
 
     ]
@@ -36,7 +28,7 @@ export default [
   {
     "nestedKey" : "map",
     "type" : "contentOnly Map",
-    "useData": "Producers"
+    "useData": "producers"
   }
 ]
 

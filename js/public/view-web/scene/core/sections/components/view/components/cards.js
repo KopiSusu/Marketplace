@@ -34,10 +34,12 @@ class Cards extends React.Component {
                         <p className='column-6-5 name'>{this.props.name}</p>
                         <p className='column-6-1 price'>${this.props.price}</p>
                     </div>
-                    <div className='cook'>
-                        <div className="profileImage" style={{backgroundImage: `url(${this.props.cook.imageURL})`}} ></div>
-                        <p className="cookName">{this.props.cook.displayName}</p>
-                    </div>
+                    {
+                        <div className='cook'>
+                            <div className="profileImage" style={{backgroundImage: `url(${this.props.cook.imageURL})`}} ></div>
+                            <p className="cookName">{this.props.cook.displayName}</p>
+                        </div>
+                    }
                 </div>
             </li>
         )
