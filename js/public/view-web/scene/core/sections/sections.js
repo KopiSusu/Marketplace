@@ -29,10 +29,21 @@ class Sections extends React.Component {
                         }
 
                         if (
+                            this.props[section].noNavigation ||
                             this.props.selectedSection === section ||
                             this.props[section].type.indexOf('contentOnly') > -1
-                        )
-                            return (<Section key={index} selectedSection={this.props.selectedSection} {...this.props[section]} listIndex={this.props.listIndex} content={content} selectItem={this.props.selectItem} fetchData={this.props.fetchData}/>)
+                        ) {
+                            return (
+                                <Section 
+                                key={index} s
+                                selectedSection={this.props.selectedSection} 
+                                {...this.props[section]} 
+                                listIndex={this.props.listIndex} 
+                                content={content} 
+                                selectItem={this.props.selectItem} 
+                                fetchData={this.props.fetchData}/
+                            >)
+                        }
                     })
                 }
     		</section>

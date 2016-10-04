@@ -16,6 +16,12 @@ class Section extends React.Component {
             this.props.fetchData(this.props.requestType, this.props.queries, '_FETCH_SECTION', this.props.nestedKey)
     }
 
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.queries && nextProps.queries !== this.props.queries)
+            this.props.fetchData(nextProps.requestType, nextProps.queries, '_FETCH_SECTION', nextProps.nestedKey)
+    }
+
+
   	render() {
     	return (
             <section className={'section column-1 ' + ( this.props.type !== 'contentOnly' ? 'noPadding' : '')}>

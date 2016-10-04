@@ -26,7 +26,7 @@ class Profiles extends React.Component {
             this.props.type.indexOf('mixed') > -1
             ? 3 : 2 
         )
-        const column = this.props.content.length > totalColumnsAllowed ? totalColumnsAllowed : this.props.content.length
+        let column = this.props.content.length > totalColumnsAllowed ? totalColumnsAllowed : this.props.content.length
         const center = {lat: this.props.location.latitude, lng: this.props.location.longitude}
 
         const split = this.props.type.split(' ');
@@ -36,6 +36,8 @@ class Profiles extends React.Component {
 
         switch (this.props.type) {
             case 'profileList':
+                if (column === 1)
+                    column = '1 single'
                 return (
                     <li className={`profiles cards column-${column}`} >
                         <div className='profile card'>

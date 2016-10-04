@@ -25,7 +25,7 @@ export default (state = Object.assign({}, initalState), action) => {
                 selectedSection: action.payload
             });
         case '_INITIALIZE_PAGE':
-            let newSections = Object.assign({}, state, _constructPageJSON(JSONlist[action.payload], action.parms))
+            let newSections = Object.assign({}, { isFetching: false, selectedSection: null }, _constructPageJSON(JSONlist[action.payload], action.parms))
             return newSections;
         case '_FETCH_SECTION':
             let newSection = Object.assign({}, state);      
@@ -61,6 +61,5 @@ const _constructPageJSON = (pageJSON, parms) => {
 }
 
 
-// We could merge the haywheel metaphor with our multiple markets. E.g instead of each card being a producer, each card could be separate marketplace, and we could list out all our chefs in each marketplace similar to how they do it (since they could essentially be the same thing). 
 
 

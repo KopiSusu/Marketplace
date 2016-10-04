@@ -14,5 +14,20 @@
 		background-position center
 		margin-top buffer
 		height ribbonHeight - buffer*2
+	.back
+		position absolute
+		cursor pointer
+		transition()
+		p
+			display inline-block
+			line-height ribbonHeight
+			height ribbonHeight
+		.icon
+			margin-left buffer
+		&:hover
+			-webkit-transform scale(1.3)
+			-moz-transform scale(1.3)
+			-ms-transform scale(1.3)
+			transform scale(1.3)
 		
 		

@@ -23,7 +23,7 @@ export default [
     "type" : "mixed",
     "title" : "FEATURED",
     "requestType": "User Meal",
-    "useData": "Chefs",
+    "useData": "producers",
     "queries": [
       "13hsxOcVzT",
       "JKJDIAMUxe",
@@ -84,7 +84,7 @@ export default [
   {
     "nestedKey" : "map",
     "type" : "contentOnly Map",
-    "useData": "Producers"
+    "useData": "producers"
   }
 ]
 

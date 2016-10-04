@@ -73,8 +73,14 @@ class Section extends React.Component {
                     </section>
                 )
             case 'contentOnly Hero Image':
+                let imageSrc = this.props.imageURL ? this.props.imageURL : ''
+
+                if ( this.props.useData === 'producers' ) {
+                    imageSrc = this.props.content[0] ? this.props.content[0].toJSON().kitchenURL : ''
+                }
+
                 return (
-                    <section className='hero' style={{backgroundImage: `url(${this.props.imageURL})`}}>
+                    <section className='hero' style={{backgroundImage: `url(${imageSrc})`}}>
 
                     </section>
                 )

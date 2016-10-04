@@ -23,8 +23,7 @@ class Filter extends React.Component {
                     item = item.toJSON()
                     return item.displayName.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
                         item.city.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
-                        item.state.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
-                        item.neighborhood.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
+                        item.state.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
             }
         })
         return (
@@ -60,7 +59,7 @@ class Filter extends React.Component {
                     </div>
                 )
             case 'producers':
-                const address = `${item.neighborhood}, ${item.city}, ${item.state}`
+                const address = `${item.city}, ${item.state}`
                 return (
                     <div key={index} className={`item ${this.props.filter}`}>
                         <div className='image' style={{backgroundImage: `url(${item.imageURL})`}} />
