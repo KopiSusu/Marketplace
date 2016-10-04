@@ -121,6 +121,7 @@ hidden(shift, height)
 								height 20px
 								padding 0
 								display inline-block
+								margin-right buffer
 							p
 								display inline-block
 						.description, .location, .detail
@@ -231,18 +232,30 @@ hidden(shift, height)
 			padding 0
 			.card
 				overflow visible
+				cursor default
+				opacity 1
+				&:hover
+					opacity 1
 				.image
 					border 2px solid white
 					height 150px
 					width 150px
 					border-radius 100%
 					margin -75px auto 0 auto
+					@media only screen and (max-width: 600px)
+						width 100px
+						height 100px
+						margin -50px auto 0 auto
 				.bio
 					.bioText
 						text-transform none
 						margin buffer*2 auto
 						font-family	secondaryFontFamily
-						max-width 800px
+						background bgColorDark
+						padding buffer*3
+						margin buffer*3
+						@media only screen and (max-width: 600px)
+							font-size 14px
 
 
 
