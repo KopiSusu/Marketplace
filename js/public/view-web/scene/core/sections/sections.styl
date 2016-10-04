@@ -131,6 +131,7 @@ hidden(shift, height)
 								height 20px
 								padding 0
 								display inline-block
+								margin-right buffer
 							p
 								display inline-block
 						.description, .location, .detail
@@ -263,16 +264,61 @@ hidden(shift, height)
 			padding 0
 			.card
 				overflow visible
+				cursor default
+				opacity 1
+				&:hover
+					opacity 1
 				.image
 					border 2px solid white
 					height 150px
 					width 150px
 					border-radius 100%
 					margin -75px auto 0 auto
+					@media only screen and (max-width: 600px)
+						width 100px
+						height 100px
+						margin -50px auto 0 auto
 				.bio
+					position relative
+					background bgColorDark
+					padding buffer*3 buffer*12
+					margin buffer*3
+					@media only screen and (max-width: 600px)
+						padding buffer*3
+					.bioHeader
+						text-align center
+						color #888
 					.bioText
 						text-transform none
 						margin buffer*2 auto
 						font-family	secondaryFontFamily
-						max-width 800px
+						@media only screen and (max-width: 600px)
+							font-size 14px
 
+
+// MOVE INTO featured.styl
+
+.section.featuredHero
+	background linear-gradient(180deg,rgba(0,0,0,.3), rgba(0,0,0,.3)), url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb')
+	background-repeat no-repeat
+	background-size cover
+	background-position center center
+	.hero
+		max-width 800px
+		padding buffer*2
+		margin 0 auto
+		text-align center
+		color white
+		h1
+			font-size 60px
+			margin-top 170px
+		p
+			font-size 24px
+
+.section.featured
+	display block
+	max-width maxPageWidth
+	margin 0 auto
+	
+	h1
+		text-align center
