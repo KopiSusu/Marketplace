@@ -41,32 +41,9 @@ class Profiles extends React.Component {
                 return (
                     <li className={`profiles cards column-${column}`} >
                         <div className='profile card'>
-                            <div className={`details column-3 rows-1`}> 
-                                <div className='image rows-2' style={{backgroundImage: `url(${this.props.imageURL})`}}>
-                                    <div className='cardActions'>
-                                        <div className='action favorite'>
-                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 33 30.3" >
-                                                <path d="M16.5,30.3L2.8,16.6C1,14.8,0,12.3,0,9.7s1-5,2.8-6.9c3.8-3.8,9.9-3.8,13.7-0.1c3.8-3.7,9.9-3.7,13.6,0.1
-                                                C32,4.7,33,7.1,33,9.7s-1,5-2.8,6.9L16.5,30.3z M9.7,2.2c-1.9,0-3.9,0.7-5.3,2.2C3,5.8,2.2,7.7,2.2,9.7c0,2,0.8,3.9,2.2,5.3l0,0
-                                                l12.1,12.1L28.6,15c1.4-1.4,2.2-3.3,2.2-5.3c0-2-0.8-3.9-2.2-5.3c-2.9-2.9-7.7-2.9-10.6,0l-1.5,1.5L15,4.4
-                                                C13.6,2.9,11.7,2.2,9.7,2.2z"/>
-                                            </svg>
-                                        </div>
-                                        <div className='action follow'>
-                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 33 30.3" >
-                                                <g>
-                                                    <path d="M16.8,12.8c3.4,0,6.2-2.8,6.2-6.2s-2.8-6.2-6.2-6.2s-6.2,2.8-6.2,6.2S13.4,12.8,16.8,12.8z M13.1,6.5
-                                                        c0-2.1,1.7-3.7,3.7-3.7c2.1,0,3.7,1.7,3.7,3.7s-1.7,3.7-3.7,3.7C14.8,10.3,13.1,8.6,13.1,6.5z"/>
-                                                    <path d="M16.8,16c4.8,0,8.5,2.4,8.5,5.6l0,1.4l2.5,0l0-1.4c0-4.6-4.7-8.1-11-8.1s-11,3.5-11,8.1l-0.1,5.5h10.4v-2.5H8.4
-                                                        c0,0-0.1,0-0.1,0l0.1-3C8.4,18.4,12,16,16.8,16z"/>
-                                                    <polygon points="23.8,21.8 21.3,21.8 21.3,24.6 18.5,24.6 18.5,27.1 21.3,27.1 21.3,29.9 23.8,29.9 23.8,27.1 26.7,27.1 26.7,24.6 
-                                                        23.8,24.6   "/>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='details rows-2'>
+                            <div className={`details`}> 
+                                <div className='details'>
+                                    <div className='image' style={{backgroundImage: `url(${this.props.imageURL})`}}></div>
                                     <p className="name">{this.props.displayName}</p>
                                     <span className="detail location"><Icon icon='Location'/><p>{`${this.props.city}, ${this.props.state}`}</p></span>
                                     <span className="detail followers"><Icon icon='Follower'/><p>{`${followers} Followers`}</p></span>
@@ -78,8 +55,8 @@ class Profiles extends React.Component {
                                 </div>
                             </div>
                             
-                            <div className='bio column-3-2 rows-1'>
-                                <p>{this.props.bio}</p>
+                            <div className='bio'>
+                                <p className='bioText'>{this.props.bio}</p>
                             </div>
                         </div>
                     </li>

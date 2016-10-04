@@ -106,7 +106,6 @@ hidden(shift, height)
 						opacity .5
 						transition()
 					.cook
-						// text-align center
 						.profileImage
 							display inline-block
 						.cookName
@@ -124,10 +123,12 @@ hidden(shift, height)
 								display inline-block
 							p
 								display inline-block
-						.description, .location
+						.description, .location, .detail
 							font-family secondaryFontFamily
 							font-style italic
 							font-size 17px
+						.description
+							margin-top (buffer/2)
 					&:hover
 						opacity .9
 						color fontColor
@@ -138,6 +139,7 @@ hidden(shift, height)
 						.cardActions
 							transition()
 							top buffer*2
+
 		.navigation
 			text-align center
 			text-transform uppercase
@@ -206,3 +208,44 @@ hidden(shift, height)
 					&:after
 						border-top-color: #333
 						transition()
+
+
+// MOVE INTO profile.styl ... Top class should be sections.Profile
+
+&.Profile
+	.section
+		.hero
+			height 350px
+			background-size cover
+			backgorund-position center center
+			margin-bottom 0
+			@media only screen and (max-width: 600px)
+				height 250px 
+			@media only screen and (min-width: 1200px)
+				height 400px 
+			@media only screen and (min-width: 1500px)
+				height 500px 
+	
+	.singleProfile
+		.profiles.cards.single
+			padding 0
+			.card
+				overflow visible
+				.image
+					border 2px solid white
+					height 150px
+					width 150px
+					border-radius 100%
+					margin -75px auto 0 auto
+				.bio
+					.bioText
+						text-transform none
+						margin buffer*2 auto
+						font-family	secondaryFontFamily
+						max-width 800px
+
+
+
+
+
+
