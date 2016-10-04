@@ -114,12 +114,7 @@ class Profiles extends React.Component {
                                 <div className='details rows-2'>
                                     <p className="name">{this.props.displayName}</p>
                                     <span className='detail location'><Icon icon='Location'/><p>{`${this.props.city}, ${this.props.state}`}</p></span>
-                                    <span className='detail followers'><Icon icon='Follower'/><p>{`${followers} Followers`}</p></span>
-                                    <span className='detail reviews'>
-                                        {
-                                            this.props.averageRating ? this.renderRating() : <span><Icon icon='Star'/><p>No Reviews</p></span>
-                                        }
-                                    </span>
+                                    <p className="description">All natural Malaysian sauces made with price in NY</p>
                                 </div>
                             </div>
                         </div>
