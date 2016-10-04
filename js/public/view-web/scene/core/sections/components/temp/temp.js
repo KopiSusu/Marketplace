@@ -14,15 +14,26 @@ class Temp extends React.Component {
 
     	return (
 
-            <section className='section column-1'>
+            <div>
+                <section className="section featuredHero">
+                    <div className="hero">
+                        <h1 className="heroTitle">Never stop munching.</h1>
+                        <p className="heroText">
+                            Homemade is a community of foodies and food producers telling their stories and sharing their products.
+                        </p>
+                    </div>
+                </section>
 
-                <h1>TEMP!!</h1>
+                <section className='section column-1 featured'>
 
-                <Video className='video rows-6-5' controls loop muted >
-                    <source src={"http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"} type="video/webm" />
-                </Video>
+                    <h1>TEMP!!</h1>
 
-            </section>
+                    <Video className='video rows-6-5' controls loop muted >
+                        <source src={"http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"} type="video/webm" />
+                    </Video>
+
+                </section>
+            </div>
 
     	)
   	}

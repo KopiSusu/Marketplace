@@ -271,3 +271,30 @@ hidden(shift, height)
 						@media only screen and (max-width: 600px)
 							font-size 14px
 
+
+// MOVE INTO featured.styl
+
+.section.featuredHero
+	background linear-gradient(180deg,rgba(0,0,0,.3), rgba(0,0,0,.3)), url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb')
+	background-repeat no-repeat
+	background-size cover
+	background-position center center
+	.hero
+		max-width 800px
+		padding buffer*2
+		margin 0 auto
+		text-align center
+		color white
+		h1
+			font-size 60px
+			margin-top 170px
+		p
+			font-size 24px
+
+.section.featured
+	display block
+	max-width maxPageWidth
+	margin 0 auto
+	
+	h1
+		text-align center
