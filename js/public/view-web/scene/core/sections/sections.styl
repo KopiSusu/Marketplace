@@ -255,13 +255,19 @@ hidden(shift, height)
 						height 100px
 						margin -50px auto 0 auto
 				.bio
+					position relative
+					background bgColorDark
+					padding buffer*3 buffer*12
+					margin buffer*3
+					@media only screen and (max-width: 600px)
+						padding buffer*3
+					.bioHeader
+						text-align center
+						color #888
 					.bioText
 						text-transform none
 						margin buffer*2 auto
 						font-family	secondaryFontFamily
-						background bgColorDark
-						padding buffer*3
-						margin buffer*3
 						@media only screen and (max-width: 600px)
 							font-size 14px
 
