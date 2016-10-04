@@ -10,6 +10,7 @@ import {
 	IoAndroidStar,
 	IoAndroidStarOutline,
 	IoChevronLeft,
+	IoEasel,
 	IoPersonStalker
 } from 'react-icons/lib/io'
 
@@ -49,6 +50,8 @@ class Icon extends React.Component {
 	       		return <IoPersonStalker/>
 	       	case 'Left':
 	       		return <IoChevronLeft/>
+	       	case 'Content':
+	       		return <IoEasel/>
       	}
     }
 }

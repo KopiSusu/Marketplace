@@ -8,6 +8,7 @@ import Blob from './components/blob'
 import Cards from './components/cards'
 import Profiles from './components/profiles'
 import Marker from './components/marker'
+import Content from './components/content'
 
 import './components/video.css'
 
@@ -41,16 +42,12 @@ class Section extends React.Component {
 
     renderView() {
         switch (this.props.type) {
-            case 'mixed':
+            case 'contentList':
                 return (
                     <ul className='column-1'>
                         {
-                            _.map(this.props.content, (item, index) => {
-                                const itemJSON = item.toJSON();
-                                if (itemJSON.displayName)
-                                    return <Profiles key={index} index={index} {...this.props} {...itemJSON}/>
-
-                                return <Cards key={index} {...this.props} {...itemJSON}/>
+                            _.map(this.props.content, (content, index) => {
+                                return <Content key={index} {...this.props} {...content}/>
                             })
                         }
                     </ul>

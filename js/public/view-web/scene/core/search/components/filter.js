@@ -12,9 +12,6 @@ class Filter extends React.Component {
     render () {
         const filteredItems = _.filter(this.props.items, (item) => {
             switch (this.props.filter) {
-                case 'market':
-                    return item.title.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
-                        item.tags.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
                 case 'products':
                     item = item.toJSON()
                     return item.name.toLowerCase().indexOf(this.props.query) > -1 ||

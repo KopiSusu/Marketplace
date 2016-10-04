@@ -4,6 +4,12 @@ import * as  Actions from './../../actions'
 import _ from 'lodash'
 
 const searchConfig = {
+  featured: {
+    'id': 1,
+    'title': 'Featured',
+    'filter': 'featured',
+    'icon': 'Content'
+  },
   producers: {
     'id': 1,
     'title': 'Producers',

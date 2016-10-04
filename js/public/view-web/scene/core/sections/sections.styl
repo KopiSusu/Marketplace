@@ -47,9 +47,19 @@ hidden(shift, height)
 		ul
 			max-width 1200px
 			margin 0 auto
-			display block
+			display block				
 			.cards
-				padding buffer*3
+				padding buffer*3	
+				&.content
+					.videoCard 
+						position relative
+						overflow hidden
+						width 100%		
+						.video
+							height 200px
+							video
+								height auto
+								width 100%		
 				.card
 					transition()
 					position relative
@@ -201,3 +211,4 @@ hidden(shift, height)
 					&:after
 						border-top-color: #333
 						transition()
+							

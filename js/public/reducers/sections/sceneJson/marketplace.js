@@ -1,3 +1,27 @@
+const featuredData = [
+  {
+    "id" : 1,
+    "type" : "videoCard",
+    "title" : "First Video Content",
+    "description": "Videos are a amazing way to market your content, try using one of our fast and furious video things",
+    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+  },
+  {
+    "id" : 2,
+    "type" : "videoCard",
+    "title" : "Second Video Content",
+    "description": "This is a second Video, just to show you how amazing videos can be!",
+    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+  },
+  {
+    "id" : 3,
+    "type" : "videoCard",
+    "title" : "Third Video Content",
+    "description": "So many videos that im not sure what to add as description text!",
+    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+  }
+]
+
 export default [
   {
     "nestedKey" : "topText",
@@ -20,25 +44,12 @@ export default [
   },
   {
     "nestedKey" : "featured",
-    "type" : "mixed",
+    "type" : "contentList",
     "class" : "featured",
     "title" : "Featured",
     "requestType": "User Meal",
-    "useData": "producers",
-    "queries": [
-      "13hsxOcVzT",
-      "JKJDIAMUxe",
-      "yFAVY4MPFG",
-      "yfjrIk9X7D",
-      "4nNagUWxZm",
-      "hwtvjancuO",
-      "KYfTo0IOZw",
-      "CFEmBDNAxC",
-      "UhnWAmQPQn",
-      "j77vAf9ZKA",
-      "XPmaRjITwf",
-      "B99QUaTbtE"
-    ]
+    "useData": "hardData",
+    "hardData": featuredData
   },
   {
     "nestedKey" : "products",
@@ -93,15 +104,4 @@ export default [
 
 
 
-// const featuredData = [
-//   {
-//     "type" : "cardList video",
-//     "title" : "First Video Content",
-//     "search": true,
-//     "requestType": "User",
-//     "nestedKey" : "Hero",
-//     "type" : "contentOnly Hero Video",
-//     "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
-//   }
-// ]
 

@@ -4,6 +4,7 @@ import _ from 'lodash'
 
 import Header from './header'
 import View from './view/view'
+import Temp from './temp/temp'
 
 class Section extends React.Component {
     constructor(props) {
@@ -24,6 +25,10 @@ class Section extends React.Component {
 
   	render() {
         const className = this.props.class || ''
+        if (this.props.hardData) {
+            return <Temp/>
+        }
+
     	return (
             <section className={`section column-1 ${this.props.type !== 'contentOnly' ? 'noPadding' : ''} ${className}`}>
 
