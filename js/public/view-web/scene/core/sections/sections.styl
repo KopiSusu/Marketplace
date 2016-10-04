@@ -275,7 +275,7 @@ hidden(shift, height)
 // MOVE INTO featured.styl
 
 .section.featuredHero
-	background linear-gradient(180deg,rgba(0,0,0,.3), rgba(0,0,0,.3)), url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb')
+	background linear-gradient(180deg,rgba(0,0,0,.35), rgba(0,0,0,.35)), url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb')
 	background-repeat no-repeat
 	background-size cover
 	background-position center center
@@ -285,11 +285,12 @@ hidden(shift, height)
 		margin 0 auto
 		text-align center
 		color white
-		h1
+		.heroTitle
 			font-size 60px
 			margin-top 170px
-		p
-			font-size 24px
+		.heroText
+			font-size 28px
+			font-family secondaryFontFamily
 
 .section.featured
 	display block
