@@ -15,11 +15,11 @@ class Filter extends React.Component {
                 case 'market':
                     return item.title.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
                         item.tags.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
-                case 'meals':
+                case 'products':
                     item = item.toJSON()
                     return item.name.toLowerCase().indexOf(this.props.query) > -1 ||
                         item.ingredients.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
-                case 'chefs':
+                case 'producers':
                     item = item.toJSON()
                     return item.displayName.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
                         item.city.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
@@ -59,7 +59,7 @@ class Filter extends React.Component {
                         </div>
                     </div>
                 )
-            case 'chefs':
+            case 'producers':
                 const address = `${item.neighborhood}, ${item.city}, ${item.state}`
                 return (
                     <div key={index} className={`item ${this.props.filter}`}>
@@ -72,7 +72,7 @@ class Filter extends React.Component {
                         </div>
                     </div>
                 )
-            case 'meals':
+            case 'products':
                 return (
                     <div key={index} className={`item ${this.props.filter}`}>
                         <div className='image' style={{backgroundImage: `url(${item.imageURLS[0]})`}} />

@@ -32,6 +32,18 @@ export const toggle = (group, boolean, secondaryProperty) => {
     return returnResponse
 }
 
+export const initializePage = (pageJSON, returnType, parms) => {
+  let returnResponse = {
+    type: returnType,
+    payload: pageJSON
+  }
+
+  if (parms)
+    returnResponse.parms = parms
+
+  return returnResponse
+} 
+
 export const receiveData = (json, returnType, nestedKey) => {
 	let returnResponse = {
 		type: returnType,
@@ -56,7 +68,7 @@ export function fetchData(requestType, idArray, returnType, nestedKey) {
   }
 }
 const _exportQueryConstruct = (requestType, idArray) => {
-  let Query;
+  let Query
   let innerQuery
   switch(requestType) {
     case 'User':

@@ -4,22 +4,16 @@ import * as  Actions from './../../actions'
 import _ from 'lodash'
 
 const searchConfig = {
-  market: {
+  producers: {
     'id': 1,
-    'title': 'Marketplaces',
-    'filter': 'market',
-    'icon': 'Market'
-  },
-  chefs: {
-    'id': 2,
-    'title': 'Chefs',
-    'filter': 'chefs',
+    'title': 'Producers',
+    'filter': 'producers',
     'icon': 'Person'
   },
-  meals: {
-    'id': 3,
-    'title': 'Meals',
-    'filter': 'meals',
+  products: {
+    'id': 2,
+    'title': 'Products',
+    'filter': 'products',
     'icon': 'Food'
   }
 }
@@ -44,9 +38,9 @@ const market = [
 
 export default (state = {
   isFetching: false,
-  config: [],
+  config: searchConfig,
   active: false,
-  filter: null,
+  filter: 'producers',
   query: ''
 }, action) => {
 
@@ -66,15 +60,6 @@ export default (state = {
         isFetching: false,
         filter: action.payload
       });
-    case '_FETCH_SECTION':
-      let newSection = Object.assign({}, state, newSection);
-      newSection[action.nestedKey.toLowerCase()] = action.payload
-      newSection['config'].push(searchConfig[action.nestedKey.toLowerCase()])
-
-      if(!newSection['filter'])
-        newSection['filter'] = action.nestedKey.toLowerCase()
-
-      return newSection
     default:
       return state
   }
