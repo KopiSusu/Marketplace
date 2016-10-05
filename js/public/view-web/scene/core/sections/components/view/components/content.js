@@ -18,7 +18,17 @@ class Content extends React.Component {
         const column = this.props.content.length > 3 ? 3 : this.props.content.length
         return (
             <li className={`cards content column-${column}`}>
-                <div className={`${this.props.type}`} onClick={() => this.clickHandler()}>
+                {
+                    this.renderContent()
+                }
+            </li>
+        )
+    }
+
+    renderContent() {
+        switch (this.props.type) {
+            case 'videoCard':
+                return <div className={`${this.props.type}`} onClick={() => this.clickHandler()}>
                     <Video className='video rows-6-5' controls loop muted >
                         <source src={this.props.videoURL} type="video/webm" />
                     </Video>
@@ -27,8 +37,8 @@ class Content extends React.Component {
                         <p className='column-1 price'>${this.props.description}</p>
                     </div>
                 </div>
-            </li>
-        )
+
+        }
     }
 
 }

@@ -23,23 +23,10 @@ class Filter extends React.Component {
     }
 
     render () {
-        const filteredItems = _.filter(this.props.items, (item) => {
-            switch (this.props.filter) {
-                case 'products':
-                    item = item.toJSON()
-                    return item.name.toLowerCase().indexOf(this.props.query) > -1 ||
-                        item.ingredients.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
-                case 'producers':
-                    item = item.toJSON()
-                    return item.displayName.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
-                        item.city.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
-                        item.state.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
-            }
-        })
         return (
             <div className='filter rows-1 column-4-3'>
                 {
-                    _.map(filteredItems, (item, index) => {
+                    _.map(this.props.items, (item, index) => {
                         if(item._objCount || item._objCount === 0)
                             item = item.toJSON()
                         return this.renderSearch(item, index)

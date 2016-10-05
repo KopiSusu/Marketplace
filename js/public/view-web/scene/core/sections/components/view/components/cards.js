@@ -14,12 +14,12 @@ class Cards extends React.Component {
 
     render () {
         const column = this.props.content.length > 3 ? 3 : this.props.content.length
-        
+
         return (
-            
+
             <li className={`cards column-${column}`}>
                 <div className='card' onClick={() => this.clickHandler()}>
-                    <div className='image rows-6-5' style={{backgroundImage: `url(${this.props.imageURLS[0]})`}}> 
+                    <div ref={`card-${this.props.objectId}`} className='image rows-6-5' style={{backgroundImage: `url(${this.props.imageURLS[0]})`}}> 
 
                     </div>
                     <div className="namePrice">

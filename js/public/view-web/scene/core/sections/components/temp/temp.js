@@ -31,7 +31,7 @@ class Temp extends React.Component {
 
             <div>
                 <section className="section featuredHero">
-                    <div className="hero">
+                    <div ref='hero' className="hero">
                         <h1 className="heroTitle">YUM.</h1>
                         <p className="heroText">
                             The Foodworks tells the stories of Brooklyn’s independent food producers and sells their products alongside, inviting you to help forge the new path in food from wherever you are.
@@ -181,7 +181,7 @@ class Temp extends React.Component {
                         <li className="cards content column-3">
                             <div className="videoCard card">
                                 <Video className='video rows-6-5' controls loop muted poster="https://images.unsplash.com/photo-1471017204627-b28469ba98cc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1026&q=80&cs=tinysrgb" >
-                                    <source src="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov" type="video/webm" />
+                                    <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" />
                                 </Video>
                                 <div className='details rows-2'>
                                     <p className='column-1 name'>Izzys Bizzy Biscuits</p>
@@ -192,7 +192,7 @@ class Temp extends React.Component {
                         <li className="cards content column-3">
                             <div className="videoCard card">
                                 <Video className='video rows-6-5' controls loop muted poster="https://images.unsplash.com/photo-1471017204627-b28469ba98cc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1026&q=80&cs=tinysrgb" >
-                                    <source src="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov" type="video/webm" />
+                                    <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" />
                                 </Video>
                                 <div className='details rows-2'>
                                     <p className='column-1 name'>Izzys Bizzy Biscuits</p>
@@ -203,7 +203,7 @@ class Temp extends React.Component {
                         <li className="cards content column-3">
                             <div className="videoCard card">
                                 <Video className='video rows-6-5' controls loop muted poster="https://images.unsplash.com/photo-1471017204627-b28469ba98cc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1026&q=80&cs=tinysrgb" >
-                                    <source src="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov" type="video/webm" />
+                                    <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" />
                                 </Video>
                                 <div className='details rows-2'>
                                     <p className='column-1 name'>Izzys Bizzy Biscuits</p>
