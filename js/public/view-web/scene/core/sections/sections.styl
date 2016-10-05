@@ -69,10 +69,16 @@ hidden(shift, height)
 						overflow hidden
 						width 100%		
 						.video
-							height 200px
+							height 270px
 							video
-								height auto
+								height 100%
 								width 100%		
+					.audioControlsWrapper
+						height 270px
+						background bgColorDark
+						audio
+							width 100%
+							margin-top 120px
 				.card
 					animation(fadeInUp cubic-bezier(0.4, 0, 0.2, 1) .5s)
 					transition()
@@ -397,3 +403,43 @@ hidden(shift, height)
 			
 	.content
 		margin-bottom buffer*4
+		
+.blogPost
+	animation(fadeInUp cubic-bezier(0.4, 0, 0.2, 1) .5s)
+	display block
+	max-width 800px
+	margin 0 auto
+	border-top border
+	margin-top buffer*4
+	padding-top buffer*4
+	
+	img
+		width 100%
+		margin buffer*2 0
+		
+	p
+		margin-bottom buffer*2
+		&.quote
+			padding 0 buffer*4
+	
+	a
+		cursor pointer
+		&:hover
+			border-bottom 1px solid fontColor
+		
+	iframe
+		border none
+		margin-bottom buffer*4
+
+
+
+
+
+
+
+
+
+
+
+
+
