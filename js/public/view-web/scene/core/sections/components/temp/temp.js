@@ -217,9 +217,9 @@ class Temp extends React.Component {
                                 </li>
                                 <li className="cards content column-3">
                                     <div className="videoCard card">
-                                        <Video className='video rows-6-5' controls loop muted poster="https://images.unsplash.com/photo-1471017204627-b28469ba98cc?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1026&q=80&cs=tinysrgb" >
-                                            <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" />
-                                        </Video>
+                                        <audio controls>
+                                           <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp4" type='audio/mp4'/>
+                                        </audio>
                                         <div className='details rows-2'>
                                             <p className='column-1 name'>Izzys Bizzy Biscuits</p>
                                             <p className="description">Izzy gets bizzy in this dope interview about his biscuits to die for</p>
