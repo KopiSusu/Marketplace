@@ -75,7 +75,15 @@ export default [
       "UhnWAmQPQn",
       "j77vAf9ZKA",
       "XPmaRjITwf",
-      "B99QUaTbtE"
+      "B99QUaTbtE",
+      "n7ahclwpdH",
+      "mSi8pD2ytL",
+      "MxmI7CyjzF",
+      "4M3Dy8e6ZG",
+      "onlXv9GGy7",
+      "hPjd7xcdjp",
+      "dx6tZP1Q9k",
+      "yPT1siTPJX"
     ]
   },
   {
@@ -98,13 +106,16 @@ export default [
       "UhnWAmQPQn",
       "j77vAf9ZKA",
       "XPmaRjITwf",
-      "B99QUaTbtE"
+      "B99QUaTbtE",
+      "n7ahclwpdH",
+      "mSi8pD2ytL",
+      "MxmI7CyjzF",
+      "4M3Dy8e6ZG",
+      "onlXv9GGy7",
+      "hPjd7xcdjp",
+      "dx6tZP1Q9k",
+      "yPT1siTPJX"
     ]
-  },
-  {
-    "nestedKey" : "map",
-    "type" : "contentOnly Map",
-    "useData": "producers"
   }
 ]
 

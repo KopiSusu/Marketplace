@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import Parse from 'parse';
-import {fetchJSON} from './../actions';
 import _ from 'lodash';
 import {configureStore} from "./../store/configure-store";
 
