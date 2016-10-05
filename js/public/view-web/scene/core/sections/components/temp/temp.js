@@ -83,16 +83,16 @@ class Temp extends React.Component {
                             <ul className="content">
                                 <li className="cards column-3" onClick={() => { this._changePage('blog') }}>
                                     <div className='card'>
-                                        <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/0neH9RMVHs")`}} > 
+                                        <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/SmvAsyBi7c")`}} > 
                                         </div>
                                         <div className="namePrice">
-                                            <p className='column-6-5 name'>15 Brown Butter Hazelnut - SPECIAL - For Local Youth Charity VARIETY</p>
-                                            <p className='column-6-1 price'>$22</p>
+                                            <p className='column-6-5 name'>Crack Cookies - Large</p>
+                                            <p className='column-6-1 price'>$13</p>
                                         </div>
                                         {
                                             <div className='cook'>
-                                                <div className="profileImage" style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/TGOJfh4bid")`}} ></div>
-                                                <p className="cookName">Gooey and Co</p>
+                                                <div className="profileImage" style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/RZefq0InJ8")`}} ></div>
+                                                <p className="cookName">Legally Addictive Foods</p>
                                             </div>
                                         }
                                     </div>
