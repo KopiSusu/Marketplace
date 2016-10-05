@@ -36,7 +36,7 @@ class Temp extends React.Component {
                     <div className="hero">
                         <h1 className="heroTitle">YUM.</h1>
                         <p className="heroText">
-                            Homemade tells the stories of Brooklyn’s independent food producers and sells their products alongside, inviting you to help forge the new path in food from wherever you are.
+                            The Foodworks tells the stories of Brooklyn’s independent food producers and sells their products alongside, inviting you to help forge the new path in food from wherever you are.
                         </p>
                     </div>
                 </section>
