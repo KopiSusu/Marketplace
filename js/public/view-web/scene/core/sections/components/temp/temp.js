@@ -47,8 +47,7 @@ class Temp extends React.Component {
                         {
                             this.state.emailCapture ?
                             <div className='text captured rows-1 column-1'>
-                                <h1>You are signed up for updates!</h1>
-                                <p>We will keep you on track for some tasty food!</p>
+                                <p className="signedUpText">You are signed up for updates!</p>
                             </div> : <span>
                                 <div className='text rows-1 column-10-4'>
                                     <h1>Get the newsletter</h1>
