@@ -55,6 +55,12 @@ transition()
 	-moz-transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
 	-o-transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
 	transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
+	
+animation(args)
+	-webkit-animation args
+	-moz-animation args
+	-o-animation args
+	animation args
 
 //Button groups
 
@@ -274,4 +280,11 @@ pre
 	border 1px solid transparent
 	
 
+//Animations
 
+    // Fade in on load
+    	
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
