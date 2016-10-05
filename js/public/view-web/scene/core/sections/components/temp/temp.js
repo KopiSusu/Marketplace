@@ -102,18 +102,34 @@ class Temp extends React.Component {
                                         }
                                     </div>
                                 </li>
-                                <li className="cards column-3" onClick={() => { this._navigateFromTemp('http://shop.eathomemade.com/malai/iSnHmJbAX0/false') }}>
+                                <li className="cards column-3" onClick={() => { this._navigateFromTemp('http://shop.eathomemade.com/rablissballs/XTHjE1ASp3/true') }}>
                                     <div className='card'>
-                                        <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/0neH9RMVHs")`}} > 
+                                        <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/ysyCCqREh9")`}} > 
                                         </div>
                                         <div className="namePrice">
-                                            <p className='column-6-5 name'>15 Brown Butter Hazelnut - SPECIAL - For Local Youth Charity VARIETY</p>
-                                            <p className='column-6-1 price'>$22</p>
+                                            <p className='column-6-5 name'>Salty Caramel Blissball</p>
+                                            <p className='column-6-1 price'>$12</p>
                                         </div>
                                         {
                                             <div className='cook'>
-                                                <div className="profileImage" style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/TGOJfh4bid")`}} ></div>
-                                                <p className="cookName">Gooey and Co</p>
+                                                <div className="profileImage" style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/GB7xnd1tMO")`}} ></div>
+                                                <p className="cookName">Ra Blissballs</p>
+                                            </div>
+                                        }
+                                    </div>
+                                </li>
+                                <li className="cards column-3" onClick={() => { this._navigateFromTemp('http://shop.eathomemade.com/rablissballs/XTHjE1ASp3/true') }}>
+                                    <div className='card'>
+                                        <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/ysyCCqREh9")`}} > 
+                                        </div>
+                                        <div className="namePrice">
+                                            <p className='column-6-5 name'>Salty Caramel Blissball</p>
+                                            <p className='column-6-1 price'>$12</p>
+                                        </div>
+                                        {
+                                            <div className='cook'>
+                                                <div className="profileImage" style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/GB7xnd1tMO")`}} ></div>
+                                                <p className="cookName">Ra Blissballs</p>
                                             </div>
                                         }
                                     </div>
