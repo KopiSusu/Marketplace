@@ -8,8 +8,6 @@ import Profiles from './../view/components/profiles'
 import Marker from './../view/components/marker'
 import Content from './../view/components/content'
 
-import './temp.css'
-
 class Temp extends React.Component {
     constructor(props) {
         super(props)
