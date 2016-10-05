@@ -11,7 +11,6 @@ class Section extends React.Component {
         super(props)
     }
 
-    // This goes out and fetchs our data's
     componentWillMount() {
         if(this.props.queries)
             this.props.fetchData(this.props.requestType, this.props.queries, '_FETCH_SECTION', this.props.nestedKey)
@@ -34,10 +33,17 @@ class Section extends React.Component {
 
                 <View {...this.props}/>
             </section>
-
     	)
   	}
 
 }
 
 export default Section;
+
+
+
+
+
+
+
+
