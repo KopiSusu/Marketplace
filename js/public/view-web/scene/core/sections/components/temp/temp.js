@@ -2,6 +2,7 @@
 import React from 'react'
 import _ from 'lodash'
 import Video from 'react-html5video'
+
 import Blob from './../view/components/blob'
 import Cards from './../view/components/cards'
 import Profiles from './../view/components/profiles'
@@ -38,6 +39,10 @@ class Temp extends React.Component {
         this.setState({
             currentPage: pageChange
         })
+    }
+
+    _navigateFromTemp(url) {
+        location.href = url
     }
 
   	render() {
@@ -97,7 +102,7 @@ class Temp extends React.Component {
                                         }
                                     </div>
                                 </li>
-                                <li className="cards column-3">
+                                <li className="cards column-3" onClick={() => { this._navigateFromTemp('http://shop.eathomemade.com/malai/iSnHmJbAX0/false') }}>
                                     <div className='card'>
                                         <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/0neH9RMVHs")`}} > 
                                         </div>
@@ -113,7 +118,7 @@ class Temp extends React.Component {
                                         }
                                     </div>
                                 </li>
-                                <li className="cards column-3">
+                                <li className="cards column-3" onClick={() => { this._navigateFromTemp('http://market.eathomemade.com.s3-website-us-east-1.amazonaws.com/p/13hsxOcVzT') }}>
                                     <div className='card'>
                                         <div className='image rows-6-5' style={{backgroundImage: `url("https://s3.amazonaws.com/homemade-user-uploads/0neH9RMVHs")`}} > 
                                         </div>
