@@ -22,8 +22,8 @@ class Cards extends React.Component {
 
                     </div>
                     <div className="namePrice">
-                        <p className='column-6-5 name'>{this.props.name}</p>
-                        <p className='column-6-1 price'>${this.props.price}</p>
+                        <p className='name'>{this.props.name}</p>
+                        <p className='price'>${this.props.price}</p>
                     </div>
                     {
                         this.props.page === 'Profile' ? null :

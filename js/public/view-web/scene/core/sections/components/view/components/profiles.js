@@ -74,7 +74,7 @@ class Profiles extends React.Component {
                                 <div className='details rows-2'>
                                     <p className="name">{this.props.displayName}</p>
                                     <span className='detail location'><Icon icon='Location'/><p>{`${this.props.city}, ${this.props.state}`}</p></span>
-                                    <p className="description">All natural Malaysian sauces made with price in NY</p>
+                                    <p className="description">{this.props.shortBio}</p>
                                 </div>
                             </div>
                         </div>

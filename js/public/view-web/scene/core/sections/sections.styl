@@ -18,27 +18,38 @@ hidden(shift, height)
 		position relative
 		text-align center
 		display block
-		height 50px
-		width 50%
-		margin buffer*2 auto buffer*4 auto
+		margin buffer auto
+		width 100%
+		padding 0 buffer*3
+		height auto
 		h1
 			display inline-block
 			text-transform uppercase
-			font-size 18px
 			font-weight 500
-			height 50px
-			line-height 50px
 			letter-spacing 3px
 			background bgColor
 			padding 0 (buffer * 5)
+			text-align center
+			font-size 22px
+			margin-bottom 0
 		.line
 			position absolute
-			top 0
-			left 0
-			height 36px
-			width 100%
 			z-index -1
-			border-bottom 1px solid fontColor
+			top 33px
+			left buffer*3
+			right buffer*3
+			height 1px
+			background strokeColor
+			width auto
+	@media only screen and (max-width: 600px)
+		.header
+			margin-bottom 0
+			h1
+				font-size 18px
+				padding 0 buffer
+			.line
+				display none
+
 	.section
 		padding (buffer * 3.5) 0
 		&.noPadding
@@ -63,6 +74,7 @@ hidden(shift, height)
 								height auto
 								width 100%		
 				.card
+					animation(fadeIn ease-in .3s)
 					transition()
 					position relative
 					height auto
@@ -71,6 +83,7 @@ hidden(shift, height)
 					cursor pointer
 					color fontColorLight
 					.image
+						background bgColorDark
 						position relative
 						height 270px
 						background-size cover
@@ -103,11 +116,15 @@ hidden(shift, height)
 						font-weight 600
 						font-size 16px
 						line-height 18px
+						display inline-block
+						width 15%
 					.name
 						margin buffer 0 (buffer/1.5) 0
 						font-size 16px
 						font-weight 400
 						line-height 18px
+						display inline-block
+						width 85%
 					.profileImage
 						display inline-block
 						border-radius 100%
@@ -153,7 +170,7 @@ hidden(shift, height)
 							transition()
 							top buffer*2
 		.capture
-			margin 0 0 (buffer * 3) 0
+			margin 0 buffer*3 buffer*3 buffer*3
 			padding buffer*2
 			height 100px
 			background bgColorDark
@@ -167,6 +184,8 @@ hidden(shift, height)
 					margin 0
 					height 33px
 					line-height 26px
+					&.signedUpText
+						margin-top buffer
 				&.captured
 					text-align center
 			input
@@ -185,6 +204,18 @@ hidden(shift, height)
 				padding buffer
 				input
 					margin-bottom buffer
+				.button
+					padding 0
+				.text
+					text-align center
+					h1
+						font-size 22px
+						line-height 22px
+					p
+						font-size 14px
+						height auto
+						line-height 20px
+						margin-bottom buffer
 			
 
 		.navigation
@@ -211,7 +242,15 @@ hidden(shift, height)
 						opacity 1
 					&.selected
 						border-bottom 1px solid secondaryColor
+			@media only screen and (max-width: 600px)
+				letter-spacing 1px
+				.wrapper
+					h2
+						margin 0 (buffer/2)
+						font-size 15px
+
 		.hero
+			animation(fadeIn ease-in .3s)
 			height 600px
 			width 100%	
 			overflow hidden
@@ -235,7 +274,9 @@ hidden(shift, height)
 				background-size cover
 				background-repeat no-repeat
 				background-position center
-				border 2px solid primaryColor
+				border 2px solid pri.ribbon
+				
+				maryColor
 				z-index 10
 				transition()
 				&:after
@@ -261,6 +302,7 @@ hidden(shift, height)
 // MOVE INTO profile.styl ... Top class should be sections.Profile
 
 &.Profile
+	animation(fadeIn ease-in-out .6s)
 	.section
 		.hero
 			height 350px
@@ -293,6 +335,8 @@ hidden(shift, height)
 						width 100px
 						height 100px
 						margin -50px auto 0 auto
+				.name
+					width auto
 				.bio
 					position relative
 					background bgColorDark
@@ -314,22 +358,33 @@ hidden(shift, height)
 // MOVE INTO featured.styl
 
 .section.featuredHero
+	animation(fadeIn ease-in .6s)
 	background linear-gradient(180deg,rgba(0,0,0,.35), rgba(0,0,0,.35)), url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb')
 	background-repeat no-repeat
 	background-size cover
 	background-position center center
 	.hero
+		position relative
 		max-width 800px
 		padding buffer*2
 		margin 0 auto
 		text-align center
 		color white
+		animation(fadeInUp ease-in-out 1s)
 		.heroTitle
 			font-size 60px
 			margin-top 170px
 		.heroText
 			font-size 28px
 			font-family secondaryFontFamily
+		@media only screen and (max-width: 600px)
+			height 250px
+			.heroTitle
+				margin-top 0
+				font-size 48px
+			.heroText
+				font-size 16px
+			
 
 .section.featured
 	display block
@@ -337,26 +392,6 @@ hidden(shift, height)
 	margin 0 auto
 	
 	.header
-		position relative
-		margin buffer auto
-		width 100%
-		padding 0 buffer*3
-		height auto
-		.featuredHeader
-			text-align center
-			font-size 22px
-			text-transform uppercase
-			background bgColor
-			margin-bottom 0
-		.line
-			height 1px
-			background strokeColor
-			position absolute
-			top 38px
-			left buffer*3
-			right buffer*3
-			border none
-			width auto
 		.featuredText
 			font-family secondaryFontFamily
 			font-size 17px

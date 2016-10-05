@@ -36,7 +36,7 @@ class Temp extends React.Component {
                     <div className="hero">
                         <h1 className="heroTitle">YUM.</h1>
                         <p className="heroText">
-                            Homemade tells the stories of Brooklyn’s independent food producers and sells their products alongside, inviting you to help forge the new path in food from wherever you are.
+                            The Foodworks tells the stories of Brooklyn’s independent food producers and sells their products alongside, inviting you to help forge the new path in food from wherever you are.
                         </p>
                     </div>
                 </section>
@@ -47,8 +47,7 @@ class Temp extends React.Component {
                         {
                             this.state.emailCapture ?
                             <div className='text captured rows-1 column-1'>
-                                <h1>You are signed up for updates!</h1>
-                                <p>We will keep you on track for some tasty food!</p>
+                                <p className="signedUpText">You are signed up for updates!</p>
                             </div> : <span>
                                 <div className='text rows-1 column-10-4'>
                                     <h1>Get the newsletter</h1>
