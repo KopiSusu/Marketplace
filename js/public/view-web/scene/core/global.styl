@@ -51,10 +51,10 @@ shadow()
 	box-shadow 0px 1px 2px 0px rgba(0,0,0,0.2)
 
 transition()
-	-webkit-transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
-	-moz-transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
-	-o-transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
-	transition: all 0.33s cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
+	-moz-transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
+	-o-transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
+	transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
 	
 animation(args)
 	-webkit-animation args
@@ -282,15 +282,13 @@ pre
 
 //Animations
 
-// Fade in on load
-
+// Fade in on render
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 	
 // Fade in and animate up
-
 @-webkit-keyframes fadeInUp {
   0%   { opacity: 0; transform: translate3d(0, 30px, 0); }
   100% { opacity: 1; transform: translate3d(0, 0px, 0)}
@@ -305,5 +303,23 @@ pre
 }
 @keyframes fadeInUp {
   0%   { opacity: 0; transform: translate3d(0, 30px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0px, 0)}
+}
+
+// Fade in and animate up
+@-webkit-keyframes fadeInDown {
+  0%   { opacity: 0; transform: translate3d(0, -30px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0px, 0)}
+}
+@-moz-keyframes fadeInDown {
+  0%   { opacity: 0; transform: translate3d(0, -30px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0px, 0)}
+}
+@-o-keyframes fadeInDown {
+  0%   { opacity: 0; transform: translate3d(0, -30px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0px, 0)}
+}
+@keyframes fadeInDown {
+  0%   { opacity: 0; transform: translate3d(0, -30px, 0); }
   100% { opacity: 1; transform: translate3d(0, 0px, 0)}
 }
