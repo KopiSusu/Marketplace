@@ -74,6 +74,7 @@ hidden(shift, height)
 								height auto
 								width 100%		
 				.card
+					animation(fadeIn ease-in .3s)
 					transition()
 					position relative
 					height auto
@@ -169,7 +170,7 @@ hidden(shift, height)
 							transition()
 							top buffer*2
 		.capture
-			margin 0 0 (buffer * 3) 0
+			margin 0 buffer*3 buffer*3 buffer*3
 			padding buffer*2
 			height 100px
 			background bgColorDark
@@ -249,6 +250,7 @@ hidden(shift, height)
 						font-size 15px
 
 		.hero
+			animation(fadeIn ease-in .3s)
 			height 600px
 			width 100%	
 			overflow hidden
@@ -355,16 +357,19 @@ hidden(shift, height)
 // MOVE INTO featured.styl
 
 .section.featuredHero
+	animation(fadeIn ease-in .6s)
 	background linear-gradient(180deg,rgba(0,0,0,.35), rgba(0,0,0,.35)), url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb')
 	background-repeat no-repeat
 	background-size cover
 	background-position center center
 	.hero
+		position relative
 		max-width 800px
 		padding buffer*2
 		margin 0 auto
 		text-align center
 		color white
+		animation(fadeInUp ease-in-out 1s)
 		.heroTitle
 			font-size 60px
 			margin-top 170px
