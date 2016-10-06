@@ -89,6 +89,7 @@ hidden(shift, height)
 					cursor pointer
 					color fontColorLight
 					.image
+						animation(fadeIn ease-in .5s)
 						background bgColorDark
 						position relative
 						height 270px
@@ -386,6 +387,9 @@ hidden(shift, height)
 		.heroText
 			font-size 28px
 			font-family secondaryFontFamily
+		@media only screen and (max-width: 1300px)
+			.heroTitle
+				margin-bottom 0
 		@media only screen and (max-width: 1000px)
 			.heroTitle
 				margin-top 3vw
