@@ -36,7 +36,7 @@ module.exports = {
 		output: {
 			path: __dirname + '/dist',
 			publicPath: '/',
-			filename: 'bundle.1.js'
+			filename: 'bundle.2.js'
 		},
 		devServer: {
 			contentBase: './dist',
