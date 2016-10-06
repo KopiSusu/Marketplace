@@ -4,21 +4,24 @@ const featuredData = [
     "type" : "videoCard",
     "title" : "First Video Content",
     "description": "Videos are a amazing way to market your content, try using one of our fast and furious video things",
-    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+    "posterURL": "https://i.ytimg.com/vi_webp/ETqFn3wubl0/sddefault.webp",
+    "videoURL": "https://s3.amazonaws.com/homemade-images/Pilot%20Light%20Tv%20Episode%20%233-%20Anisha%20Samant.mp4"
   },
   {
     "id" : 2,
     "type" : "videoCard",
     "title" : "Second Video Content",
-    "description": "This is a second Video, just to show you how amazing videos can be!",
-    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+    "description": "Videos are a amazing way to market your content, try using one of our fast and furious video things",
+    "posterURL": "https://i.ytimg.com/vi_webp/ETqFn3wubl0/sddefault.webp",
+    "videoURL": "https://s3.amazonaws.com/homemade-images/Pilot%20Light%20Tv%20Episode%20%233-%20Anisha%20Samant.mp4"
   },
   {
     "id" : 3,
     "type" : "videoCard",
     "title" : "Third Video Content",
-    "description": "So many videos that im not sure what to add as description text!",
-    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+    "description": "Videos are a amazing way to market your content, try using one of our fast and furious video things",
+    "posterURL": "https://i.ytimg.com/vi_webp/ETqFn3wubl0/sddefault.webp",
+    "videoURL": "https://s3.amazonaws.com/homemade-images/Pilot%20Light%20Tv%20Episode%20%233-%20Anisha%20Samant.mp4"
   }
 ]
 
@@ -102,6 +105,7 @@ export default [
     "subTitle": "See what's on tap in our shop.",
     "class" : "menu",
     "noNavigation": true,
+    "search": true,
     "requestType": "Meal",
     "queries": [
       "fD9Mw9j0fs",
@@ -119,15 +123,31 @@ export default [
     "subTitle": "These are the people making waves right now.",
     "class" : "producers",
     "noNavigation": true,
+    "search": true,
     "requestType": "User",
     "queries": [
       "13hsxOcVzT",
       "B99QUaTbtE",
       "KYfTo0IOZw"
     ]
+  },
+  {
+    "nestedKey" : "Content",
+    "type" : "contentList",
+    "class" : "featured",
+    "title" : "FEATURED CONTENT",
+    "requestType": "User Meal",
+    "useData": "hardData",
+    "hardData": featuredData
   }
 ]
 
-
+// shipping cost = $6.95 nyc
+                //  $10.00 florida
+                //  $13.00 cali
+// Social media
+// Instagram --> build tool for this?
+// Site built on shopify <-- good customer support. Havnt Tried squarespace <-- wants dedicated website for drinks (currently seperate) 
+// <-- build a wrapper instagram.
 
 

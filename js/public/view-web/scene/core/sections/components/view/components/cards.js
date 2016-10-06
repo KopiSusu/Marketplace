@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import { browserHistory } from 'react-router'
 import _ from 'lodash'
 
 class Cards extends React.Component {
@@ -9,7 +10,7 @@ class Cards extends React.Component {
     }
 
     clickHandler () {
-        location.href = "http://shop.eathomemade.com/" + this.props.cook.uniqueName + "/" + this.props.objectId + "/true"
+        browserHistory.push(`/products/${this.props.objectId}`)
     }
 
     render () {

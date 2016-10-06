@@ -104,7 +104,6 @@ const _exportQueryConstruct = (requestType, items) => {
       Query.set("email", items);
       Query.set("source", "marketplace");
       return Query
-
     case 'User':
       Query = new Parse.Query(Parse.User);
       Query.containedIn("objectId", items);
