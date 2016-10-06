@@ -30,12 +30,12 @@ hidden(shift, height)
 			background bgColor
 			padding 0 (buffer * 5)
 			text-align center
-			font-size 22px
+			font-size 18px
 			margin-bottom 0
 		.line
 			position absolute
 			z-index -1
-			top 33px
+			top 26px
 			left buffer*3
 			right buffer*3
 			height 1px
@@ -242,7 +242,7 @@ hidden(shift, height)
 					cursor pointer
 					border-bottom 1px solid bgColor
 					font-weight 400
-					font-size 16px
+					font-size 18px
 					transition()
 					&:hover
 						opacity 1
@@ -382,10 +382,10 @@ hidden(shift, height)
 		height 28vw
 		animation(fadeInUp cubic-bezier(0.4, 0, 0.2, 1) 1s)
 		.heroTitle
-			font-size 60px
+			font-size 50px
 			margin-top 6vw
 		.heroText
-			font-size 28px
+			font-size 24px
 			font-family secondaryFontFamily
 		@media only screen and (max-width: 1300px)
 			.heroTitle
@@ -395,7 +395,7 @@ hidden(shift, height)
 				margin-top 3vw
 				margin-bottom 0
 			.heroText
-				font-size 22px
+				font-size 20px
 		@media only screen and (max-width: 700px)
 			height 250px
 			.heroTitle
@@ -414,6 +414,7 @@ hidden(shift, height)
 		.featuredText
 			font-family secondaryFontFamily
 			font-size 17px
+			margin-top buffer
 			
 	.content
 		margin-bottom buffer*4
