@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import { browserHistory } from 'react-router'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import _ from 'lodash'
@@ -19,22 +20,25 @@ class Scene extends React.Component {
     }
 
     _constructPageJSON (pathname) {
-        let path = pathname
         let pageParms;
-
-        if(path.indexOf('/') > -1) {
-    	    path = pathname.split('/')[1]
-            pageParms = pathname.split('/')[2]
+        switch (pathname) {
+            case '/':
+                browserHistory.push('/featured')
+                break;
+            case '/featured':
+                this.props.initializePage('featured', '_INITIALIZE_PAGE')
+                break;
+            case '/products':
+                this.props.initializePage('products', '_INITIALIZE_PAGE')
+                break;
+            case '/producers':
+                this.props.initializePage('producers', '_INITIALIZE_PAGE')
+                break;
+            default:
+                pageParms = pathname.split('/')[2]
+                this.props.initializePage('profile', '_INITIALIZE_PAGE', pageParms)
+                break;
         }
-
-    	switch (path) {
-			case '':
-				this.props.initializePage('marketplace', '_INITIALIZE_PAGE')
-                break;
-			case 'p':
-				this.props.initializePage('producer', '_INITIALIZE_PAGE', pageParms)
-                break;
-		}
     }
 
     componentWillMount() {
@@ -59,12 +63,10 @@ class Scene extends React.Component {
 }
 
 const mapStateToProp = (state) => {
-    let newState = {}
-
-    newState.sectionIndex = state.sections.sectionIndex
-    newState.listIndex = state.sections.listIndex
-    
-    return newState
+    return {
+        sectionIndex : state.sections.sectionIndex,
+        listIndex : state.sections.listIndex
+    }
 }
 
 export default connect(mapStateToProp, Actions)(Scene);

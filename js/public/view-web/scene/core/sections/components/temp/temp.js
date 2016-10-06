@@ -50,34 +50,8 @@ class Temp extends React.Component {
             case 'featured':
                 return (
                     <div>
-                        <section className="section featuredHero">
-                            <div ref='hero' className="hero">
-                                <h1 className="heroTitle">Project X.</h1>
-                                <p className="heroText">
-                                    Discover independent food makers, their stories, and their products.
-                                </p>
-                            </div>
-                        </section>
 
                         <section className='section column-1 featured'>
-
-                            <section className='capture'>
-                                {
-                                    this.state.emailCapture ?
-                                    <div className='text captured rows-1 column-1'>
-                                        <p className="signedUpText">You are signed up for updates!</p>
-                                    </div> : <span>
-                                        <div className='text rows-1 column-10-4'>
-                                            <h1>Get the newsletter</h1>
-                                            <p>Sign up and never miss an exciting meal!</p>
-                                        </div>
-                                        <input ref='emailCapture' className='rows-1 column-10-4'/>
-                                        <div className='button rows-1 column-10-2'>
-                                            <button onClick={() => { this._clickHandler() }}>SUBMIT</button>
-                                        </div>
-                                    </span>
-                                }
-                            </section>
 
                             <div className="header">
                                 <h1 className="featuredHeader">TASTE</h1>

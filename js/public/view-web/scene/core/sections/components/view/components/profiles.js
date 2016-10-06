@@ -65,7 +65,7 @@ class Profiles extends React.Component {
             case 'mixed':
             case 'profileList ImageOnly':
                 return (
-                    <li className={`profiles cards column-${column}`} onClick={() => { browserHistory.push(`/p/${this.props.objectId}`) }}>
+                    <li className={`profiles cards column-${column}`} onClick={() => { browserHistory.push(`/producers/${this.props.objectId}`) }}>
                         <div className='profile card'>
                             <div className={`details column-1 rows-1`}> 
                                 <div className='image rows-2' style={{backgroundImage: `url(${this.props.imageURL})`}}>

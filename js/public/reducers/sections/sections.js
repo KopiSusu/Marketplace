@@ -1,8 +1,10 @@
 // Build Chat Reducer Here!
 // Feel free to copy other reducers
 import * as  Actions from './../../actions'
-import marketplace from './sceneJson/marketplace.js'
-import producer from './sceneJson/producer.js'
+import profile from './sceneJson/profile.js'
+import featured from './sceneJson/featured.js'
+import producers from './sceneJson/producers.js'
+import products from './sceneJson/products.js'
 
 import _ from 'lodash'
 
@@ -12,8 +14,10 @@ const initalState = {
 }
 
 const JSONlist = {
-    marketplace,
-    producer
+    profile,
+    featured,
+    products,
+    producers
 }
 
 export default (state = Object.assign({}, initalState), action) => {
@@ -50,12 +54,12 @@ const _constructPageJSON = (pageJSON, parms) => {
     _.forEach([...pageJSON], (section) => {
         json[section.nestedKey] = section;
 
+        if(section.initalSelected)
+            json['selectedSection'] = section.initalSelected
+
         if(section.type.indexOf('contentOnly') < 0) {
             json[`content-${section.nestedKey}`] = []
             json['listIndex'].push(section.nestedKey)
-
-            if(section.nestedKey === "featured")
-                json['selectedSection'] = section.nestedKey
 
             if(section.type.indexOf('capture email') > -1)
                 json['emailCaptured'] = false
