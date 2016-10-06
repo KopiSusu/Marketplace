@@ -16,7 +16,7 @@ class Ribbon extends React.Component {
     return (
     	<section className='ribbon column-1' style={this.props.app.navStyle}>
         {
-          this.props.location.pathname !== '/' ? (
+          this.props.location.pathname.split('/').length > 2 ? (
               <div className='back' onClick={() => { browserHistory.goBack() }}>
                 <Icon icon='Left'/>
                 <p>Back</p>

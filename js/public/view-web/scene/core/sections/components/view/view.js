@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import { browserHistory } from 'react-router'
 import _ from 'lodash'
 import GoogleMap from 'google-map-react'
 import Video from 'react-html5video'
@@ -25,8 +26,9 @@ class Section extends React.Component {
         this._clickHandler = this._clickHandler.bind(this)
     }
 
-    _clickHandler () {
-        this.props.postData('emailCapture', this.refs.emailCapture.value, '_CAPTURE_EMAIL')
+    _clickHandler (sectionHeader) {
+        this.props.selectItem(sectionHeader, 'section')
+        browserHistory.push(`/${sectionHeader}`) 
     }
 
   	render() {
@@ -74,7 +76,7 @@ class Section extends React.Component {
                                 </div>
                                 <input ref='emailCapture' className='rows-1 column-6-3'/>
                                 <div className='button rows-1 column-6-1'>
-                                    <button onClick={() => { this._clickHandler() }}>SUBMIT</button>
+                                    <button onClick={() => { this.props.postData('emailCapture', this.refs.emailCapture.value, '_CAPTURE_EMAIL') }}>SUBMIT</button>
                                 </div>
                             </span>
                         }
@@ -85,10 +87,10 @@ class Section extends React.Component {
                     <section className='navigation'>
                         <div className='wrapper'>
                             {
-                                _.map(this.props.listIndex, (sectionHeader) => {
+                                _.map(this.props.pages, (sectionHeader) => {
                                     const selected = this.props.selectedSection
                                     return (
-                                        <h2 onClick={() => { this.props.selectItem(sectionHeader, 'section') }}className={this.props.selectedSection === sectionHeader ? 'selected' : ''} key={sectionHeader}>{sectionHeader}</h2>
+                                        <h2 onClick={() => { this._clickHandler(sectionHeader) }}className={this.props.selectedSection === sectionHeader ? 'selected' : ''} key={sectionHeader}>{sectionHeader}</h2>
                                     )
                                 })
                             }
@@ -107,6 +109,23 @@ class Section extends React.Component {
 
                     </section>
                 )
+            case 'contentOnly Hero Image Text':
+                let textImageSrc = this.props.imageURL ? this.props.imageURL : ''
+
+                if ( this.props.useData === 'producers' ) {
+                    textImageSrc = this.props.content[0] ? this.props.content[0].toJSON().kitchenURL : ''
+                }
+
+                return (
+                    <section className="section featuredHero" style={{background: `linear-gradient(180deg,rgba(0,0,0,.35), rgba(0,0,0,.35)), url(${textImageSrc})`}}>
+                        <div ref='hero' className="hero">
+                            <h1 className="heroTitle">{this.props.title}</h1>
+                            <p className="heroText">
+                                {this.props.body}
+                            </p>
+                        </div>
+                    </section>
+                )
             case 'contentOnly Hero Video':
                 return (
                     <Video className='hero' controls autoPlay loop muted >
@@ -117,6 +136,17 @@ class Section extends React.Component {
             case 'cardList':
                 return (
                     <ul className='column-1'>
+                        {
+                            this.props.title ? <div className="header">
+                                <h1 className="featuredHeader">{this.props.title}</h1>
+                                {
+                                    this.props.subTitle ? <span>
+                                        <div className="line"></div>
+                                        <p className="featuredText">{this.props.subTitle}</p>
+                                    </span> : null
+                                }
+                            </div> : null
+                        }
                         {
                             _.map(this.props.content, (card, index) => {
                                 const cardJSON = card.toJSON()
@@ -132,6 +162,17 @@ class Section extends React.Component {
             case 'profileList Map ImageOnly Slideover':
                 return (
                     <ul className='column-1'>
+                        {
+                            this.props.title ? <div className="header">
+                                <h1 className="featuredHeader">{this.props.title}</h1>
+                                {
+                                    this.props.subTitle ? <span>
+                                        <div className="line"></div>
+                                        <p className="featuredText">{this.props.subTitle}</p>
+                                    </span> : null
+                                }
+                            </div> : null
+                        }
                         {
                             _.map(this.props.content, (profile, index) => {
                                 const profileJSON = profile.toJSON();
