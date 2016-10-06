@@ -121,14 +121,14 @@ hidden(shift, height)
 						text-align right
 						font-weight 600
 						font-size 16px
-						line-height 18px
+						line-height 24px
 						display inline-block
 						width 15%
 					.name
 						margin buffer 0 (buffer/1.5) 0
 						font-size 16px
 						font-weight 400
-						line-height 18px
+						line-height 24px
 						display inline-block
 						width 85%
 					.profileImage
@@ -259,6 +259,7 @@ hidden(shift, height)
 			height 600px
 			width 100%	
 			overflow hidden
+			background bgColorDark
 			background-size cover
 			background-repeat no-repeat
 			background-position center
@@ -311,6 +312,7 @@ hidden(shift, height)
 	.section
 		.hero
 			height 350px
+			background bgColorDark
 			background-size cover
 			backgorund-position center center
 			margin-bottom 0
@@ -375,20 +377,28 @@ hidden(shift, height)
 		margin 0 auto
 		text-align center
 		color white
+		background none
+		height 28vw
 		animation(fadeInUp cubic-bezier(0.4, 0, 0.2, 1) 1s)
 		.heroTitle
 			font-size 60px
-			margin-top 170px
+			margin-top 6vw
 		.heroText
 			font-size 28px
 			font-family secondaryFontFamily
-		@media only screen and (max-width: 600px)
+		@media only screen and (max-width: 1000px)
+			.heroTitle
+				margin-top 3vw
+				margin-bottom 0
+			.heroText
+				font-size 22px
+		@media only screen and (max-width: 700px)
 			height 250px
 			.heroTitle
-				margin-top 0
+				margin-top 20px
 				font-size 48px
 			.heroText
-				font-size 16px
+				font-size 18px
 			
 
 .section.featured
