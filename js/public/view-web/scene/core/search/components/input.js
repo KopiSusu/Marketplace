@@ -10,7 +10,7 @@ class View extends React.Component {
     }
 
     changeHandler(e) {
-        this.props.setQuery(e.currentTarget.value)
+        this.props.setQuery(e.currentTarget.value.toLowerCase())
     }
 
     render () {

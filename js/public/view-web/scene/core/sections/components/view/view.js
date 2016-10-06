@@ -103,7 +103,7 @@ class Section extends React.Component {
                 }
 
                 return (
-                    <section className='hero' style={{backgroundImage: `url(${imageSrc})`}}>
+                    <section className='hero' ref='hero' style={{backgroundImage: `url(${imageSrc})`}}>
 
                     </section>
                 )

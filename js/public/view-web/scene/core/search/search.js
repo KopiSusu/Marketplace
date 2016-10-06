@@ -11,6 +11,26 @@ import Input from './components/input'
 import './search.styl'
 
 class Ribbon extends React.Component {
+    constructor(props) {
+        super(props)
+        this._filterItems = this._filterItems.bind(this)
+    }
+
+    _filterItems () {
+        return _.filter(this.props.items, (item) => {
+            switch (this.props.filter) {
+                case 'products':
+                    item = item.toJSON()
+                    return item.name.toLowerCase().indexOf(this.props.query) > -1 ||
+                        item.ingredients.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
+                case 'producers':
+                    item = item.toJSON()
+                    return item.displayName.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
+                        item.city.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1 ||
+                        item.state.toLowerCase().replace(/[^\w\s]/gi, '').indexOf(this.props.query) > -1
+            }
+        })
+    }
 
     render() {
         return (
@@ -28,7 +48,7 @@ class Ribbon extends React.Component {
                 return (
                     <span>
                         <Input toggle={this.props.toggle} setQuery={this.props.setQuery} query={this.props.query}/>
-                        <View items={this.props.items} config={this.props.config} filter={this.props.filter} query={this.props.query} toggle={this.props.toggle}/>
+                        <View items={this._filterItems()} config={this.props.config} filter={this.props.filter} query={this.props.query} toggle={this.props.toggle}/>
                     </span>
                 )
             default:
