@@ -276,10 +276,6 @@ class Temp extends React.Component {
                                     </div>
                                 </li>
                             </ul>
-                            <div className="header">
-                                <h1 className="featuredHeader">Where the Magic Happens</h1>
-                                <div className="line"></div>
-                            </div>
 
                         </section>
                     </div>
