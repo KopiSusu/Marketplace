@@ -5,6 +5,7 @@ import profile from './sceneJson/profile.js'
 import featured from './sceneJson/featured.js'
 import producers from './sceneJson/producers.js'
 import products from './sceneJson/products.js'
+import product from './sceneJson/product.js'
 
 import _ from 'lodash'
 
@@ -17,6 +18,7 @@ const JSONlist = {
     profile,
     featured,
     products,
+    product,
     producers
 }
 

@@ -35,10 +35,13 @@ ReactDOM.render(
 
         <Route path="/featured" component={Scene}/>
         <Route path="/producers" component={Scene}>
+          <Route path=":producerID" component={Scene}>
+          </Route>
+        </Route>
+        <Route path="/products" component={Scene}>
           <Route path=":productID" component={Scene}>
           </Route>
         </Route>
-        <Route path="/products" component={Scene}/>
 
         <Route path="styleguide" component={Styleguide}/>
       </Route>

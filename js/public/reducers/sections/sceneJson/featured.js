@@ -2,23 +2,17 @@ const featuredData = [
   {
     "id" : 1,
     "type" : "videoCard",
-    "title" : "First Video Content",
-    "description": "Videos are a amazing way to market your content, try using one of our fast and furious video things",
-    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+    "title" : "Pilot Light TV: Anisha",
+    "description": "Meet Anisha Samant, a former computer programmer grows fresh ingredients in her ...",
+    "posterURL": "https://i.ytimg.com/vi_webp/ETqFn3wubl0/sddefault.webp",
+    "videoURL": "https://s3.amazonaws.com/homemade-images/Pilot%20Light%20Tv%20Episode%20%233-%20Anisha%20Samant.mp4"
   },
   {
     "id" : 2,
-    "type" : "videoCard",
-    "title" : "Second Video Content",
-    "description": "This is a second Video, just to show you how amazing videos can be!",
-    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
-  },
-  {
-    "id" : 3,
-    "type" : "videoCard",
-    "title" : "Third Video Content",
-    "description": "So many videos that im not sure what to add as description text!",
-    "videoURL": "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov"
+    "type" : "audioCard",
+    "title" : "Mike’s Hot Honey: A Hobby to 100,000 Units",
+    "description": "We spent some time with Michael Kurtz in Union Square park recently. This man and his team are...",
+    "audioURL": "https://s3.amazonaws.com/homemade-images/Mike%E2%80%99s%20Hot%20Honey%20-%20A%20Hobby%20to%20100%2C000%20Units_270720713_soundcloud.mp3"
   }
 ]
 
@@ -102,6 +96,7 @@ export default [
     "subTitle": "See what's on tap in our shop.",
     "class" : "menu",
     "noNavigation": true,
+    "search": true,
     "requestType": "Meal",
     "queries": [
       "fD9Mw9j0fs",
@@ -119,15 +114,33 @@ export default [
     "subTitle": "These are the people making waves right now.",
     "class" : "producers",
     "noNavigation": true,
+    "search": true,
     "requestType": "User",
     "queries": [
       "13hsxOcVzT",
       "B99QUaTbtE",
       "KYfTo0IOZw"
     ]
+  },
+  {
+    "nestedKey" : "Content",
+    "type" : "contentList",
+    "title": "FEATURED CONTENT",
+    "class" : "featured",
+    "title" : "FEATURED CONTENT",
+    "requestType": "User Meal",
+    "noNavigation": true,
+    "useData": "hardData",
+    "hardData": featuredData
   }
 ]
 
-
+// shipping cost = $6.95 nyc
+                //  $10.00 florida
+                //  $13.00 cali
+// Social media
+// Instagram --> build tool for this?
+// Site built on shopify <-- good customer support. Havnt Tried squarespace <-- wants dedicated website for drinks (currently seperate) 
+// <-- build a wrapper instagram.
 
 

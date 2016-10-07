@@ -21,6 +21,7 @@ class Scene extends React.Component {
 
     _constructPageJSON (pathname) {
         let pageParms;
+        let path;
         switch (pathname) {
             case '/':
                 browserHistory.push('/featured')
@@ -36,7 +37,9 @@ class Scene extends React.Component {
                 break;
             default:
                 pageParms = pathname.split('/')[2]
-                this.props.initializePage('profile', '_INITIALIZE_PAGE', pageParms)
+                path = pathname.split('/')[1] === 'producers' ? 'profile' : 'product'
+
+                this.props.initializePage(path, '_INITIALIZE_PAGE', pageParms)
                 break;
         }
     }

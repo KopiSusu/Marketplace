@@ -28,15 +28,31 @@ class Content extends React.Component {
     renderContent() {
         switch (this.props.type) {
             case 'videoCard':
-                return <div className={`${this.props.type}`} onClick={() => this.clickHandler()}>
-                    <Video className='video rows-6-5' controls loop muted >
-                        <source src={this.props.videoURL} type="video/webm" />
-                    </Video>
-                    <div className="namePrice">
-                        <p className='column-1 name'>{this.props.title}</p>
-                        <p className='column-1 price'>${this.props.description}</p>
+                return (
+                    <div className="videoCard card">
+                        <Video className='video rows-6-5' controls loop muted poster={this.props.posterURL} >
+                            <source src={this.props.videoURL} />
+                        </Video>
+                        <div className='details rows-2'>
+                            <p className='column-1 name'>{this.props.title}</p>
+                            <p className="description">{this.props.description}</p>
+                        </div>
                     </div>
-                </div>
+                )
+            case 'audioCard':
+                return (
+                    <div className="videoCard card">
+                        <div className="audioControlsWrapper">
+                            <audio controls>
+                               <source src={this.props.audioURL} type='audio/mp3'/>
+                            </audio>
+                        </div>
+                        <div className='details rows-2'>
+                            <p className='column-1 name'>{this.props.title}</p>
+                            <p className="description">{this.props.description}</p>
+                        </div>
+                    </div>
+                )
 
         }
     }
