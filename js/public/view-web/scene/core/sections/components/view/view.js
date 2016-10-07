@@ -10,6 +10,7 @@ import Cards from './components/cards'
 import Profiles from './components/profiles'
 import Marker from './components/marker'
 import Content from './components/content'
+import Selected from './components/selected'
 
 import './components/video.css'
 
@@ -49,6 +50,17 @@ class Section extends React.Component {
 
     renderView() {
         switch (this.props.type) {
+            case 'selected':
+                return (
+                    <section className='selected' >
+                        {
+                            _.map(this.props.content, (selected, index) => {
+                                const selectedJSON = selected.toJSON();
+                                return <Selected key={index} {...this.props} {...selectedJSON}/>
+                            })
+                        }
+                    </section>
+                )
             case 'contentList':
                 return (
                     <ul className='column-1'>

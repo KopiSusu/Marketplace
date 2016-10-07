@@ -20,7 +20,7 @@ class Cards extends React.Component {
 
             <li className={`cards column-${column}`}>
                 <div className='card' onClick={() => this.clickHandler()}>
-                    <div ref={`card-${this.props.objectId}`} className='image rows-6-5' style={{backgroundImage: `url(${this.props.imageURLS[0]})`}}> 
+                    <div className='image rows-6-5' style={{backgroundImage: `url(${this.props.imageURLS[0]})`}}> 
 
                     </div>
                     <div className="namePrice">

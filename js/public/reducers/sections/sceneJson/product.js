@@ -8,10 +8,5 @@ export default [
     "queries": [
 
     ]
-  },
-  {
-    "nestedKey" : "map",
-    "type" : "contentOnly Map",
-    "useData": "producers"
   }
 ]

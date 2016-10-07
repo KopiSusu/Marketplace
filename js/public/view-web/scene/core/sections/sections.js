@@ -11,10 +11,25 @@ import './sections.styl'
 class Sections extends React.Component {
     constructor(props) {
         super(props)
+        this._checkPage = this._checkPage.bind(this)
+    }
+
+    _checkPage () {
+        const pageParms = this.props.location.pathname.split('/')
+        if (pageParms.length > 2) {
+            switch (pageParms[1]) {
+                case 'producers':
+                    return 'Profile'
+                case 'products':
+                    return 'Product'
+            }
+        }
+
+        return 'Marketplace'
     }
 
   	render() {    
-        const page = this.props.location.pathname.indexOf('/producers/') > -1 ? 'Profile' : 'Marketplace'
+        const page = this._checkPage()
 
     	return (
     		<section className={`sections column-1 ${page}`}>
