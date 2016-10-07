@@ -11,14 +11,14 @@
 	border 1px solid strokeColor
 	transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
 	.icon
-		padding (buffer/2) 0 
-		height (ribbonHeight * 0.4)
+		padding (buffer/2) 
+		height (ribbonHeight * 0.6)
 		display inline-block
 		width (ribbonHeight * 0.4)
-		margin-top buffer
+		margin-top 0
 	&.closed
 		padding 0 0 0 buffer
-		cursor pointer
+		cursor pointer			
 		span
 			display block
 			p
@@ -32,6 +32,8 @@
 		height 300px
 		width 450px
 		border 1px solid strokeColor
+		.icon
+			padding (buffer/2) 0
 		.inputs
 			padding buffer
 			border-bottom 1px solid strokeColor
