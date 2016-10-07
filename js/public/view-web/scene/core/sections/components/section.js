@@ -24,8 +24,8 @@ class Section extends React.Component {
 
   	render() {
         const className = this.props.class || ''
-        if (this.props.hardData) 
-            return <Temp {...this.props}/>
+        // if (this.props.hardData) 
+        //     return <Temp {...this.props}/>
         
 
     	return (

@@ -53,6 +53,17 @@ class Section extends React.Component {
                 return (
                     <ul className='column-1'>
                         {
+                            this.props.title ? <div className="header">
+                                <h1 className="featuredHeader">{this.props.title}</h1>
+                                <div className="line"></div>
+                                {
+                                    this.props.subTitle ? <span>
+                                        <p className="featuredText">{this.props.subTitle}</p>
+                                    </span> : null
+                                }
+                            </div> : null
+                        }
+                        {
                             _.map(this.props.content, (content, index) => {
                                 return <Content key={index} {...this.props} {...content}/>
                             })
@@ -139,9 +150,9 @@ class Section extends React.Component {
                         {
                             this.props.title ? <div className="header">
                                 <h1 className="featuredHeader">{this.props.title}</h1>
+                                <div className="line"></div>
                                 {
                                     this.props.subTitle ? <span>
-                                        <div className="line"></div>
                                         <p className="featuredText">{this.props.subTitle}</p>
                                     </span> : null
                                 }
@@ -165,9 +176,9 @@ class Section extends React.Component {
                         {
                             this.props.title ? <div className="header">
                                 <h1 className="featuredHeader">{this.props.title}</h1>
+                                <div className="line"></div>
                                 {
                                     this.props.subTitle ? <span>
-                                        <div className="line"></div>
                                         <p className="featuredText">{this.props.subTitle}</p>
                                     </span> : null
                                 }

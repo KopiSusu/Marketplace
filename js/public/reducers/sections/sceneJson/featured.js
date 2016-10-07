@@ -2,26 +2,17 @@ const featuredData = [
   {
     "id" : 1,
     "type" : "videoCard",
-    "title" : "First Video Content",
-    "description": "Videos are a amazing way to market your content, try using one of our fast and furious video things",
+    "title" : "Pilot Light TV: Anisha",
+    "description": "Meet Anisha Samant, a former computer programmer grows fresh ingredients in her ...",
     "posterURL": "https://i.ytimg.com/vi_webp/ETqFn3wubl0/sddefault.webp",
     "videoURL": "https://s3.amazonaws.com/homemade-images/Pilot%20Light%20Tv%20Episode%20%233-%20Anisha%20Samant.mp4"
   },
   {
     "id" : 2,
-    "type" : "videoCard",
-    "title" : "Second Video Content",
-    "description": "Videos are a amazing way to market your content, try using one of our fast and furious video things",
-    "posterURL": "https://i.ytimg.com/vi_webp/ETqFn3wubl0/sddefault.webp",
-    "videoURL": "https://s3.amazonaws.com/homemade-images/Pilot%20Light%20Tv%20Episode%20%233-%20Anisha%20Samant.mp4"
-  },
-  {
-    "id" : 3,
-    "type" : "videoCard",
-    "title" : "Third Video Content",
-    "description": "Videos are a amazing way to market your content, try using one of our fast and furious video things",
-    "posterURL": "https://i.ytimg.com/vi_webp/ETqFn3wubl0/sddefault.webp",
-    "videoURL": "https://s3.amazonaws.com/homemade-images/Pilot%20Light%20Tv%20Episode%20%233-%20Anisha%20Samant.mp4"
+    "type" : "audioCard",
+    "title" : "Mike’s Hot Honey: A Hobby to 100,000 Units",
+    "description": "We spent some time with Michael Kurtz in Union Square park recently. This man and his team are...",
+    "audioURL": "https://s3.amazonaws.com/homemade-images/Mike%E2%80%99s%20Hot%20Honey%20-%20A%20Hobby%20to%20100%2C000%20Units_270720713_soundcloud.mp3"
   }
 ]
 
@@ -134,9 +125,11 @@ export default [
   {
     "nestedKey" : "Content",
     "type" : "contentList",
+    "title": "FEATURED CONTENT",
     "class" : "featured",
     "title" : "FEATURED CONTENT",
     "requestType": "User Meal",
+    "noNavigation": true,
     "useData": "hardData",
     "hardData": featuredData
   }
