@@ -37,15 +37,15 @@ class Ribbon extends React.Component {
                   </div>
               ) : null
             }
-            <div className="ribbonLink">BROWSE BY ▾</div>
+            <div className="ribbonLink">Browse By ▾</div>
           </div>
           {
             this.renderTitle()
           }
           <div className="ribbonAccountLinks">
-            <div className="ribbonLink sellLink">SELL IN OUR MARKET</div>
-            <div className="ribbonLink">SIGN UP</div>
-            <div className="ribbonLink">LOG IN</div>
+            <div className="ribbonLink sellLink">Sell in our Market</div>
+            <div className="ribbonLink">Sign Up</div>
+            <div className="ribbonLink">Log In</div>
           </div>
 
       	</section>
