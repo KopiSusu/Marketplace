@@ -37,7 +37,7 @@ class Ribbon extends React.Component {
                   </div>
               ) : null
             }
-            <div className="ribbonLink">BROWSE BY</div>
+            <div className="ribbonLink">BROWSE BY ▾</div>
           </div>
           {
             this.renderTitle()
