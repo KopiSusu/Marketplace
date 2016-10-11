@@ -25,23 +25,30 @@ class Ribbon extends React.Component {
 
     //If we are scrolled further lets render the other one.
     return (
-    	<section className='ribbon column-1' style={this.props.app.navStyle}>
-        <Search />              
-        {
-          this.props.location.pathname.split('/').length > 2 ? (
-              <div className='back' onClick={() => { browserHistory.goBack() }}>
-                <Icon icon='Left'/>
-                <p>Back</p>
-              </div>
-          ) : null
-        }
-        <div className="ribbonDiv column-10-1">BROWSE BY</div>
-        {
-          this.renderTitle()
-        }
-        <div className="ribbonDiv column-10-1">Sell in our market</div>
-        <div className="ribbonDiv column-10-1">SIGN UP</div>
-        <div className="ribbonDiv column-10-1">LOG IN</div>
+      <div className="pageHeader">
+      	<section className='ribbon column-1' style={this.props.app.navStyle}>
+          <div className="ribbonNavigationLinks">
+            <Search />              
+            {
+              this.props.location.pathname.split('/').length > 2 ? (
+                  <div className='back' onClick={() => { browserHistory.goBack() }}>
+                    <Icon icon='Left'/>
+                    <p>Back</p>
+                  </div>
+              ) : null
+            }
+            <div className="ribbonLink">BROWSE BY</div>
+          </div>
+          {
+            this.renderTitle()
+          }
+          <div className="ribbonAccountLinks">
+            <div className="ribbonLink sellLink">SELL IN OUR MARKET</div>
+            <div className="ribbonLink">SIGN UP</div>
+            <div className="ribbonLink">LOG IN</div>
+          </div>
+
+      	</section>
 
         <section className='navigation'>
           <div className='wrapper'>
@@ -50,14 +57,14 @@ class Ribbon extends React.Component {
             <h2 onClick={() => { this._clickHandler('producers') }}className={this.props.selectedSection === 'producers' ? 'selected' : ''} key={'PRODUCERS'}>{'PRODUCERS'}</h2>
           </div>
         </section>
-    	</section>
+      </div>
     );
   }
 
   renderTitle() {
     if(this.props.app.image)
-      return <div className='column-3-1 image logo' />
-    return <h1 className='column-3-offset-2' style={Object.assign({}, this.props.app.titleStyle, {lineHeight})}>{this.props.app.title}</h1>
+      return <div className='image brand' />
+    return <h1 className='brand' style={Object.assign({}, this.props.app.titleStyle, {lineHeight})}>{this.props.app.title}</h1>
   }
 }
 
