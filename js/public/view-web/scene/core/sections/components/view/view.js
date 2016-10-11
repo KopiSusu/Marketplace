@@ -106,20 +106,7 @@ class Section extends React.Component {
                     </section>
                 )
             case 'contentOnly navigation':
-                return (
-                    <section className='navigation'>
-                        <div className='wrapper'>
-                            {
-                                _.map(this.props.pages, (sectionHeader) => {
-                                    const selected = this.props.selectedSection
-                                    return (
-                                        <h2 onClick={() => { this._clickHandler(sectionHeader) }}className={this.props.selectedSection === sectionHeader ? 'selected' : ''} key={sectionHeader}>{sectionHeader}</h2>
-                                    )
-                                })
-                            }
-                        </div>
-                    </section>
-                )
+                return null;
             case 'contentOnly Hero Image':
                 let imageSrc = this.props.imageURL ? this.props.imageURL : ''
 

@@ -8,7 +8,6 @@ class Selected extends React.Component {
     }
 
     render () {
-        debugger
         return (
         	<span>
         		<div className='rows-3-2 column-1'>
