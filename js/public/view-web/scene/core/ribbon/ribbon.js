@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react'
-import {ReactDOM} from 'react-dom'
+import ReactDOM from 'react-dom'
 
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
@@ -22,33 +22,73 @@ class Ribbon extends React.Component {
   }
 
   render() {
+    //The first retyurns the big scroll and the small fixed one. Second case returns just the big one that is position relative.
+    return this.props.scrollPosition > 100 ? (
+      <div>
+        <div className="smallPageHeader">
+          <section className='ribbon column-1' style={this.props.app.navStyle}>
+            <div className='image brand' />
+            <div className="ribbonNavigationLinks">
+              {
+                this.props.location.pathname.split('/').length > 2 ? (
+                    <div className='ribbonLink back' onClick={() => { browserHistory.goBack() }}>
+                      <Icon icon='Left'/>
+                      <p>Back</p>
+                    </div>
+                ) : null
+              }
+              <Search />              
+              <div className="ribbonLink">Browse By ▾</div>
+            </div>
+            <section className='smallNavigation'>
+              <div className='wrapper'>
+                <h2 onClick={() => { this._clickHandler('featured') }}className={this.props.selectedSection === 'featured' ? 'selected' : ''} key={'FEATURED'}>{'FEATURED'}</h2>
+                <h2 onClick={() => { this._clickHandler('products') }}className={this.props.selectedSection === 'products' ? 'selected' : ''} key={'PRODUCTS'}>{'PRODUCTS'}</h2>
+                <h2 onClick={() => { this._clickHandler('producers') }}className={this.props.selectedSection === 'producers' ? 'selected' : ''} key={'PRODUCERS'}>{'PRODUCERS'}</h2>
+              </div>
+            </section>
+            <div className="ribbonAccountLinks">
+              <a href="http://eathomemade.com/" target="_blank" className="ribbonLink sellLink">Sell in our market</a>
+              <div className="ribbonLink">SIGN UP</div>
+              <div className="ribbonLink">LOG IN</div>
+            </div>
+          </section>
+        </div>
+        {this.renderTopNav()}
+      </div>
+    ) : (
+      <div>
+      {this.renderTopNav()}
+      </div>
+    );
+  }
 
-    //If we are scrolled further lets render the other one.
+  renderTopNav() {
     return (
       <div className="pageHeader">
-      	<section className='ribbon column-1' style={this.props.app.navStyle}>
+        <section className='ribbon column-1' style={this.props.app.navStyle}>
           <div className="ribbonNavigationLinks">
-            <Search />              
             {
               this.props.location.pathname.split('/').length > 2 ? (
-                  <div className='back' onClick={() => { browserHistory.goBack() }}>
+                  <div className='ribbonLink back' onClick={() => { browserHistory.goBack() }}>
                     <Icon icon='Left'/>
                     <p>Back</p>
                   </div>
               ) : null
             }
+            <Search />              
             <div className="ribbonLink">Browse By ▾</div>
           </div>
           {
             this.renderTitle()
           }
           <div className="ribbonAccountLinks">
-            <div className="ribbonLink sellLink">Sell in our Market</div>
+            <a href="http://eathomemade.com/" target="_blank" className="ribbonLink sellLink">Sell in our market</a>
             <div className="ribbonLink">Sign Up</div>
             <div className="ribbonLink">Log In</div>
           </div>
 
-      	</section>
+        </section>
 
         <section className='navigation'>
           <div className='wrapper'>
@@ -72,7 +112,8 @@ const mapStateToProp = (state) => {
     return {
       app: state.app.app,
       location: state.routing.locationBeforeTransitions,
-      selectedSection: state.sections.selectedSection
+      selectedSection: state.sections.selectedSection,
+      scrollPosition: state.sections.scrollPosition
     }
 }
 

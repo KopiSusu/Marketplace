@@ -127,7 +127,7 @@ class Section extends React.Component {
                 }
 
                 return (
-                    <section className="section featuredHero" style={{background: `linear-gradient(180deg,rgba(0,0,0,.35), rgba(0,0,0,.35)), url(${textImageSrc})`}}>
+                    <section className="section featuredHero" style={{backgroundImage: `linear-gradient(180deg,rgba(0,0,0,.35), rgba(0,0,0,.35)), url(${textImageSrc})`}}>
                         <div ref='hero' className="hero">
                             <h1 className="heroTitle">{this.props.title}</h1>
                             <p className="heroText">

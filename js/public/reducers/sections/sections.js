@@ -11,7 +11,8 @@ import _ from 'lodash'
 
 const initalState = { 
     isFetching: false,
-    selectedSection: null
+    selectedSection: null,
+    scrollPosition: 0
 }
 
 const JSONlist = {
@@ -23,7 +24,7 @@ const JSONlist = {
 }
 
 export default (state = Object.assign({}, initalState), action) => {
-
+    let newSection = Object.assign({}, state);      
     switch (action.type) {
         case '_CAPTURE_EMAIL':
             return Object.assign({}, state, {
@@ -39,8 +40,10 @@ export default (state = Object.assign({}, initalState), action) => {
             let newSections = Object.assign({}, { isFetching: false, selectedSection: null }, _constructPageJSON(JSONlist[action.payload], action.parms))
             return newSections;
         case '_FETCH_SECTION':
-            let newSection = Object.assign({}, state);      
             newSection[`content-${action.nestedKey}`] = action.payload
+            return newSection
+        case 'SET_SCROLL':
+            newSection.scrollPosition = action.payload
             return newSection
         default:
             return state
@@ -58,7 +61,7 @@ const _constructPageJSON = (pageJSON, parms) => {
 
         if(section.initalSelected)
             json['selectedSection'] = section.initalSelected
-
+            json['scrollPosition'] = 0;
         if(section.type.indexOf('contentOnly') < 0) {
             json[`content-${section.nestedKey}`] = []
             json['listIndex'].push(section.nestedKey)

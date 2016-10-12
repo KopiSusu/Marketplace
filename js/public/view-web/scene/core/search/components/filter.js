@@ -24,7 +24,7 @@ class Filter extends React.Component {
 
     render () {
         return (
-            <div className='filter rows-1 column-4-3'>
+            <div className='filter rows-1 column-1'>
                 {
                     _.map(this.props.items, (item, index) => {
                         if(item._objCount || item._objCount === 0)

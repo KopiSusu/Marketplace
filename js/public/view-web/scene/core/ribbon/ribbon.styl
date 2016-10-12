@@ -4,21 +4,28 @@
 	text-transform uppercase
 	position relative
 	height ribbonHeight
-	padding 0 buffer
 	background bgColor
+	
+	a 
+		text-decoration none
+
 	.ribbonNavigationLinks
 		position absolute
-		left 0
+		left buffer
+		margin 20px 0
+		height 29px
 	.ribbonAccountLinks
 		position absolute
 		top 0
-		right 0
+		right buffer
+		margin 20px 0
+		height 29px
 	.ribbonLink
 		display	inline-block
 		text-align center
 		cursor pointer
 		height ribbonHeight
-		padding 20px buffer
+		padding 0px buffer
 		color fontColorLight
 		transition()
 		&:hover
@@ -28,35 +35,131 @@
 	h1
 		text-align center
 	.brand
-		display block
-		margin buffer auto
 		background-image url('https://s3.amazonaws.com/homemade-images/the_foodworks.jpg')
-		background-size contain
+		background-size cover
 		background-repeat no-repeat
 		background-position center
 		text-align center
+		margin-top buffer
 		height ribbonHeight - buffer*2
-		width 240px
+		&.bigNav
+			margin-left calc(23.3% - 100px)
 	.back
-		position absolute
 		cursor pointer
-		transition()
 		p
 			display inline-block
-			line-height ribbonHeight
-			height ribbonHeight
 		.icon
 			margin-left buffer
-		&:hover
-			-webkit-transform scale(1.3)
-			-moz-transform scale(1.3)
-			-ms-transform scale(1.3)
-			transform scale(1.3)
-		
+
+	.navigation
+		text-align center
+		text-transform uppercase
+		letter-spacing 3px
+		padding (buffer*1.5) 0
+		background white
+		.wrapper
+			display inline-block
+			transition()
+			&:hover 
+				h2
+					opacity 0.5
+			h2
+				display inline-block
+				margin 0 buffer*3
+				cursor pointer
+				border-bottom 1px solid bgColor
+				font-weight 400
+				font-size 18px
+				transition()
+				&:hover
+					opacity 1
+				&.selected
+					border-bottom 1px solid secondaryColor
+		@media only screen and (max-width: 600px)
+			letter-spacing 1px
+			.wrapper
+				h2
+					margin 0 (buffer/1.5)
+					font-size 15px	
+					
+	.smallNavigation
+		text-align center
+		text-transform uppercase
+		letter-spacing 3px
+		padding (buffer*1.5) 0
+		background white
+		display inline-block
+		.wrapper
+			display inline-block
+			transition()
+			&:hover 
+				h2
+					opacity 0.5
+			h2
+				display inline-block
+				margin 0 buffer*3
+				cursor pointer
+				border-bottom 1px solid bgColor
+				font-weight 400
+				font-size 13px
+				transition()
+				&:hover
+					opacity 1
+				&.selected
+					border-bottom 1px solid secondaryColor
+		@media only screen and (max-width: 600px)
+			letter-spacing 1px
+			.wrapper
+				h2
+					margin 0 (buffer/1.5)
+					font-size 15px	
+
 	@media only screen and (max-width: 600px)
 		.logo
 			margin-left 0
 			margin-right 0
+
+.pageHeader
+	.brand
+		display block
+		margin buffer auto
+		width 240px
+
+.smallPageHeader
+	position fixed
+	width 100%
+	z-index 1000
+	height 50px
+	background white
+	.ribbon
+		shadow()
+		.back
+			display inline-block
+		.brand
+			display inline-block
+			width 100px
+		.ribbonNavigationLinks
+			position static
+			display inline-block
+
+		.smallNavigation
+			margin-left buffer
+			padding 0 buffer
+			margin-top buffer*1.5
+			border-left border
+			
+			.wrapper 
+				padding-top 2px
+				h2
+					font-size 16px
+					letter-spacing 0
+					margin 0 buffer
+	@media only screen and (max-width: 1160px)
+		.ribbon
+			.sellLink
+				display none
+	// @media only screen and (max-width: 970px)
+	
 
 .navigation
 	text-align center

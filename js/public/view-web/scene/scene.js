@@ -16,6 +16,7 @@ class Scene extends React.Component {
 	constructor(props) {
         super(props)
         this._constructPageJSON = this._constructPageJSON.bind(this)
+        this._constructPageJSON = this._constructPageJSON.bind(this)
     }
 
     _constructPageJSON (pathname) {
@@ -37,7 +38,6 @@ class Scene extends React.Component {
             default:
                 pageParms = pathname.split('/')[2]
                 path = pathname.split('/')[1] === 'producers' ? 'profile' : 'product'
-
                 this.props.initializePage(path, '_INITIALIZE_PAGE', pageParms)
                 break;
         }
@@ -47,6 +47,11 @@ class Scene extends React.Component {
         this._constructPageJSON(this.props.location.pathname)
    	}
 
+    handleScroll(){
+        var scroll = this.refs.scroll;
+        this.props.updateScrollPosition(scroll.scrollTop);
+    }
+
     componentWillReceiveProps (nextProps) {
     	if (nextProps.location.pathname !== this.props.location.pathname)
     		this._constructPageJSON(nextProps.location.pathname)
@@ -54,13 +59,12 @@ class Scene extends React.Component {
 
   	render() {
 		return (
-			<section ref="scroll" className="scroll">
-				<Ribbon app={this.props.app} />
+			<section ref="scroll" onScroll={() => {this.handleScroll()}} className="scroll">
+				<Ribbon scroll={this} app={this.props.app} />
 				{this.props.sectionIndex ? <Sections/> : null}
     		</section>
 		)
   	}
-
 }
 
 const mapStateToProp = (state) => {
