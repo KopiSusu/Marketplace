@@ -1,21 +1,42 @@
 @import './../global.styl'
 
+
 .ribbon
+	text-transform uppercase
+	position relative
 	height ribbonHeight
-	padding 0 0
+	padding 0 buffer
 	background bgColor
-	position fixed
-	z-index 1000
-	.ribbonDiv
+	.ribbonNavigationLinks
+		position absolute
+		left 0
+	.ribbonAccountLinks
+		position absolute
+		top 0
+		right 0
+	.ribbonLink
 		display	inline-block
 		text-align center
+		cursor pointer
+		height ribbonHeight
+		padding 20px buffer
+		color fontColorLight
+		transition()
+		&:hover
+			color fontColor
+			transition()
+		
 	h1
 		text-align center
-	.logo
+	.brand
+		display block
+		margin buffer auto
 		background-image url('https://s3.amazonaws.com/homemade-images/the_foodworks.jpg')
 		background-size contain
 		background-repeat no-repeat
 		background-position center
+		text-align center
+		width 240px
 		margin-top buffer
 		height ribbonHeight - buffer*2
 		&.bigNav
@@ -35,6 +56,7 @@
 			-moz-transform scale(1.3)
 			-ms-transform scale(1.3)
 			transform scale(1.3)
+
 	.navigation
 		text-align center
 		text-transform uppercase
@@ -102,4 +124,35 @@
 		.logo
 			margin-left 0
 			margin-right 0
-			
+
+.navigation
+	text-align center
+	text-transform uppercase
+	letter-spacing 3px
+	margin-top buffer
+	background white
+	height 30px
+	.wrapper
+		display inline-block
+		transition()
+		&:hover 
+			h2
+				opacity 0.5
+		h2
+			display inline-block
+			margin 0 buffer*3
+			cursor pointer
+			border-bottom 1px solid bgColor
+			font-weight 400
+			font-size 18px
+			transition()
+			&:hover
+				opacity 1
+			&.selected
+				border-bottom 1px solid secondaryColor
+	@media only screen and (max-width: 600px)
+		letter-spacing 1px
+		.wrapper
+			h2
+				margin 0 (buffer/1.5)
+				font-size 15px	

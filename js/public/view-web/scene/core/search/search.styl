@@ -4,10 +4,8 @@
 	z-index 100
 	display inline-block
 	background bgColor
-	border-radius radius
 	left buffer
 	margin buffer
-	border 1px solid strokeColor
 	transition all 0.33s cubic-bezier(0.4, 0, 0.2, 1)
 	.icon
 		padding (buffer/2) 
@@ -27,7 +25,11 @@
 				line-height (ribbonHeight * 0.6)
 		&:hover
 			background bgColorDark
+		@media only screen and (max-width: 600px)
+			span p
+				display none
 	&.open
+		position absolute
 		height 300px
 		width 450px
 		border 1px solid strokeColor
