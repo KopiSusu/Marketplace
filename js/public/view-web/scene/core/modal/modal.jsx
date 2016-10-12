@@ -37,8 +37,8 @@ class Ribbon extends React.Component {
             default:
                 return (
                     <span onClick={() => this.props.toggle('SEARCH', true)}>
-                        <p>Search</p>
                         <Icon icon='Search'/>
+                        <p>Search</p>
                     </span>
                 )
         }
