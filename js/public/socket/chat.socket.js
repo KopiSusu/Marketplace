@@ -15,7 +15,26 @@ export const initSocket = () => {
 
 
 export const configListener = (store, socket) => {
-	debugger
+	socket.on('connect', function (action, data) {
+		// inital connect logic
+		debugger
+	});
+
+	// We should determin several different error types and a catch all type.
+	socket.on('_ACTION', function (action, data) {
+		// Distpact action directly to store	
+		debugger
+		store.dispatch()
+	});
+
+	// we should determin several different error types and a catch all type.
+	socket.on('_ERROR', function (action, data) {
+		// Distpact action directly to store
+		debugger		
+		store.dispatch()
+	});
+
+
 	// do socket switch here, need to build out
 	// primarily check for errors.
 	// send back ERROR_TYPE to reducer if failed <--- this will be its own error reducer
