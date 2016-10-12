@@ -5,19 +5,19 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import Parse from 'parse';
 import _ from 'lodash';
-import {configureStore} from "./../store/configure-store";
+import {configureStore, socketConnection} from "./../store/configure-store"
+import {configListener} from './../socket/chat.socket.js'
 
 import Scene from "./scene/scene.js"
 import Styleguide from "./scene/styleguide.js"
 
-
-
 //Production Keys
-Parse.initialize("zAOPmmOBH8zN9r5iX6LFHFxLJEnycHIqV7a7QO5F", "z8IhWLkM0NWV82CvWBeKttjVTgKkGib3ICzCyMnN");
-Parse.serverURL = 'https://api.eathomemade.com/parse';
+Parse.initialize("zAOPmmOBH8zN9r5iX6LFHFxLJEnycHIqV7a7QO5F", "z8IhWLkM0NWV82CvWBeKttjVTgKkGib3ICzCyMnN")
+Parse.serverURL = 'https://api.eathomemade.com/parse'
 
 // Add the reducer to your store on the `routing` key
 const store = configureStore();
+const socket = configListener(store, socketConnection());
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store)

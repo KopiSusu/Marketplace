@@ -72,6 +72,7 @@ export function fetchData(requestType, idArray, returnType, nestedKey) {
       })
   }
 }
+
 ////////////////////////////////////////////////
 ////////////////// POST DATA //////////////////
 ////////////////////////////////////////////////
@@ -129,4 +130,22 @@ const _exportQueryConstruct = (requestType, items) => {
       return Query
   }
 }
+
+///////////////////////////////////////////////////////////
+////////////////// Socket API /////////////////////////////
+///////////////////////////////////////////////////////////
+
+// temp test
+export const sendData = (query) => {
+  const tempQuery = {username: "2027143646", password: "mouse"}
+
+  return {
+    meta: {remote: true},
+    type: 'LOGIN_USER',
+    payload: tempQuery
+  }
+
+}
+
+
 
