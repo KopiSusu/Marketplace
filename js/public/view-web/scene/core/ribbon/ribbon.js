@@ -27,17 +27,19 @@ class Ribbon extends React.Component {
       <div>
         <div className="smallPageHeader">
           <section className='ribbon column-1' style={this.props.app.navStyle}>
-            <div className='column-10-1 image logo' />
-            <Search />              
-            {
-              this.props.location.pathname.split('/').length > 2 ? (
-                  <div className='back' onClick={() => { browserHistory.goBack() }}>
-                    <Icon icon='Left'/>
-                    <p>Back</p>
-                  </div>
-              ) : null
-            }
-            <div className="ribbonDiv column-10-1">BROWSE BY</div>
+            <div className='image brand' />
+            <div className="ribbonNavigationLinks">
+              {
+                this.props.location.pathname.split('/').length > 2 ? (
+                    <div className='ribbonLink back' onClick={() => { browserHistory.goBack() }}>
+                      <Icon icon='Left'/>
+                      <p>Back</p>
+                    </div>
+                ) : null
+              }
+              <Search />              
+              <div className="ribbonLink">Browse By ▾</div>
+            </div>
             <section className='smallNavigation'>
               <div className='wrapper'>
                 <h2 onClick={() => { this._clickHandler('featured') }}className={this.props.selectedSection === 'featured' ? 'selected' : ''} key={'FEATURED'}>{'FEATURED'}</h2>
@@ -45,9 +47,11 @@ class Ribbon extends React.Component {
                 <h2 onClick={() => { this._clickHandler('producers') }}className={this.props.selectedSection === 'producers' ? 'selected' : ''} key={'PRODUCERS'}>{'PRODUCERS'}</h2>
               </div>
             </section>
-            <div className="ribbonDiv column-10-1">Sell in our market</div>
-            <div className="ribbonDiv column-10-1">SIGN UP</div>
-            <div className="ribbonDiv column-10-1">LOG IN</div>
+            <div className="ribbonAccountLinks">
+              <div className="ribbonLink">Sell in our market</div>
+              <div className="ribbonLink">SIGN UP</div>
+              <div className="ribbonLink">LOG IN</div>
+            </div>
           </section>
         </div>
         {this.renderTopNav()}
@@ -64,15 +68,15 @@ class Ribbon extends React.Component {
       <div className="pageHeader">
         <section className='ribbon column-1' style={this.props.app.navStyle}>
           <div className="ribbonNavigationLinks">
-            <Search />              
             {
               this.props.location.pathname.split('/').length > 2 ? (
-                  <div className='back' onClick={() => { browserHistory.goBack() }}>
+                  <div className='ribbonLink back' onClick={() => { browserHistory.goBack() }}>
                     <Icon icon='Left'/>
                     <p>Back</p>
                   </div>
               ) : null
             }
+            <Search />              
             <div className="ribbonLink">Browse By ▾</div>
           </div>
           {
