@@ -13,6 +13,13 @@ export const selectItem = (item, type) => {
     }
 }
 
+export const updateScrollPosition = (scrollPosition) => {
+    return {
+        type: 'SET_SCROLL',
+        payload: scrollPosition
+    }
+}
+
 export const setQuery = (query) => {
   return {
     type: 'SET_QUERY',
