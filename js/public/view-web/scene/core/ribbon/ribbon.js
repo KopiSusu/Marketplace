@@ -48,7 +48,7 @@ class Ribbon extends React.Component {
               </div>
             </section>
             <div className="ribbonAccountLinks">
-              <div className="ribbonLink">Sell in our market</div>
+              <div className="ribbonLink sellLink">Sell in our market</div>
               <div className="ribbonLink">SIGN UP</div>
               <div className="ribbonLink">LOG IN</div>
             </div>

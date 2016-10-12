@@ -8,16 +8,20 @@
 	.ribbonNavigationLinks
 		position absolute
 		left 0
+		margin 20px 0
+		height 29px
 	.ribbonAccountLinks
 		position absolute
 		top 0
 		right buffer
+		margin 20px 0
+		height 29px
 	.ribbonLink
 		display	inline-block
 		text-align center
 		cursor pointer
 		height ribbonHeight
-		padding 20px buffer
+		padding 0px buffer
 		color fontColorLight
 		transition()
 		&:hover
@@ -145,6 +149,12 @@
 					font-size 16px
 					letter-spacing 0
 					margin 0 buffer
+	@media only screen and (max-width: 1160px)
+		.ribbon
+			.sellLink
+				display none
+	// @media only screen and (max-width: 970px)
+	
 
 .navigation
 	text-align center
