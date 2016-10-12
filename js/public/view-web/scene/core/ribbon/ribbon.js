@@ -22,36 +22,12 @@ class Ribbon extends React.Component {
   }
 
   render() {
-    //The first one is the small scroll.
+    //The first retyurns the big scroll and the small fixed one. Second case returns just the big one that is position relative.
     return this.props.scrollPosition > 100 ? (
-      <div className="pageHeader">
-        <section className='ribbon column-1' style={this.props.app.navStyle}>
-          <div className='column-10-1 image logo' />
-          <Search />              
-          {
-            this.props.location.pathname.split('/').length > 2 ? (
-                <div className='back' onClick={() => { browserHistory.goBack() }}>
-                  <Icon icon='Left'/>
-                  <p>Back</p>
-                </div>
-            ) : null
-          }
-          <div className="ribbonDiv column-10-1">BROWSE BY</div>
-          <section className='smallNavigation'>
-            <div className='wrapper'>
-              <h2 onClick={() => { this._clickHandler('featured') }}className={this.props.selectedSection === 'featured' ? 'selected' : ''} key={'FEATURED'}>{'FEATURED'}</h2>
-              <h2 onClick={() => { this._clickHandler('products') }}className={this.props.selectedSection === 'products' ? 'selected' : ''} key={'PRODUCTS'}>{'PRODUCTS'}</h2>
-              <h2 onClick={() => { this._clickHandler('producers') }}className={this.props.selectedSection === 'producers' ? 'selected' : ''} key={'PRODUCERS'}>{'PRODUCERS'}</h2>
-            </div>
-          </section>
-          <div className="ribbonDiv column-10-1">Sell in our market</div>
-          <div className="ribbonDiv column-10-1">SIGN UP</div>
-          <div className="ribbonDiv column-10-1">LOG IN</div>
-        </section>
-      </div>
-    ) : ( <div className="pageHeader">
-        <section className='ribbon column-1' style={this.props.app.navStyle}>
-          <div className="ribbonNavigationLinks">
+      <div>
+        <div className="smallPageHeader">
+          <section className='ribbon column-1' style={this.props.app.navStyle}>
+            <div className='column-10-1 image logo' />
             <Search />              
             {
               this.props.location.pathname.split('/').length > 2 ? (
@@ -61,32 +37,32 @@ class Ribbon extends React.Component {
                   </div>
               ) : null
             }
-            <div className="ribbonLink">Browse By ▾</div>
-          </div>
-          {
-            this.renderTitle()
-          }
-          <div className="ribbonAccountLinks">
-            <div className="ribbonLink sellLink">Sell in our Market</div>
-            <div className="ribbonLink">Sign Up</div>
-            <div className="ribbonLink">Log In</div>
-          </div>
-
-        </section>
-
-        <section className='navigation'>
-          <div className='wrapper'>
-            <h2 onClick={() => { this._clickHandler('featured') }}className={this.props.selectedSection === 'featured' ? 'selected' : ''} key={'FEATURED'}>{'FEATURED'}</h2>
-            <h2 onClick={() => { this._clickHandler('products') }}className={this.props.selectedSection === 'products' ? 'selected' : ''} key={'PRODUCTS'}>{'PRODUCTS'}</h2>
-            <h2 onClick={() => { this._clickHandler('producers') }}className={this.props.selectedSection === 'producers' ? 'selected' : ''} key={'PRODUCERS'}>{'PRODUCERS'}</h2>
-          </div>
-        </section>
+            <div className="ribbonDiv column-10-1">BROWSE BY</div>
+            <section className='smallNavigation'>
+              <div className='wrapper'>
+                <h2 onClick={() => { this._clickHandler('featured') }}className={this.props.selectedSection === 'featured' ? 'selected' : ''} key={'FEATURED'}>{'FEATURED'}</h2>
+                <h2 onClick={() => { this._clickHandler('products') }}className={this.props.selectedSection === 'products' ? 'selected' : ''} key={'PRODUCTS'}>{'PRODUCTS'}</h2>
+                <h2 onClick={() => { this._clickHandler('producers') }}className={this.props.selectedSection === 'producers' ? 'selected' : ''} key={'PRODUCERS'}>{'PRODUCERS'}</h2>
+              </div>
+            </section>
+            <div className="ribbonDiv column-10-1">Sell in our market</div>
+            <div className="ribbonDiv column-10-1">SIGN UP</div>
+            <div className="ribbonDiv column-10-1">LOG IN</div>
+          </section>
+        </div>
+        {this.renderTopNav()}
+      </div>
+    ) : (
+      <div>
+      {this.renderTopNav()}
       </div>
     );
-    /*
+  }
+
+  renderTopNav() {
     return (
       <div className="pageHeader">
-      	<section className='ribbon column-1' style={this.props.app.navStyle}>
+        <section className='ribbon column-1' style={this.props.app.navStyle}>
           <div className="ribbonNavigationLinks">
             <Search />              
             {
@@ -108,7 +84,7 @@ class Ribbon extends React.Component {
             <div className="ribbonLink">Log In</div>
           </div>
 
-      	</section>
+        </section>
 
         <section className='navigation'>
           <div className='wrapper'>
@@ -119,7 +95,6 @@ class Ribbon extends React.Component {
         </section>
       </div>
     );
-    */
   }
 
   renderTitle() {
