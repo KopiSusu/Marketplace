@@ -48,7 +48,7 @@ class Ribbon extends React.Component {
               </div>
             </section>
             <div className="ribbonAccountLinks">
-              <div className="ribbonLink sellLink">Sell in our market</div>
+              <a href="http://eathomemade.com/" target="_blank" className="ribbonLink sellLink">Sell in our market</a>
               <div className="ribbonLink">SIGN UP</div>
               <div className="ribbonLink">LOG IN</div>
             </div>
@@ -83,7 +83,7 @@ class Ribbon extends React.Component {
             this.renderTitle()
           }
           <div className="ribbonAccountLinks">
-            <div className="ribbonLink sellLink">Sell in our Market</div>
+            <a href="http://eathomemade.com/" target="_blank" className="ribbonLink sellLink">Sell in our market</a>
             <div className="ribbonLink">Sign Up</div>
             <div className="ribbonLink">Log In</div>
           </div>
